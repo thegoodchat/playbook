@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Good Chat Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--kp:#0b442b;--ks:#fb8b24;--cp:#0f4c5c;--cs:#5f0f40;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:2rem}
+.logo{font-size:13px;font-weight:800;color:var(--kp)}
+nav a{font-size:12px;font-weight:600;color:#555;margin-left:16px}
+nav a:hover{color:var(--kp)}
+nav a.on{color:var(--ks)}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ks);margin-bottom:.7rem}
+h1{font-size:26px;font-weight:800;color:var(--kp);line-height:1.2;letter-spacing:-.02em;margin-bottom:.9rem}
+h1 em{font-style:italic}
+.sub{font-size:14px;color:#555;line-height:1.7;max-width:500px;margin-bottom:.4rem}
+.nudge{font-size:13px;color:#999;font-style:italic;margin-bottom:1.5rem}
+.slabel{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:1rem}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:2rem}
+.card{border:.5px solid var(--b);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.card:hover{border-color:#c2d9cc}
+.card img{width:100%;height:150px;object-fit:cover;display:block}
+.ct{padding:1rem 1.1rem}
+.ct-k{background:var(--kp)}
+.ct-c{background:#e4f0f3}
+.cpill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:.6rem}
+.cpill-k{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)}
+.cpill-c{background:#b6d4db;color:#073340}
+.cq{font-size:15px;font-weight:800;line-height:1.25;margin-bottom:4px}
+.cq-k{color:#fff}
+.cq-c{color:var(--cp)}
+.cf{font-size:12px;line-height:1.55}
+.cf-k{color:rgba(255,255,255,.72)}
+.cf-c{color:#555}
+.cb{padding:.65rem 1.1rem;background:#fff;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid var(--b)}
+
+hr{border:none;border-top:.5px solid var(--b);margin:1.75rem 0}
+.alabel{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:1rem}
+.acc{border:.5px solid var(--b);border-radius:10px;overflow:hidden;margin-bottom:1.5rem}
+.aitem{border-bottom:.5px solid var(--b)}
+.aitem:last-child{border-bottom:none}
+.atrig{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.2rem;cursor:pointer;gap:12px;list-style:none}
+.atrig:hover{background:#f7f7f5}
+.atl{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}
+.ach{font-size:10px;color:#999;transition:transform .2s}
+.abod{display:none;padding:.1rem 1.2rem 1rem 3rem}
+.abod p{font-size:13px;color:#555;line-height:1.7;margin-top:.6rem}
+.abod strong{font-weight:700;color:#111}
+.abod em{font-style:italic}
+.open .ach{transform:rotate(180deg)}
+.open .abod{display:block}
+
+.qbar{background:#fff5ec;border:.5px solid #fcd4a8;border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:1.5rem}
+.qt{font-size:13px;font-weight:600;color:var(--kp)}
+.qt span{font-weight:400;color:#777;font-size:12px;display:block;margin-top:2px}
+.qbtn{padding:8px 16px;background:var(--ks);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;white-space:nowrap}
+
+footer{margin-top:1.75rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--ks);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:160px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--kp);width:200px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--kp)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">The Good Chat Playbook</span>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="on">Home</a>
+    <a href="kol-path.html">KOL Path</a>
+    <a href="cso-path.html">CSO Path</a>
+  </div>
+</nav>
+
+<p class="eyebrow">Two paths. One mission.</p>
+<h1>Your choose-your-own-adventure guide<br>to talking about energy transition<br>in ways that feel <em>honest &amp; human.</em></h1>
+<p class="sub">Mainstreaming energy-transition conversations across Southeast Asia — for creators, civil society, and everyone in between.</p>
+<p class="nudge">Choose a path below. Or wander. Wandering is encouraged.</p>
+<p class="slabel">Who are you here as?</p>
+
+<div class="grid">
+  <a class="card" href="kol-path.html">
+    <img src="https://raw.githubusercontent.com/thegoodchat/playbook/main/KOL.png" alt="KOL" style="object-position:center 30%">
+    <div class="ct ct-k">
+      <div class="cpill cpill-k">For Creators</div>
+      <p class="cq cq-k">Are you a KOL or content creator?</p>
+      <p class="cf cf-k">For storytellers &amp; community voices</p>
+    </div>
+    <div class="cb">
+      <span style="font-size:11px;font-weight:700;color:var(--kp);letter-spacing:.04em">The KOL Path →</span>
+      <span style="font-size:12px;font-weight:700;color:var(--ks)">5 Levels</span>
+    </div>
+  </a>
+  <a class="card" href="cso-path.html">
+    <img src="https://raw.githubusercontent.com/thegoodchat/playbook/main/CSO.png" alt="CSO" style="object-position:center 25%">
+    <div class="ct ct-c">
+      <div class="cpill cpill-c">For CSOs</div>
+      <p class="cq cq-c">Are you a civil society org?</p>
+      <p class="cf cf-c">For researchers &amp; advocates</p>
+    </div>
+    <div class="cb">
+      <span style="font-size:11px;font-weight:700;color:var(--cp);letter-spacing:.04em">The CSO Path →</span>
+      <span style="font-size:12px;font-weight:700;color:var(--cs)">5 Levels</span>
+    </div>
+  </a>
+</div>
+
+<hr>
+<p class="alabel">About this playbook</p>
+<div class="acc">
+  <div class="aitem">
+    <div class="atrig" onclick="tog(this)">
+      <span class="atl">🌏 How to use this playbook</span>
+      <span class="ach">▼</span>
+    </div>
+    <div class="abod">
+      <p>Think of this space like a <strong>neighborhood library where no one shushes you</strong>: wander in, pull random books off the shelf, flip through whatever sparks joy, leave the rest exactly where they are.</p>
+      <p>Everything here is meant to be <strong>skimmed, borrowed, annotated, remixed</strong>, and taken home in your metaphorical tote bag. There's no correct route. Just follow what feels useful to you.</p>
+    </div>
+  </div>
+  <div class="aitem">
+    <div class="atrig" onclick="tog(this)">
+      <span class="atl">🔓 Open-source, because gatekeeping is boring</span>
+      <span class="ach">▼</span>
+    </div>
+    <div class="abod">
+      <p>Everything here is free, accessible, and made to be passed around. Screenshots welcome. Copy-paste encouraged. If it helps someone spark a conversation or start a tiny climate uprising with their cousins, <em>perfect.</em></p>
+    </div>
+  </div>
+  <div class="aitem">
+    <div class="atrig" onclick="tog(this)">
+      <span class="atl">🥥 Rooted in Southeast Asia</span>
+      <span class="ach">▼</span>
+    </div>
+    <div class="abod">
+      <p>Born out of real conversations in <strong>the Philippines, Thailand, and Indonesia</strong>. It speaks our languages, our humor, our chaos, and our ways of taking care of each other. It's <em>glocal</em> — sweaty humidity and traffic jams baked in.</p>
+    </div>
+  </div>
+  <div class="aitem">
+    <div class="atrig" onclick="tog(this)">
+      <span class="atl">🪴 FAQs</span>
+      <span class="ach">▼</span>
+    </div>
+    <div class="abod">
+      <p><strong>Can I copy parts of this?</strong> Yes, please. Copy, paste, remix — whatever helps you and your community.</p>
+      <p><strong>I'm outside Southeast Asia. Is this for me?</strong> Totally. Just know it was built from lived experiences here. Adapt as needed.</p>
+      <p><strong>What if I'm overwhelmed?</strong> Same. Take one page at a time. Or close the tab, drink water, and return when your neurons feel less toasted.</p>
+    </div>
+  </div>
+</div>
+
+<div class="qbar">
+  <div class="qt">Take the quiz &amp; get your certificate<span>Test what you've learned and earn a certificate from The Good Chat Playbook team.</span></div>
+  <a href="https://makesense.typeform.com/to/AO0X5upD" target="_blank"><button class="qbtn">Take the quiz →</button></a>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Open Resource · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function tog(t){t.parentElement.classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+</body>
+</html>

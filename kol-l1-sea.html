@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Climate Change & the Energy Transition in SEA — KOL Level 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:1.5rem;max-width:600px;font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* HEAT CALLOUT */
+.heat-box{background:var(--p);border-radius:12px;padding:1.4rem 1.5rem;margin-bottom:2rem}
+.heat-box .hb-icon{font-size:22px;margin-bottom:.5rem}
+.heat-box .hb-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:.6rem}
+.heat-box p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:.5rem}
+.heat-box p:last-child{margin-bottom:0}
+.heat-box em{font-style:italic;color:rgba(255,255,255,.95)}
+.heat-box strong{font-weight:700;color:#fff}
+
+/* BENEFITS GRID */
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.25rem 0 1.5rem}
+.benefit{display:flex;align-items:flex-start;gap:10px;border:.5px solid var(--b);border-radius:9px;padding:.85rem 1rem;transition:border-color .15s}
+.benefit:hover{border-color:var(--pm)}
+.bicon{font-size:18px;flex-shrink:0;margin-top:1px}
+.btext{font-size:13px;color:#444;line-height:1.6}
+.btext strong{font-weight:700;color:#111}
+
+/* PQUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* SESSION PANELS */
+.session{border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.session-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;gap:12px;transition:background .15s}
+.session-head:hover{background:#f7f7f5}
+.session.open .session-head{background:var(--pl)}
+.sh-left{display:flex;align-items:center;gap:10px}
+.sh-flag{font-size:20px;flex-shrink:0}
+.sh-title{font-size:14px;font-weight:800;color:#111}
+.sarr{font-size:14px;color:#aaa;transition:transform .2s;flex-shrink:0}
+.session.open .sarr{transform:rotate(90deg);color:var(--s)}
+.session-body{display:none;padding:1.25rem;border-top:.5px solid var(--b)}
+.session.open .session-body{display:block}
+
+.speakers-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.6rem}
+.speaker{font-size:13px;color:#444;padding:.4rem 0;border-bottom:.5px solid var(--b);line-height:1.55}
+.speaker:last-child{border-bottom:none}
+.speaker strong{font-weight:700;color:#111}
+
+.summary-box{background:#f7f7f5;border-radius:8px;padding:.85rem 1rem;margin:1rem 0;font-size:13px;color:#555;line-height:1.7;border:.5px solid var(--b)}
+.summary-box .sb-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.35rem}
+
+.video-placeholder{background:#e8e8e8;border-radius:8px;overflow:hidden;margin:1rem 0;position:relative;height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
+.video-placeholder p{font-size:13px;color:#888;font-style:italic;margin:0}
+
+.lang-note{font-size:12px;color:#888;font-style:italic;margin:.4rem 0 .75rem}
+.audio-link{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:8px;padding:7px 14px;background:var(--pl);text-decoration:none}
+.audio-link:hover{background:var(--pm)}
+.pdf-link{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#555;border:.5px solid var(--b);border-radius:8px;padding:7px 14px;text-decoration:none;margin-left:8px;margin-top:8px}
+.pdf-link:hover{border-color:var(--pm);color:var(--p)}
+
+/* LEVEL COMPLETE */
+.level-complete{background:var(--p);border-radius:12px;padding:1.5rem;margin-top:2.5rem;text-align:center}
+.lc-icon{font-size:28px;margin-bottom:.5rem}
+.lc-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:.4rem}
+.lc-sub{font-size:13px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:1.1rem}
+.lc-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--s);color:#fff;font-size:13px;font-weight:800;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;text-decoration:none}
+.lc-btn:hover{background:#e07a18}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-1.html">Level 1: Why Energy Now</a><span class="sep">›</span>
+  <span>Climate Change &amp; the Energy Transition in SEA</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep on" href="kol-level-1.html">Level 1</a>
+  <a class="lstep" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🌏 Level 1 · Why Energy Now</p>
+<h1>Climate Change &amp; the Energy Transition in Southeast Asia: what's really at stake?</h1>
+<p class="lead">What's at stake in Southeast Asia's energy transition is nothing less than our health, livelihoods, and future resilience in a warming world.</p>
+
+<div class="heat-box">
+  <div class="hb-icon">🔥</div>
+  <div class="hb-title">Ouf, it's getting hotter and wetter every day.</div>
+  <p>Climate change is already reshaping our daily lives — from struggling to get to work during stronger and more frequent storms, to avoiding playing outside with our kids because of the heat and air pollution, to paying higher and higher electricity bills because of increased aircon consumption.</p>
+  <p><em>But it doesn't have to stay this way.</em></p>
+  <p><strong>We can do something about it — and one of the biggest solutions is speeding up the energy transition:</strong> shifting from polluting fossil fuels to clean, affordable, and renewable energy for everyone.</p>
+</div>
+
+<p>Let's be honest — talking about energy isn't exactly "sexy."</p>
+<p><strong>But changing the way we produce and use energy is one of the most important things we can do for the future of our people and our countries.</strong></p>
+<p>An energy transition grounded in renewables doesn't just tackle the climate crisis — it brings real, everyday benefits. According to <a href="https://www.irena.org/" target="_blank" style="color:var(--p);font-weight:700">IRENA ↗</a>, switching to clean energy can:</p>
+
+<div class="benefits">
+  <div class="benefit"><span class="bicon">🌱</span><div class="btext"><strong>Create new jobs</strong> and boost local economies</div></div>
+  <div class="benefit"><span class="bicon">🌏</span><div class="btext"><strong>Drive sustainable development</strong> that benefits communities, not just corporations</div></div>
+  <div class="benefit"><span class="bicon">💨</span><div class="btext"><strong>Improve public health</strong> by reducing air pollution and exposure to natural disasters</div></div>
+  <div class="benefit"><span class="bicon">☀️</span><div class="btext"><strong>Reduce heat waves</strong> and make our homes more resilient to rising temperatures</div></div>
+  <div class="benefit" style="grid-column:1/-1"><span class="bicon">🥦</span><div class="btext"><strong>Protect our favorite foods and products</strong> — from chocolate and beer to vegetables and meat</div></div>
+</div>
+
+<div class="pquote">
+  <p>The energy transition isn't just about saving the planet. It's about making sure life stays livable, affordable, and fair for everyone.</p>
+</div>
+
+<hr>
+
+<h2>Why do we need the energy transition — and what solutions exist in each country?</h2>
+<p>Two expert sessions exploring how energy shapes everyday life in Indonesia and Thailand, and what the path forward looks like.</p>
+
+<!-- INDONESIA SESSION -->
+<div class="session" id="sess-id">
+  <div class="session-head" onclick="stog('sess-id')">
+    <div class="sh-left">
+      <span class="sh-flag">🇮🇩</span>
+      <span class="sh-title">How Energy Shapes Everyday Life in Indonesia</span>
+    </div>
+    <span class="sarr">›</span>
+  </div>
+  <div class="session-body">
+    <p class="speakers-lbl">Speakers</p>
+    <div class="speaker"><strong>Agus Tampubolon</strong> — Project Manager, Clean, Affordable &amp; Sustainable Energy (CASE), Institute for Essential Services Reform (IESR)</div>
+    <div class="speaker"><strong>Novita Indri</strong> — Fossil Fuels &amp; Climate Finance Campaigner, TRendAsia</div>
+
+    <div class="summary-box">
+      <div class="sb-label">🧭 Session summary</div>
+      This session explores how energy shapes daily life in Indonesia — from the food we eat to the homes we live in. The discussion dives into where Indonesia's energy comes from, how decisions about it are made, and why the energy transition matters for everyone. It also clears up common myths and misconceptions about renewable energy, helping viewers understand how the shift toward cleaner power connects to Indonesians' everyday realities.
+    </div>
+
+    <div class="video-placeholder">
+      <p>📹 Add Indonesia session video here</p>
+      <p style="font-size:12px">(replace this div with a YouTube embed)</p>
+    </div>
+    <p class="lang-note">🗣 Speaking language: English</p>
+    <a class="audio-link" href="https://drive.google.com/file/d/1xt0T4c6KJFI6fOCzwJZUBaQi6e9c5rI_/view" target="_blank">🎧 Audio only (podcast-style) ↗</a>
+  </div>
+</div>
+
+<!-- THAILAND SESSION -->
+<div class="session" id="sess-th">
+  <div class="session-head" onclick="stog('sess-th')">
+    <div class="sh-left">
+      <span class="sh-flag">🇹🇭</span>
+      <span class="sh-title">How Energy Shapes Everyday Life in Thailand</span>
+    </div>
+    <span class="sarr">›</span>
+  </div>
+  <div class="session-body">
+    <p class="speakers-lbl">Speakers</p>
+    <div class="speaker"><strong>Athita (Zad) Vivatpinyo</strong> — Team Leader, Policy and Regulation, Asia Clean Energy Partners</div>
+    <div class="speaker"><strong>Thanyaporn (Ann) Surapukdee</strong> — Just Energy Transition in Thailand</div>
+
+    <div class="summary-box">
+      <div class="sb-label">🧭 Session summary</div>
+      This session explores how energy shapes daily life in Thailand — from the food we eat to the homes we live in. The discussion dives into where Thailand's energy comes from, how decisions about it are made, and why the energy transition matters for everyone. It also clears up common myths and misconceptions about renewable energy, helping viewers understand how the shift toward cleaner power connects to Thais' everyday realities.
+    </div>
+
+    <div class="video-placeholder">
+      <p>📹 Add Thailand session video here</p>
+      <p style="font-size:12px">(replace this div with a YouTube embed)</p>
+    </div>
+    <p class="lang-note">🗣 Speaking language: mostly Thai</p>
+    <a class="audio-link" href="https://drive.google.com/file/d/1BKgxtAJnK6PYk9N6V_4SBXAZOS2Cu0WQ/view?usp=drive_open" target="_blank">🎧 Audio only (podcast-style) ↗</a>
+    <a class="pdf-link" href="https://drive.google.com/file/d/b7d60b3e-45d6-47c4-b08a-f1d5cffd328f" target="_blank">📄 Download JET data report (PDF) ↗</a>
+  </div>
+</div>
+
+<!-- LEVEL COMPLETE -->
+<div class="level-complete">
+  <div class="lc-icon">🎉</div>
+  <div class="lc-title">You've completed Level 1!</div>
+  <p class="lc-sub">You now know the basics — what clean energy looks like in SEA, your role as a KOL, the key vocabulary, and what's at stake. Ready to find your own entry point into this topic?</p>
+  <a class="lc-btn" href="kol-level-2.html">Start Level 2 →</a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 1 — All pages</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l1-beginners.html">
+      <div class="pn-ey">Page 1</div>
+      <div class="pn-title">💧 Energy Transition for Beginners</div>
+    </a>
+    <a class="pn-card" href="kol-l1-role.html">
+      <div class="pn-ey">Page 2</div>
+      <div class="pn-title">😍 I'm a KOL… What role can I play?</div>
+    </a>
+    <a class="pn-card" href="kol-l1-glossary.html">
+      <div class="pn-ey">Page 3</div>
+      <div class="pn-title">📝 Glossary</div>
+    </a>
+    <a class="pn-card" href="kol-l1-climate-impact.html">
+      <div class="pn-ey">Page 4</div>
+      <div class="pn-title">🌴 How Climate Change impacts our lives</div>
+    </a>
+    <a class="pn-card" href="kol-l1-sea.html">
+      <div class="pn-ey">Page 5 · You are here</div>
+      <div class="pn-title">🌏 Climate Change in SEA</div>
+    </a>
+    <a class="pn-card highlight" href="kol-level-2.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">Level 2: Let's Start!</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function stog(id){document.getElementById(id).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+</body>
+</html>

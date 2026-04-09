@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I'm a KOL… What role can I play? — KOL Level 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* BANNER */
+.banner{width:calc(100% + 2.5rem);margin:0 -1.25rem 2rem;height:200px;overflow:hidden;background:var(--pm)}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;max-width:600px}
+
+/* DIVIDER */
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+
+/* HEADINGS & TEXT */
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.5rem;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:800;color:#111;margin-bottom:.5rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+ul{padding-left:1.25rem;margin-bottom:.75rem}
+li{font-size:14px;color:#444;line-height:1.75}
+
+/* COMPARE CARDS */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.5rem 0}
+.ccard{border:.5px solid var(--b);border-radius:10px;padding:1.25rem}
+.ccard-kol{background:var(--p)}
+.ccard-icon{font-size:20px;margin-bottom:.6rem}
+.ccard-title{font-size:14px;font-weight:800;margin-bottom:.75rem}
+.ccard-kol .ccard-title{color:#fff}
+.ccard-creator .ccard-title{color:var(--p)}
+.ccard-row{display:flex;flex-direction:column;gap:6px}
+.ccard-item{font-size:12px;line-height:1.6;padding:.5rem .75rem;border-radius:7px}
+.ccard-kol .ccard-item{background:rgba(255,255,255,.1);color:rgba(255,255,255,.88)}
+.ccard-creator .ccard-item{background:var(--pl);color:var(--pd)}
+.ccard-item strong{font-weight:700}
+.ccard-kol .ccard-item strong{color:#fff}
+.ccard-creator .ccard-item strong{color:var(--p)}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin-bottom:.3rem}
+.pquote cite{font-size:12px;color:#777;font-style:normal;font-weight:600}
+
+/* POWER TYPES */
+.power-block{border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.power-head{padding:1.1rem 1.25rem;border-bottom:.5px solid var(--b)}
+.power-head.mega{background:var(--p)}
+.power-head.camp{background:#fff5ec;border-bottom:.5px solid #fcd4a8}
+.power-icon{font-size:24px;margin-bottom:.35rem}
+.power-title{font-size:17px;font-weight:800;margin-bottom:.3rem}
+.power-head.mega .power-title{color:#fff}
+.power-head.camp .power-title{color:var(--pd)}
+.power-desc{font-size:13px;line-height:1.65;margin-bottom:.4rem}
+.power-head.mega .power-desc{color:rgba(255,255,255,.8)}
+.power-head.camp .power-desc{color:#666}
+.power-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+.power-head.mega .power-tag{background:rgba(255,255,255,.18);color:rgba(255,255,255,.9)}
+.power-head.camp .power-tag{background:#fcd4a8;color:#8a4a00}
+.power-profiles{padding:1.25rem}
+.power-profiles h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+
+/* KOL PROFILE CARD */
+.kol-card{border:.5px solid var(--b);border-radius:10px;overflow:hidden;margin-bottom:12px;cursor:pointer}
+.kol-card:last-child{margin-bottom:0}
+.kol-head{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;user-select:none}
+.kol-head:hover{background:#f7f7f5}
+.kol-meta{display:flex;flex-direction:column;gap:2px}
+.kol-name{font-size:14px;font-weight:800;color:#111}
+.kol-handle{font-size:12px;color:#777}
+.karr{font-size:14px;color:#999;transition:transform .2s}
+.kol-card.open .karr{transform:rotate(90deg);color:var(--s)}
+.kol-card.open .kol-head{background:var(--pl)}
+.kol-body{display:none;padding:0 1.1rem 1.1rem;border-top:.5px solid var(--b)}
+.kol-card.open .kol-body{display:block}
+.kol-q{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--s);margin-top:.9rem;margin-bottom:.3rem}
+.kol-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:.5rem}
+.kol-body strong{font-weight:700;color:#111}
+.kol-link{display:inline-flex;align-items:center;gap:5px;margin-top:.75rem;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:7px;padding:5px 12px}
+.kol-link:hover{background:var(--pl)}
+
+/* CALLOUT WARNING */
+.warn-box{background:#fff5ec;border:.5px solid #fcd4a8;border-radius:10px;padding:1.1rem 1.25rem;margin:1.5rem 0}
+.warn-box .wt{font-size:13px;font-weight:800;color:var(--pd);margin-bottom:.5rem}
+.warn-box p{font-size:13px;color:#6b4c00;line-height:1.7;margin-bottom:.5rem}
+.warn-box p:last-child{margin-bottom:0}
+
+/* PANELS */
+.panel-block{border:.5px solid var(--b);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;cursor:pointer;user-select:none;background:var(--pl)}
+.panel-head:hover{background:var(--pm)}
+.panel-flag{font-size:16px;margin-right:6px}
+.panel-title{font-size:14px;font-weight:800;color:var(--p)}
+.parr{font-size:14px;color:var(--p);transition:transform .2s}
+.panel-block.open .parr{transform:rotate(90deg)}
+.panel-body{display:none;padding:1.1rem}
+.panel-block.open .panel-body{display:block}
+.speakers-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.6rem}
+.speaker{font-size:13px;color:#444;line-height:1.65;padding:.35rem 0;border-bottom:.5px solid var(--b)}
+.speaker:last-child{border-bottom:none}
+.speaker strong{font-weight:700;color:#111}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin:1rem 0;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.audio-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:8px;padding:7px 14px;margin-top:.5rem;background:var(--pl)}
+.audio-link:hover{background:var(--pm)}
+.lang-note{font-size:12px;color:#999;font-style:italic;margin-top:.5rem}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-1.html">Level 1: Why Energy Now</a><span class="sep">›</span>
+  <span>I'm a KOL… What role can I play?</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep on" href="kol-level-1.html">Level 1</a>
+  <a class="lstep" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<div class="banner"><img src="https://raw.githubusercontent.com/thegoodchat/playbook/main/image/banner-KOL1-2.PNG" alt="I'm a KOL — What role can I play?"></div>
+
+<p class="hero-tag">😍 Level 1 · Why Energy Now</p>
+<h1>I'm a KOL… What role can I play in the Energy Transition?</h1>
+<p class="lead">You already have influence. The question is: what do you do with it? This page helps you understand your unique power — and the specific ways you can use it to move the climate conversation forward.</p>
+
+<hr>
+
+<h2>Content Creators vs. KOLs</h2>
+<p>The terms <strong>content creator</strong> and <strong>KOL</strong> are often used interchangeably. Both influence audiences through what they share online. But they come from different starting points and have different strengths. Neither is more important — they simply work in different ways.</p>
+<p>On this page, we use the terms <em>interchangeably</em> to refer to anyone who creates influence through content.</p>
+
+<div class="compare">
+  <div class="ccard ccard-creator">
+    <div class="ccard-icon">✍️</div>
+    <div class="ccard-title">Content Creators</div>
+    <div class="ccard-row">
+      <div class="ccard-item"><strong>What they do:</strong> Make and share digital content — videos, photos, blogs, podcasts, social media posts.</div>
+      <div class="ccard-item"><strong>Core skill:</strong> Storytelling &amp; audience engagement.</div>
+      <div class="ccard-item"><strong>Influence comes from:</strong> Relatability and visibility.</div>
+      <div class="ccard-item"><strong>Leverage:</strong> A direct emotional link with followers. They know what their audience wants and how to make it appealing.</div>
+    </div>
+  </div>
+  <div class="ccard ccard-kol">
+    <div class="ccard-icon">🎓</div>
+    <div class="ccard-title">KOLs (Key Opinion Leaders)</div>
+    <div class="ccard-row">
+      <div class="ccard-item"><strong>What they do:</strong> Share expertise within their field — dermatologists, architects, nutritionists.</div>
+      <div class="ccard-item"><strong>Core strength:</strong> Credibility &amp; authority.</div>
+      <div class="ccard-item"><strong>Influence comes from:</strong> Knowledge and authenticity.</div>
+      <div class="ccard-item"><strong>Leverage:</strong> Expert trust built over time. They only share what they truly believe in.</div>
+    </div>
+  </div>
+</div>
+
+<p>Whether you're a content creator or a KOL, you are an <strong>influential person</strong>. When people see your stories, videos, or posts, they begin to <em>want</em> something they never thought about before. And what you say can make them believe they <em>need</em> it. Your opinion carries <strong>power</strong>. It shapes how people think, feel, and act.</p>
+
+<div class="pquote">
+  <p>"Most of us don't realize it, but consumers hold incredible power. 🔥 Every peso we spend sends a message about the kind of culture we want to live in. Too often, that power gets wasted on mindless flexes — hauls, logos, status symbols."</p>
+  <cite>— <a href="https://www.instagram.com/basicallyborrowed/" target="_blank" style="color:var(--p)">@basicallyborrowed</a></cite>
+</div>
+
+<hr>
+
+<h2>Two Types of KOL Superpowers</h2>
+<p>Every influential person has a natural mode. Which one feels most like you?</p>
+
+<!-- MEGAPHONE -->
+<div class="power-block" id="pb1">
+  <div class="power-head mega">
+    <div class="power-icon">📣</div>
+    <div class="power-title">The Megaphone — Reach</div>
+    <p class="power-desc">You're the voice that carries across the crowd. Your posts fly far, fast, and wide. You set the vibe for the masses — sometimes reaching people you've never even met. Think of it like tossing a stone into a lake: your ripples touch far-off shores.</p>
+    <span class="power-tag">⚡️ Your strength is <strong>scale</strong>. You make climate action hard to ignore.</span>
+  </div>
+  <div class="power-profiles">
+    <h3>Real examples from The Good Chat</h3>
+
+    <div class="kol-card" id="kc1">
+      <div class="kol-head" onclick="ktog('kc1')">
+        <div class="kol-meta">
+          <span class="kol-name">Buji Babiera</span>
+          <span class="kol-handle">@bujibabiera · 3.7M followers on TikTok 🇵🇭</span>
+        </div>
+        <span class="karr">›</span>
+      </div>
+      <div class="kol-body">
+        <div class="kol-q">Who is he?</div>
+        <p>Buji Babiera is a Filipino content creator and soft mobility advocate, encouraging Filipinos to embrace cycling as an eco-friendly alternative to cars. Once a car enthusiast himself, <strong>Buji's personal transformation into a passionate cyclist inspired thousands to rethink urban mobility,</strong> community connection, and climate action through everyday choices.</p>
+        <div class="kol-q">Why he joined The Good Chat</div>
+        <p>Buji joined to expand his impact beyond mobility and explore how digital storytelling could drive broader conversations around the energy transition — connecting sustainable transport, renewable energy, and climate resilience.</p>
+        <div class="kol-q">What he achieved</div>
+        <p>Buji began sharing insights from visits to solar farms across the Philippines, sparking pride and curiosity. His most powerful moment came when he returned to Tacloban, devastated by Typhoon Yolanda in 2013. <strong>His video on the Philippines' vulnerability to climate change generated 4.6 million views on TikTok and nearly 300,000 reactions</strong> — turning grief and anger into awareness and action.</p>
+        <a class="kol-link" href="https://www.tiktok.com/@bujibabiera" target="_blank">View profile on TikTok ↗</a>
+      </div>
+    </div>
+
+    <div class="kol-card" id="kc2">
+      <div class="kol-head" onclick="ktog('kc2')">
+        <div class="kol-meta">
+          <span class="kol-name">Maria Lynn Ehren</span>
+          <span class="kol-handle">@marialynnehren · 786K followers on Instagram 🇹🇭</span>
+        </div>
+        <span class="karr">›</span>
+      </div>
+      <div class="kol-body">
+        <div class="kol-q">Who is she?</div>
+        <p>Maria Lynn Ehren is a Thai public figure, model, and advocate crowned <strong>Miss Universe Thailand 2017.</strong> Since 2020, she has used her platform to raise awareness on animal welfare, sustainability, and wellbeing.</p>
+        <div class="kol-q">Why she joined The Good Chat</div>
+        <p>Maria wanted to go beyond advocacy and take concrete action for the environment. Through the fellowship, she deepened her understanding of Thailand's energy challenges and conducted audience polls to assess public attitudes toward renewable energy.</p>
+        <div class="kol-q">What she achieved</div>
+        <p>Driven by her newfound passion for renewable energy, Maria <strong>launched her own solar panel company and foundation,</strong> helping Thai SMEs access clean energy solutions. She also began collaborating with Greenpeace Thailand on campaigns against fossil fuels.</p>
+        <a class="kol-link" href="https://www.instagram.com/marialynnehren/" target="_blank">View profile on Instagram ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAMPFIRE -->
+<div class="power-block" id="pb2">
+  <div class="power-head camp">
+    <div class="power-icon">🔥</div>
+    <div class="power-title">The Campfire — Engagement</div>
+    <p class="power-desc">You gather people close and spark conversations that feel safe and relatable. You listen as much as you talk, so people trust you deeply. Around your "campfire," followers feel like part of a community, not just an audience.</p>
+    <span class="power-tag">⚡️ Your strength is <strong>connection</strong>. You make climate action feel personal.</span>
+  </div>
+  <div class="power-profiles">
+    <h3>Real examples from The Good Chat</h3>
+
+    <div class="kol-card" id="kc3">
+      <div class="kol-head" onclick="ktog('kc3')">
+        <div class="kol-meta">
+          <span class="kol-name">Puty Puar</span>
+          <span class="kol-handle">@byputy · Founder of Buibu Baca Buku (90,000 members) 🇮🇩</span>
+        </div>
+        <span class="karr">›</span>
+      </div>
+      <div class="kol-body">
+        <div class="kol-q">Who is she?</div>
+        <p>Puty Puar is an Indonesian illustrator, writer, and community leader. She founded <em>Buibu Baca Buku</em>, a women's book club with over <strong>90,000 members</strong> across Indonesia, where mothers and young women exchange ideas on parenting, education, and personal growth.</p>
+        <div class="kol-q">Why she joined The Good Chat</div>
+        <p>Puty joined to explore how motherhood could become an entry point for conversations about the climate crisis — connecting health, safety, and children's futures to pollution, energy transition, and sustainability.</p>
+        <div class="kol-q">What she achieved</div>
+        <p>Puty launched a book competition linking climate change to daily life and co-created a <strong>children's book series on climate action, air pollution, and renewable energy.</strong> She became a regular guest on Indonesian news programs, and later launched her own fellowship for Indonesian mothers who lead digital communities of women.</p>
+        <a class="kol-link" href="https://www.instagram.com/byputy/" target="_blank">View profile on Instagram ↗</a>
+      </div>
+    </div>
+
+    <div class="kol-card" id="kc4">
+      <div class="kol-head" onclick="ktog('kc4')">
+        <div class="kol-meta">
+          <span class="kol-name">Frances Bautista</span>
+          <span class="kol-handle">Founder of Home Buddies · 3M members on Facebook 🇵🇭</span>
+        </div>
+        <span class="karr">›</span>
+      </div>
+      <div class="kol-body">
+        <div class="kol-q">Who is she?</div>
+        <p>Frances Bautista is the founder of <em>Home Buddies</em>, one of the Philippines' largest online communities with over <strong>3 million members</strong> — originally created for home improvement tips and lifestyle, now a powerful digital forum for everyday Filipinos.</p>
+        <div class="kol-q">Why she joined The Good Chat</div>
+        <p>Frances was interested in how everyday concerns — like rising electricity bills — could serve as relatable entry points to talk about cleaner, more affordable energy solutions.</p>
+        <div class="kol-q">What she achieved</div>
+        <p>Frances launched a conversation about soaring electricity costs in the Philippines. The thread went viral — thousands shared their struggles, which led to an <strong>organic wave of interest in solar energy</strong>, with members sharing photos of their home solar installations. She then produced a documentary-style video series visiting solar homeowners, showing that renewable energy was an accessible, community-driven solution.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout" style="background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:1.5rem;font-size:14px;color:var(--pd);line-height:1.7">
+  <strong>Megaphone energy</strong> makes the general public and influential people pay attention.<br>
+  <strong>Campfire energy</strong> makes the general public take action.<br><br>
+  Whether you reach wide or engage deep — your spark keeps the climate fire burning.
+</div>
+
+<hr>
+
+<h2>How KOLs Can Drive the Energy Transition</h2>
+<p>Two panel discussions with experts and community leaders from Thailand and Indonesia.</p>
+
+<div class="warn-box">
+  <div class="wt">⚠️ You don't need to know everything about energy policy to make a difference.</div>
+  <p>Leave the heavy policy lifting to the civil society organizations (CSOs) who work on it every day. <strong>Your role is different — and just as powerful.</strong> You make the transition visible, wanted, and urgent.</p>
+  <p>Every conversation you start, every post you share, every livestream you host adds up to <strong>social proof</strong>. It shows people that others care — and that caring about climate is normal, not niche. Decision-makers are paying attention. When they see public figures like you speaking out, they feel both the pressure and the legitimacy to act.</p>
+</div>
+
+<div class="panel-block" id="panel-th">
+  <div class="panel-head" onclick="ptog('panel-th')">
+    <span><span class="panel-flag">🇹🇭</span><span class="panel-title">Panel Discussion — Thailand</span></span>
+    <span class="parr">›</span>
+  </div>
+  <div class="panel-body">
+    <p class="speakers-label">Speakers</p>
+    <div class="speaker"><strong>Kawaitsara (Kim) Phannapunukul</strong> — Campaigner, Greenpeace Thailand</div>
+    <div class="speaker"><strong>Thatsika (Baimon) Singtui</strong> — Creative Work &amp; Communications Officer, Thailand Development Research Institute (TDRI)</div>
+    <div class="speaker"><strong>Jareerat (Baitong) Petsom</strong> — Miss Earth 2021 &amp; Sustainability Advocate</div>
+    <div class="speaker"><strong>Walaipat (Jib) Aksorndee</strong> — YogawithJib &amp; The Good Chat Fellow (Cohort 1)</div>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/6ZbfVFQKStc" loading="lazy" allowfullscreen title="Panel Discussion Thailand"></iframe>
+    </div>
+    <p class="lang-note">🗣 Speaking language: English</p>
+    <a class="audio-link" href="https://drive.google.com/file/d/1cBt1z26byqXO_mKSTFTeBp8Nc6DEiRn5/view" target="_blank">🎧 Audio only (podcast-style) ↗</a>
+  </div>
+</div>
+
+<div class="panel-block" id="panel-id">
+  <div class="panel-head" onclick="ptog('panel-id')">
+    <span><span class="panel-flag">🇮🇩</span><span class="panel-title">Panel Discussion — Indonesia</span></span>
+    <span class="parr">›</span>
+  </div>
+  <div class="panel-body">
+    <p class="speakers-label">Speakers</p>
+    <div class="speaker"><strong>Nurul Sarifah</strong> — KPop4Planet</div>
+    <div class="speaker"><strong>Fani Rachmita</strong> — Institute for Transportation &amp; Development Policy</div>
+    <div class="speaker"><strong>Walaipat (Jib) Aksorndee</strong> — YogawithJib &amp; The Good Chat Fellow (Cohort 1)</div>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/ns936ny5i1c" loading="lazy" allowfullscreen title="Panel Discussion Indonesia"></iframe>
+    </div>
+    <a class="audio-link" href="https://drive.google.com/file/d/11uA7H2-YFJVQeKuiXSJd15TF13HmwUnx/view" target="_blank">🎧 Audio only (podcast-style) ↗</a>
+  </div>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 1 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l1-beginners.html">
+      <div class="pn-ey">Previous</div>
+      <div class="pn-title">💧 Energy Transition for Beginners</div>
+    </a>
+    <a class="pn-card" href="kol-l1-climate-impact.html">
+      <div class="pn-ey">Also in Level 1</div>
+      <div class="pn-title">🌴 How does Climate Change impact our lives?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l1-glossary.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">📝 Climate &amp; Energy Transition Glossary</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function ktog(id){
+  var el=document.getElementById(id);
+  el.classList.toggle('open');
+}
+function ptog(id){
+  var el=document.getElementById(id);
+  el.classList.toggle('open');
+}
+</script>
+<script src="search.js"></script>
+</body>
+</html>

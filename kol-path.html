@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOL Path — The Good Chat Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:2rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+nav a{font-size:12px;font-weight:600;color:#555;margin-left:16px}
+nav a:hover{color:var(--p)}
+nav a.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+
+.banner{width:calc(100% + 2.5rem);margin:-0.5rem -1.25rem 2rem;height:230px;overflow:hidden;background:var(--pm)}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--pl);border:.5px solid var(--pm);border-radius:20px;padding:4px 12px;margin-bottom:1rem}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--p)}
+.pill span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p)}
+h1{font-size:30px;font-weight:800;color:var(--p);line-height:1.15;letter-spacing:-.025em;margin-bottom:.75rem}
+h1 em{font-style:italic}
+.sub{font-size:14px;color:#555;line-height:1.7;max-width:500px;margin-bottom:.35rem}
+.note{font-size:13px;color:#999;font-style:italic;margin-bottom:2rem}
+
+.road{position:relative;padding-left:20px;margin-bottom:2.5rem}
+.road::before{content:'';position:absolute;left:11px;top:16px;bottom:16px;width:1px;background:var(--pm)}
+.stop{display:flex;gap:14px;align-items:flex-start;margin-bottom:10px}
+.dot{width:24px;height:24px;border-radius:50%;background:var(--p);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:13px;cursor:pointer;transition:background .15s,transform .15s;position:relative;z-index:1}
+.stop.open .dot{background:var(--s);transform:scale(1.1)}
+.card{flex:1;border:.5px solid var(--b);border-radius:10px;overflow:hidden;transition:border-color .15s}
+.card:hover{border-color:var(--pm)}
+.stop.open .card{border-color:var(--p)}
+.head{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;cursor:pointer;user-select:none}
+.head:hover{background:#f7f7f5}
+.hl{display:flex;flex-direction:column;gap:2px}
+.ey{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999}
+.ln{font-size:15px;font-weight:800;color:#111}
+.hr{display:flex;align-items:center;gap:8px}
+.badge{font-size:10px;font-weight:700;background:var(--pl);color:var(--pd);padding:3px 9px;border-radius:20px;border:.5px solid var(--pm)}
+.arr{font-size:14px;color:#999;transition:transform .2s;display:inline-block}
+.stop.open .arr{transform:rotate(90deg);color:var(--s)}
+.body{display:none;padding:0 1.1rem 1rem;border-top:.5px solid var(--b)}
+.stop.open .body{display:block}
+.desc{font-size:13px;color:#555;line-height:1.7;padding-top:.85rem;margin-bottom:.9rem}
+.desc em{font-style:italic}
+.btn{display:inline-flex;align-items:center;padding:8px 18px;background:var(--p);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer}
+.btn:hover{background:var(--pd)}
+.btn2{display:inline-flex;align-items:center;padding:8px 14px;background:none;color:#555;font-size:12px;font-weight:600;font-family:'Raleway',sans-serif;border:.5px solid var(--b);border-radius:8px;cursor:pointer;margin-left:8px}
+.btn2:hover{border-color:var(--p);color:var(--p)}
+
+.qbar{background:#fff5ec;border:.5px solid #fcd4a8;border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:2.5rem}
+.qt{font-size:13px;font-weight:600;color:var(--pd)}
+.qt span{font-weight:400;color:#777;font-size:12px;display:block;margin-top:2px}
+.qbtn{padding:8px 16px;background:var(--s);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;white-space:nowrap}
+
+footer{margin-top:1.75rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:160px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:200px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="kol-path.html" class="on">KOL Path</a>
+    <a href="cso-path.html">CSO Path</a>
+  </div>
+</nav>
+
+<div class="banner">
+  <img src="https://raw.githubusercontent.com/thegoodchat/playbook/main/KOL.png" alt="KOL">
+</div>
+
+<div class="pill"><i></i><span>KOL Path</span></div>
+<h1>You don't need to be<br>a climate expert.</h1>
+<p class="sub">This playbook is designed for storytellers and community voices who want to understand the energy transition, and talk about it in ways that feel <em>honest &amp; human.</em></p>
+<p class="note">5 Levels. Start anywhere. Stop anytime.</p>
+
+<div class="road">
+
+  <div class="stop" id="s1">
+    <div class="dot" onclick="tog(1)">1</div>
+    <div class="card">
+      <div class="head" onclick="tog(1)">
+        <div class="hl"><span class="ey">Level 1</span><span class="ln">Why Energy Now</span></div>
+        <div class="hr"><span class="badge">Start here</span><span class="arr">›</span></div>
+      </div>
+      <div class="body">
+        <p class="desc">Understand why the energy transition matters — and why it matters <em>now</em>. Get grounded in the basics before you bring it to your audience. No jargon. No guilt. Just context.</p>
+        <button class="btn">Open Level 1 →</button>
+        <button class="btn2" onclick="tog(1);tog(2)">Next level ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="s2">
+    <div class="dot" onclick="tog(2)">2</div>
+    <div class="card">
+      <div class="head" onclick="tog(2)">
+        <div class="hl"><span class="ey">Level 2</span><span class="ln">Your Entry Point</span></div>
+        <span class="arr">›</span>
+      </div>
+      <div class="body">
+        <p class="desc">Every creator has a lens — community, lifestyle, pop culture, food, gaming. This level helps you find where energy transition fits into <em>your</em> world, not someone else's.</p>
+        <button class="btn">Open Level 2 →</button>
+        <button class="btn2" onclick="tog(2);tog(3)">Next level ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="s3">
+    <div class="dot" onclick="tog(3)">3</div>
+    <div class="card">
+      <div class="head" onclick="tog(3)">
+        <div class="hl"><span class="ey">Level 3</span><span class="ln">Starting Conversations</span></div>
+        <span class="arr">›</span>
+      </div>
+      <div class="body">
+        <p class="desc">Tone, framing, and making energy feel real — not distant, not preachy, not overwhelming. How to bring this topic to your audience without losing them.</p>
+        <button class="btn">Open Level 3 →</button>
+        <button class="btn2" onclick="tog(3);tog(4)">Next level ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="s4">
+    <div class="dot" onclick="tog(4)">4</div>
+    <div class="card">
+      <div class="head" onclick="tog(4)">
+        <div class="hl"><span class="ey">Level 4</span><span class="ln">Engaging &amp; Mobilizing</span></div>
+        <span class="arr">›</span>
+      </div>
+      <div class="body">
+        <p class="desc">Move from awareness to action. Spark engagement, bring your community along, and connect with others doing this work across Southeast Asia.</p>
+        <button class="btn">Open Level 4 →</button>
+        <button class="btn2" onclick="tog(4);tog(5)">Next level ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop" id="s5">
+    <div class="dot" onclick="tog(5)">5</div>
+    <div class="card">
+      <div class="head" onclick="tog(5)">
+        <div class="hl"><span class="ey">Level 5</span><span class="ln">Scaling Impact</span></div>
+        <span class="arr">›</span>
+      </div>
+      <div class="body">
+        <p class="desc">You've started the conversations. Now — how do you make them last? Build momentum, collaborate across sectors, and sustain your voice for the long haul.</p>
+        <button class="btn">Open Level 5 →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="qbar">
+  <div class="qt">Take the quiz &amp; get your certificate<span>Test what you've learned and earn a certificate from The Good Chat Playbook team.</span></div>
+  <a href="https://makesense.typeform.com/to/AO0X5upD" target="_blank"><button class="qbtn">Take the quiz →</button></a>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function tog(n){document.getElementById('s'+n).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Energy Transition for Beginners — KOL Level 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* BANNER */
+.banner{width:calc(100% + 2.5rem);margin:0 -1.25rem 2rem;height:200px;overflow:hidden;background:var(--pm);border-radius:0}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;max-width:600px}
+
+/* CALLOUT */
+.callout{background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:2rem;font-size:14px;color:var(--pd);line-height:1.7}
+.callout strong{color:var(--p)}
+
+/* DIVIDER */
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+
+/* HEADINGS & BODY */
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.5rem;letter-spacing:-.01em}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* ENERGY CARDS */
+.energy-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.25rem 0 2rem}
+.ecard{border:.5px solid var(--b);border-radius:10px;padding:1.1rem 1.2rem;transition:border-color .15s}
+.ecard:hover{border-color:var(--pm)}
+.ecard-icon{font-size:22px;margin-bottom:.6rem}
+.ecard-title{font-size:14px;font-weight:800;color:var(--p);margin-bottom:.5rem}
+.ecard-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+.ecard-body{font-size:13px;color:#555;line-height:1.65;margin-bottom:.6rem}
+.ecard-tip{font-size:12px;background:#fff5ec;border:.5px solid #fcd4a8;border-radius:7px;padding:.5rem .75rem;color:#8a4a00;font-weight:600}
+.ecard-warn{font-size:12px;background:#fef3f2;border:.5px solid #fecaca;border-radius:7px;padding:.5rem .75rem;color:#9b1c1c;font-weight:600}
+.full{grid-column:1/-1}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* COUNTRY TABS */
+.country-tabs{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
+.ctab{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;border:.5px solid var(--b);background:none;cursor:pointer;color:#666;transition:all .15s}
+.ctab:hover{border-color:var(--pm);color:var(--p)}
+.ctab.on{background:var(--p);color:#fff;border-color:var(--p)}
+.cpanel{display:none}
+.cpanel.vis{display:block}
+.data-box{border:.5px solid var(--b);border-radius:10px;background:#f7f7f5;padding:2.5rem 1.5rem;text-align:center;color:#aaa;font-size:13px;font-style:italic;line-height:1.7}
+.data-src{font-size:11px;color:#aaa;padding:.5rem 0;font-style:italic}
+
+/* SOURCES */
+.sources-list{margin:1.25rem 0;display:flex;flex-direction:column;gap:8px}
+.src{display:flex;gap:12px;align-items:flex-start;border:.5px solid var(--b);border-radius:10px;padding:.85rem 1rem;transition:border-color .15s;text-decoration:none}
+.src:hover{border-color:var(--pm)}
+.src-dot{width:8px;height:8px;border-radius:50%;background:var(--pm);flex-shrink:0;margin-top:5px}
+.src-name{font-size:13px;font-weight:700;color:var(--p);margin-bottom:2px}
+.src-desc{font-size:12px;color:#666;line-height:1.55}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-1.html">Level 1: Why Energy Now</a><span class="sep">›</span>
+  <span>Energy Transition for Beginners</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep on" href="kol-level-1.html">Level 1</a>
+  <a class="lstep" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<div class="banner"><img src="https://raw.githubusercontent.com/thegoodchat/playbook/main/image/banner-KOL1-1.PNG" alt="Energy Transition for Beginners"></div>
+
+<p class="hero-tag">💧 Level 1 · Why Energy Now</p>
+<h1>Energy Transition for Beginners: what are the different types of clean energy available to SouthEast Asians?</h1>
+<p class="lead">If you're going to talk about the climate, you need to know your "products." You wouldn't sell skincare without knowing the ingredients, right?</p>
+
+<div class="callout">
+  The <strong>Energy Transition</strong> is basically a massive diet change for our countries. We're switching from <strong>"junk food"</strong> (Fossil Fuels: Coal, Oil, Gas) to <strong>"superfoods"</strong> (Renewables). Here's the cheat sheet for what's actually available in our backyard — Indonesia, Thailand, and the Philippines.
+</div>
+
+<hr>
+
+<h2>1. The "Superfoods" — Clean Energy Types</h2>
+<p>Know your menu before you start talking about it.</p>
+
+<div class="energy-grid">
+
+  <div class="ecard">
+    <div class="ecard-icon">☀️</div>
+    <div class="ecard-title">Solar — The People's Champ</div>
+    <div class="ecard-label">What is it?</div>
+    <p class="ecard-body">Energy from the sun. We have sun year-round — this is the most accessible option. You'll see <strong>Rooftop Solar</strong> (on houses &amp; malls) and <strong>Floating Solar</strong> on reservoirs, like the Cirata plant in West Java or Sirindhorn Dam in Thailand.</p>
+    <div class="ecard-tip">💡 The cheapest form of new electricity in history.</div>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-icon">🌋</div>
+    <div class="ecard-title">Geothermal — Volcano Power</div>
+    <div class="ecard-label">What is it?</div>
+    <p class="ecard-body">Heat from under the earth. Indonesia and the Philippines are <strong>world leaders</strong> here because of the Ring of Fire. Reliable (works at night!), but expensive to drill — and can conflict with forests and indigenous lands if not handled carefully.</p>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-icon">💨</div>
+    <div class="ecard-title">Wind — The New Kid</div>
+    <div class="ecard-label">What is it?</div>
+    <p class="ecard-body">Giant fans that turn wind into power. We used to think our wind wasn't strong enough. <em>Wrong.</em> Vietnam is crushing it, and the Philippines and Indonesia (Sidrap &amp; Jeneponto) are catching up fast.</p>
+  </div>
+
+  <div class="ecard">
+    <div class="ecard-icon">💧</div>
+    <div class="ecard-title">Hydro — The Old Guard</div>
+    <div class="ecard-label">What is it?</div>
+    <p class="ecard-body">Dams. Our oldest renewable source. Big dams are controversial — they can displace villages and hurt river ecosystems. <strong>Micro-hydro</strong> (tiny dams for one community) is the cooler, more community-friendly cousin.</p>
+  </div>
+
+  <div class="ecard full">
+    <div class="ecard-icon">🌾</div>
+    <div class="ecard-title">Biomass — The Controversial One</div>
+    <div class="ecard-label">What is it?</div>
+    <p class="ecard-body">Burning organic waste (rice husks, palm oil shells) for power. Huge in Thailand. Some people call "burning wood pellets" (co-firing) renewable — but if it causes deforestation, it's definitely <em>not</em> cool.</p>
+    <div class="ecard-warn">⚠️ Keep a close eye on how biomass is sourced before you amplify it.</div>
+  </div>
+
+</div>
+
+<hr>
+
+<h2>2. The Reality Check — Dreams vs. Data</h2>
+<p>Before you post "We're going 100% Green tomorrow!" — look at the numbers. Despite the hype, our countries are still heavily reliant on fossil fuels. Knowing the real picture makes your content <em>credible</em>.</p>
+
+<div class="pquote"><p>The truth is more interesting than the hype. Share the real picture — it gives your audience something concrete to push for.</p></div>
+
+<div class="country-tabs">
+  <button class="ctab on" onclick="showCountry('ph',this)">🇵🇭 Philippines</button>
+  <button class="ctab" onclick="showCountry('id',this)">🇮🇩 Indonesia</button>
+  <button class="ctab" onclick="showCountry('th',this)">🇹🇭 Thailand</button>
+</div>
+
+<div id="cp-ph" class="cpanel vis">
+  <div class="data-box">📊 Add Philippines energy mix chart here<br><span style="font-size:12px">(paste your screenshot or link from the SEA Information Platform for the Energy Transition)</span></div>
+  <p class="data-src">Source: SEA Information Platform for the Energy Transition · Click chart for full data</p>
+</div>
+<div id="cp-id" class="cpanel">
+  <div class="data-box">📊 Add Indonesia energy mix chart here<br><span style="font-size:12px">(paste your screenshot or link from the SEA Information Platform for the Energy Transition)</span></div>
+  <p class="data-src">Source: SEA Information Platform for the Energy Transition · Click chart for full data</p>
+</div>
+<div id="cp-th" class="cpanel">
+  <div class="data-box">📊 Add Thailand energy mix chart here<br><span style="font-size:12px">(paste your screenshot or link from the SEA Information Platform for the Energy Transition)</span></div>
+  <p class="data-src">Source: SEA Information Platform for the Energy Transition · Click chart for full data</p>
+</div>
+
+<hr>
+
+<h2>3. Credible Sources — Follow These</h2>
+<p>Don't just Google it. These organizations publish legit, citable data with charts you can screenshot and share with your audience.</p>
+
+<div class="sources-list">
+  <a class="src" href="https://ember-energy.org/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">Ember Climate ↗</div><div class="src-desc">Beautiful, easy-to-understand graphs about electricity systems globally and in SEA.</div></div>
+  </a>
+  <a class="src" href="https://iesr.or.id/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">IESR — Institute for Essential Services Reform ↗</div><div class="src-desc">The go-to think tank for Indonesia's energy transition data.</div></div>
+  </a>
+  <a class="src" href="https://icsc.ngo/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">ICSC — Institute for Climate and Sustainable Cities ↗</div><div class="src-desc">Great for Philippines context, focusing on fair and equitable energy policies.</div></div>
+  </a>
+  <a class="src" href="https://www.forumforthefuture.org/renewable-energy-responsible-energy-initiative" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">Forum for the Future — Responsible Energy Initiative ↗</div><div class="src-desc">Multi-year programme ensuring renewable energy in Asia is ecologically safe, rights-respecting, and socially just. Philippines-focused.</div></div>
+  </a>
+  <a class="src" href="https://asiareengage.com/report/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">Asia Research &amp; Engagement ↗</div><div class="src-desc">Independent ESG-risk firm. Strong reports on financing the Asia energy transition.</div></div>
+  </a>
+  <a class="src" href="https://www.iseas.edu.sg/programmes/climate-change-in-southeast-asia-programme/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">ISEAS Yusof Ishak Institute ↗</div><div class="src-desc">Publishes studies on public opinion about climate change and accelerating the ASEAN energy transition.</div></div>
+  </a>
+  <a class="src" href="https://irid.or.id/en/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">IRID — Indonesia Research Institute for Decarbonisation ↗</div><div class="src-desc">Indonesian think tank focused on decarbonization and climate-resilient society.</div></div>
+  </a>
+  <a class="src" href="https://www.wri.org/asia" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">World Resources Institute — Southeast Asia ↗</div><div class="src-desc">Global research org spanning 60+ countries, covering energy in Vietnam, Philippines, and Indonesia.</div></div>
+  </a>
+  <a class="src" href="https://www.sei.org/region/asia/" target="_blank">
+    <div class="src-dot"></div>
+    <div><div class="src-name">Stockholm Environment Institute — Asia ↗</div><div class="src-desc">Bangkok-based office bridging science, policy, and practice across Thailand and the region.</div></div>
+  </a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 1 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l1-glossary.html">
+      <div class="pn-ey">Also in Level 1</div>
+      <div class="pn-title">📝 Climate &amp; Energy Glossary</div>
+    </a>
+    <a class="pn-card" href="kol-l1-climate-impact.html">
+      <div class="pn-ey">Also in Level 1</div>
+      <div class="pn-title">🌴 How does Climate Change impact our lives?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l1-role.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">😍 I'm a KOL… What role can I play?</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function showCountry(id,btn){
+  ['ph','id','th'].forEach(function(c){document.getElementById('cp-'+c).classList.remove('vis')});
+  document.querySelectorAll('.ctab').forEach(function(b){b.classList.remove('on')});
+  document.getElementById('cp-'+id).classList.add('vis');
+  btn.classList.add('on');
+}
+</script>
+<script src="search.js"></script>
+</body>
+</html>

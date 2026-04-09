@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How does Climate Change impact our lives? — KOL Level 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:1.5rem;max-width:600px}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.5rem;letter-spacing:-.01em}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* QUICK LINKS */
+.qlinks{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+.qlink{display:flex;align-items:center;gap:12px;border:.5px solid var(--b);border-radius:10px;padding:.85rem 1.1rem;text-decoration:none;transition:border-color .15s}
+.qlink:hover{border-color:var(--pm);background:#f7f7f5}
+.qlink-icon{font-size:20px;flex-shrink:0}
+.qlink-body{}
+.qlink-title{font-size:13px;font-weight:800;color:var(--p);margin-bottom:1px}
+.qlink-sub{font-size:12px;color:#777}
+
+/* DISCLAIMER */
+.disclaimer{background:#f7f7f5;border:.5px solid var(--b);border-radius:10px;padding:1rem 1.25rem;margin-bottom:2rem;font-size:13px;color:#666;line-height:1.65}
+.disclaimer strong{color:#111}
+
+/* BBC LINK */
+.article-link{display:flex;align-items:center;gap:12px;border:.5px solid var(--b);border-radius:10px;padding:.85rem 1.1rem;margin-bottom:2rem;text-decoration:none;transition:border-color .15s}
+.article-link:hover{border-color:var(--pm)}
+.al-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#f0f0f0;color:#555;padding:3px 8px;border-radius:5px;flex-shrink:0}
+.al-title{font-size:13px;font-weight:700;color:var(--p)}
+
+/* RESOURCE SECTIONS */
+.res-block{border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.res-head{padding:1.25rem;background:var(--p)}
+.res-head.light{background:var(--pl)}
+.res-head.orange{background:#fff5ec;border-bottom:.5px solid #fcd4a8}
+.res-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.res-head .res-eyebrow{color:rgba(255,255,255,.65)}
+.res-head.light .res-eyebrow{color:var(--p)}
+.res-head.orange .res-eyebrow{color:var(--s)}
+.res-title{font-size:18px;font-weight:800;margin-bottom:.4rem}
+.res-head .res-title{color:#fff}
+.res-head.light .res-title{color:var(--p)}
+.res-head.orange .res-title{color:var(--pd)}
+.res-desc{font-size:13px;line-height:1.65}
+.res-head .res-desc{color:rgba(255,255,255,.8)}
+.res-head.light .res-desc{color:#555}
+.res-head.orange .res-desc{color:#6b4c00}
+.res-body{padding:1.25rem}
+.res-body p{font-size:13px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.res-body strong{font-weight:700;color:#111}
+.res-body em{font-style:italic}
+
+/* VIDEO EMBED */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin-bottom:1rem;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video-note{font-size:12px;color:#aaa;font-style:italic}
+
+/* FREE BADGE */
+.free-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;background:var(--pl);color:var(--p);border:.5px solid var(--pm);border-radius:6px;padding:3px 10px;margin-bottom:.75rem}
+
+/* CTA BUTTON */
+.cta{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:var(--p);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;text-decoration:none;margin-top:.75rem}
+.cta:hover{background:var(--pd)}
+.cta-outline{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:none;color:var(--p);font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:.5px solid var(--pm);border-radius:8px;cursor:pointer;text-decoration:none;margin-top:.75rem;margin-left:8px}
+.cta-outline:hover{background:var(--pl)}
+
+/* FRESK TABLE */
+.fresk-table{width:100%;border-collapse:collapse;margin-top:.75rem;font-size:13px}
+.fresk-table th{text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;padding:.5rem .75rem;border-bottom:.5px solid var(--b)}
+.fresk-table td{padding:.65rem .75rem;border-bottom:.5px solid var(--b);vertical-align:top;line-height:1.55}
+.fresk-table tr:last-child td{border-bottom:none}
+.fresk-table tr:hover td{background:#f7f7f5}
+.fresk-table td:first-child{font-weight:700;color:#111;white-space:nowrap}
+.fresk-table td:nth-child(2){color:#555}
+.fresk-table a{color:var(--p);font-weight:600}
+.fresk-table a:hover{text-decoration:underline}
+
+/* INDONESIA CALLOUT */
+.id-callout{display:flex;align-items:flex-start;gap:14px;border:.5px solid var(--b);border-radius:10px;padding:1.1rem 1.25rem;margin-top:1rem;text-decoration:none;transition:border-color .15s}
+.id-callout:hover{border-color:var(--pm)}
+.id-flag{font-size:28px;flex-shrink:0}
+.id-body .id-title{font-size:14px;font-weight:800;color:var(--p);margin-bottom:3px}
+.id-body .id-sub{font-size:13px;color:#555;line-height:1.6}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-1.html">Level 1: Why Energy Now</a><span class="sep">›</span>
+  <span>How does Climate Change impact our lives?</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep on" href="kol-level-1.html">Level 1</a>
+  <a class="lstep" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🌴 Level 1 · Why Energy Now</p>
+<h1>How does Climate Change impact our lives?</h1>
+<p class="lead">Resources and activities to help you deepen your understanding of both the science of climate change and its socio-economic impacts on people in Southeast Asia.</p>
+
+<!-- QUICK JUMP LINKS -->
+<div class="qlinks">
+  <a class="qlink" href="#the-week">
+    <div class="qlink-icon">📽️</div>
+    <div class="qlink-body">
+      <div class="qlink-title">The Week</div>
+      <div class="qlink-sub">A three-part experience and film</div>
+    </div>
+  </a>
+  <a class="qlink" href="#climate-fresk">
+    <div class="qlink-icon">🃏</div>
+    <div class="qlink-body">
+      <div class="qlink-title">Climate Fresk</div>
+      <div class="qlink-sub">Collaborative, science-based workshop</div>
+    </div>
+  </a>
+  <a class="qlink" href="#indonesia">
+    <div class="qlink-icon">🇮🇩</div>
+    <div class="qlink-body">
+      <div class="qlink-title">Climate Action 101</div>
+      <div class="qlink-sub">Indonesia guide for newbies</div>
+    </div>
+  </a>
+</div>
+
+<div class="disclaimer">
+  <strong>❓ A note on these resources:</strong> Some are Western-centric and may not fully reflect the Southeast Asian context — but they still provide valuable insights to strengthen your understanding of the climate crisis.
+</div>
+
+<a class="article-link" href="https://www.bbc.com/news/articles/c9w15nggj58o" target="_blank">
+  <span class="al-tag">BBC · Read</span>
+  <span class="al-title">What is climate change? A really simple guide ↗</span>
+</a>
+
+<hr>
+
+<!-- THE WEEK -->
+<div class="res-block" id="the-week">
+  <div class="res-head">
+    <div class="res-eyebrow">📽️ Resource 1 · Film</div>
+    <div class="res-title">The Week</div>
+    <div class="res-desc">A three-part experience by Frédéric Laloux &amp; Hélène Gérin</div>
+  </div>
+  <div class="res-body">
+    <p>Across its three episodes, <em>The Week</em> helps you understand the unfolding environmental breakdown and its direct impacts on people's lives, health, and finances.</p>
+    <p>We encourage you to watch it in a small group — invite friends, colleagues, or family — and watch <strong>one episode per day.</strong> It's a powerful way to process your emotions around the climate crisis and begin meaningful conversations together.</p>
+    <p>Can't do it in a group? No problem — it's a documentary in 3 episodes and works just as well solo.</p>
+
+    <div class="video-wrap">
+      <iframe src="https://player.vimeo.com/video/772206263" loading="lazy" allowfullscreen title="The Week — Episode 1"></iframe>
+    </div>
+    <p class="video-note">Episode 1 of 3 — watch at your own pace</p>
+
+    <div class="free-badge">✨ Free to watch</div>
+    <br>
+    <a class="cta" href="https://www.theweek.ooo/" target="_blank">Access the full experience ↗</a>
+  </div>
+</div>
+
+<hr>
+
+<!-- CLIMATE FRESK -->
+<div class="res-block" id="climate-fresk">
+  <div class="res-head light">
+    <div class="res-eyebrow">🃏 Resource 2 · Workshop</div>
+    <div class="res-title">Climate Fresk</div>
+    <div class="res-desc">A collaborative, science-based workshop to understand climate change — together.</div>
+  </div>
+  <div class="res-body">
+    <p>Created in France by Cédric Ringenbach in 2015, the Climate Fresk is based on the findings of the <a href="https://www.ipcc.ch/reports/" target="_blank" style="color:var(--p);font-weight:700">IPCC reports ↗</a>.</p>
+    <p>The format is a <strong>3-hour group activity</strong> where participants work together to map out 42 cards illustrating the links between human activity, greenhouse gas emissions, global warming, and its social, economic, and environmental impacts.</p>
+    <p>The approach is both <strong>educational and experiential</strong> — combining science, teamwork, and emotions to make the complexity of climate change accessible to everyone. 🌍</p>
+
+    <p style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.6rem;margin-top:1.25rem">Find a workshop near you</p>
+    <table class="fresk-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Coordinator</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>🇸🇬 Singapore</td><td>Thibaut Meurgue-Guyard</td><td><a href="mailto:singapore@climatefresk.org">singapore@climatefresk.org</a></td></tr>
+        <tr><td>🇵🇭 Philippines</td><td>Sven Romberg</td><td><a href="mailto:philippines@climatefresk.org">philippines@climatefresk.org</a></td></tr>
+        <tr><td>🇹🇭 Thailand</td><td>Romy Weytens</td><td><a href="mailto:thailand@climatefresk.org">thailand@climatefresk.org</a></td></tr>
+        <tr><td>🇮🇩 Indonesia</td><td>Stephanie Rawi</td><td><a href="mailto:indonesia@climatefresk.org">indonesia@climatefresk.org</a></td></tr>
+        <tr><td>🇻🇳 Vietnam</td><td>Quang-Trân Dao</td><td><a href="mailto:vietnam@climatefresk.org">vietnam@climatefresk.org</a></td></tr>
+        <tr><td>🇰🇭 Cambodia</td><td>Frantz Vaganay</td><td><a href="mailto:cambodia@climatefresk.org">cambodia@climatefresk.org</a></td></tr>
+        <tr><td>🇲🇲 Myanmar</td><td>Moe Gi Gi</td><td><a href="mailto:myanmar@climatefresk.org">myanmar@climatefresk.org</a></td></tr>
+        <tr><td>🇦🇺 Australia</td><td>Carole Defago</td><td><a href="mailto:australia@climatefresk.org">australia@climatefresk.org</a></td></tr>
+        <tr><td>🇰🇷 Korea</td><td>Julian Quintart</td><td><a href="mailto:southkorea@climatefresk.org">southkorea@climatefresk.org</a></td></tr>
+        <tr><td>🇯🇵 Japan</td><td>Sakura Hamaoka</td><td><a href="mailto:japan@climatefresk.org">japan@climatefresk.org</a></td></tr>
+      </tbody>
+    </table>
+    <a class="cta" href="https://climatefresk.org/world/registration-workshop/general-public/" target="_blank">Find a workshop ↗</a>
+  </div>
+</div>
+
+<hr>
+
+<!-- INDONESIA -->
+<div id="indonesia">
+  <h2>Special Indonesia Focus 🇮🇩</h2>
+  <p>New to climate action and based in Indonesia? This is your starting point.</p>
+  <a class="id-callout" href="https://www.sre.co.id/climate-action-101" target="_blank">
+    <div class="id-flag">🇮🇩</div>
+    <div class="id-body">
+      <div class="id-title">Climate Action 101 — Indonesia Guide for Newbies ↗</div>
+      <div class="id-sub">A beginner-friendly guide to climate action, built specifically for the Indonesian context. A great place to start before diving deeper into the playbook.</div>
+    </div>
+  </a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 1 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l1-glossary.html">
+      <div class="pn-ey">Previous</div>
+      <div class="pn-title">📝 Climate &amp; Energy Glossary</div>
+    </a>
+    <a class="pn-card" href="kol-l1-role.html">
+      <div class="pn-ey">Also in Level 1</div>
+      <div class="pn-title">😍 I'm a KOL… What role can I play?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l1-sea.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">🌏 Climate Change &amp; Energy Transition in SEA</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script src="search.js"></script>
+</body>
+</html>

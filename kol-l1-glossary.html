@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Climate & Energy Transition Glossary — KOL Level 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.5rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;max-width:600px}
+.lead em{font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+strong{font-weight:700;color:#111}
+
+/* GLOSSARY FILTER */
+.gfilter-wrap{position:relative;margin-bottom:1.25rem}
+.gfilter{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;width:100%;padding:10px 14px 10px 38px;border:.5px solid var(--b);border-radius:10px;outline:none;color:#111;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 12px center;transition:border-color .15s}
+.gfilter:focus{border-color:var(--p)}
+.gfilter::placeholder{color:#aaa}
+.gcount{font-size:12px;color:#aaa;font-weight:600;margin-bottom:1.25rem}
+.gcount span{color:var(--p);font-weight:700}
+
+/* ALPHA INDEX */
+.alpha{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.alpha-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:800;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:6px;border:.5px solid var(--b);background:none;cursor:pointer;color:#aaa;transition:all .15s}
+.alpha-btn:hover{border-color:var(--pm);color:var(--p)}
+.alpha-btn.on{background:var(--p);color:#fff;border-color:var(--p)}
+.alpha-btn.dim{opacity:.3;cursor:default;pointer-events:none}
+
+/* TERM CARDS */
+.terms{display:flex;flex-direction:column;gap:8px}
+.term{border:.5px solid var(--b);border-radius:10px;overflow:hidden;transition:border-color .15s}
+.term:hover{border-color:var(--pm)}
+.term.open{border-color:var(--p)}
+.term-head{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;cursor:pointer;user-select:none;gap:12px}
+.term-head:hover{background:#f7f7f5}
+.term.open .term-head{background:var(--pl)}
+.term-letter{width:26px;height:26px;border-radius:6px;background:var(--pm);color:var(--pd);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.term.open .term-letter{background:var(--p);color:#fff}
+.term-name{font-size:14px;font-weight:800;color:#111;flex:1}
+.tarr{font-size:14px;color:#aaa;transition:transform .2s;flex-shrink:0}
+.term.open .tarr{transform:rotate(90deg);color:var(--s)}
+.term-body{display:none;border-top:.5px solid var(--b)}
+.term.open .term-body{display:grid;grid-template-columns:1fr 1fr}
+.def-col{padding:1rem 1.1rem}
+.def-col:first-child{border-right:.5px solid var(--b)}
+.def-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem}
+.def-label.book{color:var(--p)}
+.def-label.kid{color:var(--s)}
+.def-text{font-size:13px;color:#444;line-height:1.65}
+.def-text strong{font-weight:700;color:#111}
+.def-text em{font-style:italic;color:var(--pd)}
+.def-nickname{font-size:12px;font-weight:800;color:var(--s);margin-bottom:.3rem}
+
+/* HIDDEN */
+.term.hidden{display:none}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-1.html">Level 1: Why Energy Now</a><span class="sep">›</span>
+  <span>Glossary</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep on" href="kol-level-1.html">Level 1</a>
+  <a class="lstep" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">📝 Level 1 · Why Energy Now</p>
+<h1>Climate &amp; Energy Transition Glossary</h1>
+<p class="lead">Buzzwords decoded — how to explain the complex stuff to a kid (or your confused uncle). Every term comes with a textbook definition <em>and</em> a human one.</p>
+
+<hr>
+
+<input class="gfilter" id="gfilter" type="text" placeholder="Filter terms… e.g. carbon, net zero, solar" autocomplete="off" oninput="filterTerms()">
+<p class="gcount">Showing <span id="gcount-num">20</span> of 20 terms</p>
+
+<div class="alpha" id="alpha-index"></div>
+
+<div class="terms" id="terms-list">
+
+  <div class="term" data-term="1.5c target" data-letter="0">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">1</div>
+      <span class="term-name">1.5°C Target</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">The goal to limit global temperature rise to 1.5 degrees Celsius above pre-industrial levels to avoid catastrophe.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"The Safety Line"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">If your body temperature goes up 1.5 degrees, you feel sick. If it goes higher, you go to the hospital. We need to keep Earth out of the hospital.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="adaptation" data-letter="A">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">A</div>
+      <span class="term-name">Adaptation</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Adjusting to current or expected climate change and its effects.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Buying an Umbrella"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">The rain is already here, so we need to learn how to stay dry — like building higher walls against floods.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="carbon footprint" data-letter="C">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">C</div>
+      <span class="term-name">Carbon Footprint</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">The total amount of greenhouse gases generated by our actions.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Your Invisible Shadow"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">Every time you drive a car or buy plastic, you leave a mark on the planet. We want to make that mark smaller.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="carbon offsetting" data-letter="C">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">C</div>
+      <span class="term-name">Carbon Offsetting</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Compensating for emissions by funding an equivalent carbon dioxide saving elsewhere.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Paying for Chores"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">You made a mess in your room, but instead of cleaning it, you pay your brother to clean <em>his</em> room. (It helps, but your room is still messy!)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="circular economy" data-letter="C">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">C</div>
+      <span class="term-name">Circular Economy</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">A model of production and consumption involving reusing, repairing, and recycling materials as long as possible.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Legos"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">When you finish building a Lego castle, you don't throw the bricks in the trash. You take them apart and build a spaceship. No waste!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="climate change" data-letter="C">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">C</div>
+      <span class="term-name">Climate Change</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Long-term shifts in temperatures and weather patterns.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"The Earth is Getting a Fever"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">The weather is acting weird — storms are scarier and summers are hotter — because the planet is sick.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="climate justice" data-letter="C">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">C</div>
+      <span class="term-name">Climate Justice</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Framing global warming as an ethical and political issue, acknowledging that those who did the least to cause it suffer the most.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Fair Play"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">The rich kids made the mess, but the poor kids are being forced to clean it up. Climate Justice means making sure the rules are fair for everyone.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="decarbonisation" data-letter="D">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">D</div>
+      <span class="term-name">Decarbonisation</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">The reduction or removal of carbon dioxide emissions from an economy or sector.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Going on a Diet"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">We are cutting out the junk food (carbon) from our daily lives to get healthy.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="energy efficiency" data-letter="E">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">E</div>
+      <span class="term-name">Energy Efficiency</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Using less energy to perform the same task.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Sipping Slowly"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">Getting the same amount of fun from your juice box, but making it last longer so you don't waste it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="esg environmental social governance" data-letter="E">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">E</div>
+      <span class="term-name">ESG (Environmental, Social &amp; Governance)</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">A set of standards measuring a business's impact on society, the environment, and how transparent it is.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"A Company Report Card"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">It's not just about how much money a company makes, but if they are being nice to people and the planet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="fossil fuels coal oil gas" data-letter="F">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">F</div>
+      <span class="term-name">Fossil Fuels</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Non-renewable energy sources formed from ancient remains of plants and animals (Coal, Oil, Gas).</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Dinosaur Juice"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">It's old stuff we dig up and burn. It gives us power, but the smoke makes the Earth sick.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="global boiling warming" data-letter="G">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">G</div>
+      <span class="term-name">Global Boiling</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">A term coined by the UN to emphasize that "Global Warming" is no longer a strong enough description.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"It's Not Just Warm — It's Cooking"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">Imagine leaving a pot of soup on the stove too long. That's us right now.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="greenhouse gases ghg co2 methane" data-letter="G">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">G</div>
+      <span class="term-name">Greenhouse Gases (GHG)</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Gases (like CO₂ &amp; Methane) that trap heat in the atmosphere.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"A Heavy Blanket"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">The more gas we pump out, the thicker the blanket gets, making the Earth sweat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="greenwashing" data-letter="G">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">G</div>
+      <span class="term-name">Greenwashing</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Deceptive marketing used to persuade the public that an organization's products, aims, and policies are environmentally friendly.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Faking It"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">It's like eating a cookie and calling it a salad just because the wrapper is green. Don't be fooled!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="just transition workers" data-letter="J">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">J</div>
+      <span class="term-name">Just Transition</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Greening the economy in a way that is fair and inclusive to all workers and communities.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Moving House Together"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">We are moving to a cleaner house (Green Energy), but we can't leave our friends (coal workers) behind. We help them pack and move too.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="loss and damage climate" data-letter="L">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">L</div>
+      <span class="term-name">Loss and Damage</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Impacts of climate change that cannot be avoided or adapted to (like land lost to rising seas).</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"You Break It, You Buy It"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">Big countries broke the climate. Now our islands are sinking. They should pay for the damage.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="mitigation emissions" data-letter="M">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">M</div>
+      <span class="term-name">Mitigation</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Actions taken to reduce or prevent the emission of greenhouse gases.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Stop the Leak"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">Fixing the hole in the roof so the rain stops coming in.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="net zero emissions balance" data-letter="N">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">N</div>
+      <span class="term-name">Net Zero</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Achieving a balance between the greenhouse gases put into the atmosphere and those taken out.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"The Bathtub Rule"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">If you can't turn off the tap (pollution) completely yet, you must open the drain (planting trees / tech) so the water doesn't overflow.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="renewable energy solar wind water" data-letter="R">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">R</div>
+      <span class="term-name">Renewable Energy</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">Energy from sources that naturally replenish themselves (Sun, Wind, Water).</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"Infinite Magic Power"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">Unlike coal, the sun and wind never run out. We can use them forever without making smoke.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="term" data-term="tipping point climate threshold" data-letter="T">
+    <div class="term-head" onclick="ttog(this)">
+      <div class="term-letter">T</div>
+      <span class="term-name">Tipping Point</span>
+      <span class="tarr">›</span>
+    </div>
+    <div class="term-body">
+      <div class="def-col">
+        <div class="def-label book">📖 Textbook</div>
+        <p class="def-text">A critical threshold that, when crossed, leads to large and often irreversible changes in the climate system.</p>
+      </div>
+      <div class="def-col">
+        <div class="def-nickname">"The Jenga Tower"</div>
+        <div class="def-label kid">🧒 For an 8-year-old</div>
+        <p class="def-text">You can pull out a few blocks and it wobbles. But if you pull out <em>one</em> wrong block… the whole thing crashes down and you can't put it back.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /terms -->
+
+<div class="page-nav">
+  <p class="pn-label">Level 1 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l1-role.html">
+      <div class="pn-ey">Previous</div>
+      <div class="pn-title">😍 I'm a KOL… What role can I play?</div>
+    </a>
+    <a class="pn-card" href="kol-l1-sea.html">
+      <div class="pn-ey">Also in Level 1</div>
+      <div class="pn-title">🌏 Climate Change in SEA</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l1-climate-impact.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">🌴 How does Climate Change impact our lives?</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+var allTerms = Array.from(document.querySelectorAll('.term'));
+
+/* build alpha index */
+var letters = [];
+allTerms.forEach(function(t){ var l = t.dataset.letter; if(letters.indexOf(l)<0) letters.push(l); });
+letters.sort();
+var alphaEl = document.getElementById('alpha-index');
+var activeLetter = null;
+letters.forEach(function(l){
+  var btn = document.createElement('button');
+  btn.className = 'alpha-btn';
+  btn.textContent = l === '0' ? '#' : l;
+  btn.onclick = function(){
+    if(activeLetter === l){ activeLetter=null; updateAlpha(); filterTerms(); return; }
+    activeLetter = l;
+    document.getElementById('gfilter').value = '';
+    updateAlpha();
+    filterTerms();
+  };
+  alphaEl.appendChild(btn);
+});
+
+function updateAlpha(){
+  var btns = alphaEl.querySelectorAll('.alpha-btn');
+  btns.forEach(function(b,i){ b.classList.toggle('on', letters[i]===activeLetter); });
+}
+
+function filterTerms(){
+  var q = document.getElementById('gfilter').value.trim().toLowerCase();
+  if(q) activeLetter = null;
+  updateAlpha();
+  var vis = 0;
+  allTerms.forEach(function(t){
+    var matchQ = !q || t.dataset.term.indexOf(q)>-1 || t.querySelector('.term-name').textContent.toLowerCase().indexOf(q)>-1;
+    var matchL = !activeLetter || t.dataset.letter === activeLetter;
+    var show = matchQ && matchL;
+    t.classList.toggle('hidden', !show);
+    if(show) vis++;
+  });
+  document.getElementById('gcount-num').textContent = vis;
+}
+
+function ttog(head){
+  head.parentElement.classList.toggle('open');
+}
+</script>
+<script src="search.js"></script>
+</body>
+</html>
