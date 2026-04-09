@@ -69,6 +69,13 @@ footer{margin-top:1.75rem;padding-top:1rem;border-top:.5px solid var(--b);displa
 .fdot{width:6px;height:6px;border-radius:50%;background:var(--ks);flex-shrink:0}
 footer span{font-size:11px;color:#999;font-weight:500}
 
+.visit-bar{margin-top:2rem;padding:1rem 1.25rem;border:.5px solid var(--b);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.vb-left{display:flex;align-items:center;gap:10px}
+.vb-icon{font-size:20px}
+.vb-num{font-size:22px;font-weight:800;color:var(--kp);letter-spacing:-.02em;line-height:1}
+.vb-label{font-size:11px;font-weight:600;color:#aaa;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.vb-note{font-size:12px;color:#aaa;font-weight:500;font-style:italic}
+
 #search-bar{position:relative}
 #search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:160px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
 #search-input:focus{border-color:var(--kp);width:200px;background-color:#fff}
@@ -179,6 +186,17 @@ footer span{font-size:11px;color:#999;font-weight:500}
   <a href="https://makesense.typeform.com/to/AO0X5upD" target="_blank"><button class="qbtn">Take the quiz →</button></a>
 </div>
 
+<div class="visit-bar">
+  <div class="vb-left">
+    <div class="vb-icon">👀</div>
+    <div>
+      <div class="vb-num" id="visit-count">—</div>
+      <div class="vb-label">total visitors</div>
+    </div>
+  </div>
+  <div class="vb-note">Free &amp; open resource · No ads · No paywalls</div>
+</div>
+
 <footer>
   <div class="fdot"></div>
   <span>The Good Chat Playbook · Open Resource · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
@@ -186,6 +204,13 @@ footer span{font-size:11px;color:#999;font-weight:500}
 
 <script>
 function tog(t){t.parentElement.classList.toggle('open')}
+
+fetch('https://api.counterapi.dev/v1/thegoodchat-playbook/visits/up')
+  .then(function(r){return r.json()})
+  .then(function(d){
+    if(d && d.count) document.getElementById('visit-count').textContent = d.count.toLocaleString();
+  })
+  .catch(function(){document.getElementById('visit-count').textContent = '—'});
 </script>
 <script src="search.js"></script>
 </body>
