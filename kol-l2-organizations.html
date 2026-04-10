@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Climate Organizations Database — KOL Level 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:14px;color:#555;line-height:1.7;max-width:560px;margin-bottom:.5rem}
+.wip-pill{display:inline-flex;align-items:center;gap:6px;background:#fff5ec;border:.5px solid #fcd4a8;border-radius:20px;padding:4px 12px;margin-bottom:2rem;font-size:12px;font-weight:700;color:#8a4a00}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+
+/* DB CONTROLS */
+.db-controls{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.db-search-wrap{position:relative}
+.db-search{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;width:100%;padding:10px 14px 10px 38px;border:.5px solid var(--b);border-radius:10px;outline:none;color:#111;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 12px center;transition:border-color .15s}
+.db-search:focus{border-color:var(--p)}
+.db-search::placeholder{color:#aaa}
+
+.country-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.ctab{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;border:.5px solid var(--b);background:none;cursor:pointer;color:#666;transition:all .15s}
+.ctab:hover{border-color:var(--pm);color:var(--p)}
+.ctab.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+.topic-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.ttab{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);background:none;cursor:pointer;color:#888;transition:all .15s}
+.ttab:hover{border-color:var(--pm);color:var(--p)}
+.ttab.on{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+.db-meta{font-size:12px;color:#aaa;font-weight:600;margin-bottom:1rem}
+.db-meta span{color:var(--p);font-weight:700}
+
+/* ORG CARDS */
+.orgs-grid{display:flex;flex-direction:column;gap:10px}
+.org-card{border:.5px solid var(--b);border-radius:12px;overflow:hidden;transition:border-color .15s}
+.org-card:hover{border-color:var(--pm)}
+.org-card.hidden{display:none}
+.org-head{display:flex;align-items:center;gap:14px;padding:1rem 1.1rem;cursor:pointer;user-select:none}
+.org-head:hover{background:#f7f7f5}
+.org-card.open .org-head{background:var(--pl)}
+.org-avatar{width:40px;height:40px;border-radius:8px;background:var(--pm);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;font-weight:800;color:var(--p)}
+.org-meta{flex:1;min-width:0}
+.org-name{font-size:14px;font-weight:800;color:#111;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.org-country{font-size:11px;color:#888;font-weight:600}
+.org-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.org-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--pl);color:var(--p);border:.5px solid var(--pm)}
+.oarr{font-size:14px;color:#aaa;transition:transform .2s;flex-shrink:0}
+.org-card.open .oarr{transform:rotate(90deg);color:var(--s)}
+.org-body{display:none;padding:0 1.1rem 1.1rem;border-top:.5px solid var(--b)}
+.org-card.open .org-body{display:block}
+.org-desc{font-size:13px;color:#555;line-height:1.7;padding-top:.9rem;margin-bottom:.85rem}
+.org-links{display:flex;gap:8px;flex-wrap:wrap}
+.org-link{font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:7px;padding:5px 12px;background:var(--pl);text-decoration:none}
+.org-link:hover{background:var(--pm)}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:3rem 1rem;color:#aaa}
+.empty-state p{font-size:14px;margin-top:.5rem}
+
+/* SUGGEST BOX */
+.suggest-box{border:.5px solid var(--b);border-radius:10px;padding:1.1rem 1.25rem;margin-top:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.sug-text{font-size:13px;font-weight:700;color:#111}
+.sug-sub{font-size:12px;color:#777;font-weight:400;margin-top:2px}
+.sug-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--p);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.sug-btn:hover{background:var(--pd)}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-2.html">Level 2: Your Entry Point</a><span class="sep">›</span>
+  <span>Climate Organizations</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep on" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🌿 Level 2 · Your Entry Point</p>
+<h1>Who are the incredible climate organizations of my country?</h1>
+<p class="lead">This database is your shortcut to the right climate orgs in your country — so you can connect faster, collaborate smarter, and turn your influence into real-world impact.</p>
+<div class="wip-pill">🌱 Constant work in progress — new orgs added regularly</div>
+
+<div class="db-controls">
+  <div class="db-search-wrap">
+    <input class="db-search" id="db-search" type="text" placeholder="Search organizations…" autocomplete="off" oninput="filterOrgs()">
+  </div>
+  <div class="country-tabs">
+    <button class="ctab on" onclick="setCountry('all',this)">🌏 All countries</button>
+    <button class="ctab" onclick="setCountry('PH',this)">🇵🇭 Philippines</button>
+    <button class="ctab" onclick="setCountry('TH',this)">🇹🇭 Thailand</button>
+    <button class="ctab" onclick="setCountry('ID',this)">🇮🇩 Indonesia</button>
+    <button class="ctab" onclick="setCountry('SEA',this)">🌏 Regional</button>
+  </div>
+  <div class="topic-tabs">
+    <button class="ttab on" onclick="setTopic('all',this)">All types</button>
+    <button class="ttab" onclick="setTopic('campaigning',this)">Campaigning NGO</button>
+    <button class="ttab" onclick="setTopic('research',this)">Research</button>
+    <button class="ttab" onclick="setTopic('solar',this)">Solar</button>
+    <button class="ttab" onclick="setTopic('access',this)">Access to Energy</button>
+    <button class="ttab" onclick="setTopic('network',this)">Network</button>
+    <button class="ttab" onclick="setTopic('accelerator',this)">Accelerator</button>
+  </div>
+</div>
+
+<p class="db-meta">Showing <span id="org-count">0</span> organizations</p>
+
+<div class="orgs-grid" id="orgs-grid"></div>
+
+<div class="empty-state" id="empty-state" style="display:none">
+  <div style="font-size:32px">🔍</div>
+  <p>No organizations found. Try a different search or filter.</p>
+</div>
+
+<div class="suggest-box">
+  <div>
+    <div class="sug-text">Know a great climate org we're missing?</div>
+    <div class="sug-sub">Help us grow this database — every suggestion counts.</div>
+  </div>
+  <a class="sug-btn" href="/cdn-cgi/l/email-protection#dbb3beb7b7b49bafb3bebcb4b4bfb8b3baaff5b4a9bce4a8aeb9b1beb8afe698b7b2b6baafbefee9eb94a9bcfee9eb88aebcbcbea8afb2b4b5">Suggest an org →</a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 2 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l2-imposter.html">
+      <div class="pn-ey">← Previous</div>
+      <div class="pn-title">💪 How to fight imposter syndrome</div>
+    </a>
+    <a class="pn-card" href="kol-l2-solar.html">
+      <div class="pn-ey">Also in Level 2</div>
+      <div class="pn-title">☀️ Why solar energy?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l2-who-am-i.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">🪞 Who am I? What role do I want to play?</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/*
+  ============================================================
+  ADD YOUR ORGANIZATIONS HERE
+  Each entry:  { name, country, flag, emoji, desc, tags[], website, instagram }
+  country codes: 'PH' | 'TH' | 'ID' | 'SEA'
+  tags (pick from): 'solar' | 'policy' | 'community' | 'research' | 'youth' | 'media'
+  ============================================================
+*/
+var ORGS = [
+  { name:'Greenpeace', country:'TH', flag:'🇹🇭', emoji:'🌿', desc:'International campaigning organization advocating against fossil fuels and for renewable energy access in Thailand. Known for public campaigns, media engagement, and community activism.', tags:['campaigning'], website:'https://www.greenpeace.org/thailand', instagram:'https://www.instagram.com/greenpeacethailand' },
+  { name:'TDRI — Thailand Development Research Institute', country:'TH', flag:'🇹🇭', emoji:'📊', desc:'Leading Thai think tank producing independent research and policy analysis. Works on economic and social development including energy and environmental policy.', tags:['research'], website:'https://tdri.or.th', instagram:'' },
+  { name:'Asia Clean Energy Partners', country:'TH', flag:'🇹🇭', emoji:'⚡', desc:'Consulting firm specializing in clean energy policy and regulatory support across Southeast Asia, including renewable energy transition in Thailand.', tags:['research'], website:'', instagram:'' },
+  { name:'Just Energy Transition in Thailand (JET)', country:'TH', flag:'🇹🇭', emoji:'⚖️', desc:'Campaigns for greater access to renewable energy solutions in Thailand. Focuses on fair and inclusive energy policies and publishes data on Thailand\'s energy system.', tags:['campaigning'], website:'', instagram:'' },
+  { name:'Institute for Essential Services Reform (IESR)', country:'ID', flag:'🇮🇩', emoji:'🔬', desc:'Indonesia\'s leading think tank on energy transition data. Publishes research on clean energy pathways, coal phase-out, and just transition policies.', tags:['research'], website:'https://iesr.or.id', instagram:'' },
+  { name:'Trend Asia', country:'ID', flag:'🇮🇩', emoji:'📢', desc:'Works on fossil fuel and climate finance campaigning. Focuses on exposing harmful energy investments and advocating for a just energy transition across Southeast Asia.', tags:['campaigning'], website:'https://trendasiaenergy.org', instagram:'' },
+  { name:'KPOP 4 Planet', country:'ID', flag:'🇮🇩', emoji:'🎤', desc:'Uses the power of K-Pop fandom culture to advocate for climate action across Asia. Engages youth through music, social media, and community organizing.', tags:['campaigning'], website:'https://kpop4planet.com', instagram:'https://www.instagram.com/kpop4planet' },
+  { name:'ITDP — Institute for Transportation and Development Policy', country:'ID', flag:'🇮🇩', emoji:'🚲', desc:'Research and advocacy organization promoting sustainable and equitable transportation. Works on reducing emissions through urban mobility solutions.', tags:['research'], website:'https://www.itdp.org', instagram:'' },
+  { name:'New Energy Nexus', country:'SEA', flag:'🌏', emoji:'🚀', desc:'Regional accelerator supporting clean energy entrepreneurs and startups across Southeast Asia. Provides funding, mentorship, and network access.', tags:['accelerator'], website:'https://www.newenergynexus.com', instagram:'' },
+  { name:'350.org Pilipinas', country:'PH', flag:'🇵🇭', emoji:'🌍', desc:'Part of the global 350.org movement. Campaigns to end fossil fuels and build community-led renewable energy solutions in the Philippines.', tags:['campaigning'], website:'https://350.org', instagram:'' },
+  { name:'Responsible Energy Initiative by Forum for the Future (FFF)', country:'PH', flag:'🇵🇭', emoji:'🔄', desc:'A multi-year systems-change programme ensuring renewable energy in Asia is ecologically safe, rights-respecting, and socially just. Philippines is the second inquiry launched.', tags:['campaigning','research'], website:'https://www.forumforthefuture.org/renewable-energy-responsible-energy-initiative', instagram:'' },
+  { name:'ICLEI — Local Governments for Sustainability', country:'SEA', flag:'🌏', emoji:'🏛️', desc:'Global network of local and regional governments committed to sustainable development. Works on climate resilience, clean energy, and urban sustainability across the region.', tags:['network'], website:'https://iclei.org', instagram:'' },
+  { name:'ICLEI — Indonesia 100% Renewable Energy', country:'ID', flag:'🇮🇩', emoji:'🏛️', desc:'Indonesian chapter of ICLEI focusing on the 100% renewable energy transition for local governments. Supports cities and regions in clean energy planning.', tags:['network'], website:'https://iclei.org', instagram:'' },
+  { name:'International Renewable Energy Agency (IRENA)', country:'SEA', flag:'🌏', emoji:'⚡', desc:'Intergovernmental organization supporting the global transition to renewable energy. Publishes data, policy analysis, and best practices for energy transitions.', tags:['network','research'], website:'https://www.irena.org', instagram:'' },
+  { name:'Sustainable Energy for All (SEforALL)', country:'SEA', flag:'🌏', emoji:'🌍', desc:'International NGO working to ensure everyone has access to sustainable energy. Focuses on energy access, efficiency, and renewables in developing countries.', tags:['network','access'], website:'https://www.seforall.org', instagram:'' },
+  { name:'Right People Renewable Energy', country:'ID', flag:'🇮🇩', emoji:'☀️', desc:'Solar energy solutions provider in Indonesia, connecting communities and businesses with affordable renewable energy access.', tags:['solar'], website:'', instagram:'' },
+  { name:'Indonesian Center for Environmental Law (ICEL)', country:'ID', flag:'🇮🇩', emoji:'⚖️', desc:'Research and advocacy center focused on environmental law and policy in Indonesia. Works on climate change, energy regulation, and environmental justice.', tags:['research','campaigning'], website:'https://icel.or.id', instagram:'' },
+  { name:'Yayasan Indonesia Cerah', country:'ID', flag:'🇮🇩', emoji:'💡', desc:'Indonesian foundation campaigning for clean and affordable energy. Works on accelerating the renewable energy transition through advocacy, community engagement, and research.', tags:['campaigning'], website:'https://indonesiacerah.org', instagram:'' },
+  { name:'Kota Kita', country:'ID', flag:'🇮🇩', emoji:'🏙️', desc:'Participatory urban planning and advocacy organization in Indonesia. Works with communities to create inclusive, resilient, and sustainable cities.', tags:['campaigning','network'], website:'https://kotakita.org', instagram:'' },
+  { name:'World Resources Institute Indonesia (WRI)', country:'ID', flag:'🇮🇩', emoji:'🌍', desc:'International NGO working on sustainable development in Indonesia. Covers energy, forests, food, water, and climate across the country.', tags:['research','network'], website:'https://www.wri.org/asia', instagram:'' },
+  { name:'Yayasan Mitra Hijau', country:'ID', flag:'🇮🇩', emoji:'🌿', desc:'Indonesian environmental foundation focused on knowledge and research for green development, sustainability, and conservation.', tags:['research'], website:'', instagram:'' },
+  { name:'Solar Village Foundation', country:'PH', flag:'🇵🇭', emoji:'☀️', desc:'NGO bringing solar energy access to off-grid and underserved communities in the Philippines. Focused on energy equity and rural electrification.', tags:['solar','access'], website:'', instagram:'' },
+  { name:'ATE Co — Access To Energy for Communities', country:'PH', flag:'🇵🇭', emoji:'🔌', desc:'Works to expand access to clean, affordable energy for underserved communities in the Philippines through innovative financing and community engagement.', tags:['access','solar'], website:'', instagram:'' },
+  { name:'WeGen Philippines', country:'PH', flag:'🇵🇭', emoji:'⚡', desc:'Solar energy solutions company in the Philippines, helping homes and businesses transition to clean, affordable solar power.', tags:['solar'], website:'', instagram:'' },
+  { name:'One Renewable Energy Enterprise', country:'PH', flag:'🇵🇭', emoji:'♻️', desc:'Solar energy solutions provider in the Philippines, delivering renewable energy systems to homes, communities, and businesses.', tags:['solar'], website:'', instagram:'' }
+];
+
+var activeCountry = 'all';
+var activeTopic = 'all';
+
+function renderOrgs() {
+  var q = document.getElementById('db-search').value.trim().toLowerCase();
+  var grid = document.getElementById('orgs-grid');
+  var empty = document.getElementById('empty-state');
+  grid.innerHTML = '';
+  var count = 0;
+
+  ORGS.forEach(function(o, i) {
+    var matchC = activeCountry === 'all' || o.country === activeCountry;
+    var matchT = activeTopic === 'all' || o.tags.indexOf(activeTopic) > -1;
+    var matchQ = !q || (o.name + ' ' + o.desc + ' ' + o.tags.join(' ')).toLowerCase().indexOf(q) > -1;
+    if (!matchC || !matchT || !matchQ) return;
+    count++;
+
+    var links = '';
+    if (o.website) links += '<a class="org-link" href="' + o.website + '" target="_blank">Website ↗</a>';
+    if (o.instagram) links += '<a class="org-link" href="' + o.instagram + '" target="_blank">Instagram ↗</a>';
+
+    var tags = o.tags.map(function(t){ return '<span class="org-tag">' + t + '</span>'; }).join('');
+
+    var card = document.createElement('div');
+    card.className = 'org-card';
+    card.innerHTML =
+      '<div class="org-head" onclick="this.parentElement.classList.toggle(\'open\')">' +
+        '<div class="org-avatar">' + o.emoji + '</div>' +
+        '<div class="org-meta">' +
+          '<div class="org-name">' + o.flag + ' ' + o.name + '</div>' +
+          '<div class="org-tags">' + tags + '</div>' +
+        '</div>' +
+        '<span class="oarr">›</span>' +
+      '</div>' +
+      '<div class="org-body">' +
+        '<p class="org-desc">' + o.desc + '</p>' +
+        (links ? '<div class="org-links">' + links + '</div>' : '') +
+      '</div>';
+    grid.appendChild(card);
+  });
+
+  var countEl = document.getElementById('org-count'); if(countEl) countEl.textContent = count;
+  empty.style.display = count === 0 ? 'block' : 'none';
+}
+
+function filterOrgs(){ renderOrgs(); }
+
+function setCountry(c, btn) {
+  activeCountry = c;
+  document.querySelectorAll('.ctab').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  renderOrgs();
+}
+
+function setTopic(t, btn) {
+  activeTopic = t;
+  document.querySelectorAll('.ttab').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  renderOrgs();
+}
+
+document.addEventListener('DOMContentLoaded', renderOrgs);
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
