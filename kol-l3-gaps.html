@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Key Gaps in the Energy Transition — KOL Level 3</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;font-style:italic;max-width:600px}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+h3{font-size:15px;font-weight:800;color:#111;margin-bottom:.5rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* BLOCKQUOTE */
+.bquote{border-left:3px solid var(--pm);padding:.85rem 1.25rem;margin:1.25rem 0;background:#f7f7f5;border-radius:0 8px 8px 0}
+.bquote p{font-size:13px;color:#555;line-height:1.75;margin-bottom:.5rem}
+.bquote p:last-child{margin-bottom:0}
+.bquote strong{font-weight:700;color:#111}
+.bquote a{color:var(--p);font-weight:600;text-decoration:underline}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* ALERT BOX */
+.alert-box{background:#fff3cd;border:.5px solid #ffc107;border-radius:12px;padding:1.25rem 1.4rem;margin:1.5rem 0}
+.alert-icon{font-size:20px;margin-bottom:.5rem}
+.alert-title{font-size:15px;font-weight:800;color:#856404;margin-bottom:.75rem}
+.alert-body{font-size:14px;color:#533f00;line-height:1.75;margin-bottom:.85rem}
+.alert-body strong{font-weight:700;color:#533f00}
+.promises{display:flex;flex-direction:column;gap:8px;margin-top:.75rem}
+.promise{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.6);border-radius:8px;padding:.75rem 1rem;font-size:13px;color:#533f00;line-height:1.6}
+.promise strong{font-weight:700}
+
+/* COUNTRY ACCORDION */
+.country-blocks{display:flex;flex-direction:column;gap:8px;margin:1.25rem 0}
+.cb{border:.5px solid var(--b);border-radius:10px;overflow:hidden}
+.cb-head{display:flex;align-items:center;gap:12px;padding:.85rem 1.1rem;cursor:pointer;user-select:none}
+.cb-head:hover{background:#f7f7f5}
+.cb.open .cb-head{background:var(--pl)}
+.cb-flag{font-size:20px;flex-shrink:0}
+.cb-name{font-size:14px;font-weight:800;color:#111;flex:1}
+.cbarr{font-size:14px;color:#aaa;transition:transform .2s}
+.cb.open .cbarr{transform:rotate(90deg);color:var(--s)}
+.cb-body{display:none;padding:.85rem 1.1rem;border-top:.5px solid var(--b)}
+.cb.open .cb-body{display:block}
+.cb-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:.5rem}
+.cb-body strong{font-weight:700;color:#111}
+
+/* KEY ISSUES */
+.issues{display:flex;flex-direction:column;gap:12px;margin:1.25rem 0}
+.issue{border:.5px solid var(--b);border-radius:12px;overflow:hidden;transition:border-color .15s}
+.issue:hover{border-color:var(--pm)}
+.issue-head{display:flex;align-items:center;gap:14px;padding:1.1rem 1.25rem;background:var(--p);cursor:pointer;user-select:none}
+.issue-num{font-size:22px;font-weight:800;color:rgba(255,255,255,.3);flex-shrink:0;width:32px}
+.issue-title{font-size:15px;font-weight:800;color:#fff;flex:1;line-height:1.3}
+.iarr{font-size:16px;color:rgba(255,255,255,.5);transition:transform .2s}
+.issue.open .iarr{transform:rotate(90deg);color:#fff}
+.issue.open .issue-head{background:var(--pd)}
+.issue-body{display:none;padding:1.1rem 1.25rem;border-top:.5px solid var(--b)}
+.issue.open .issue-body{display:block}
+.issue-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.6rem}
+.issue-body ul{padding-left:1.25rem;margin-bottom:.75rem}
+.issue-body li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.3rem}
+.issue-body strong{font-weight:700;color:#111}
+
+/* PANEL ACTIONS */
+.panel-actions{display:flex;flex-direction:column;gap:10px;margin:1.25rem 0}
+.paction{border:.5px solid var(--b);border-radius:10px;overflow:hidden}
+.pa-head{display:flex;align-items:center;gap:12px;padding:.9rem 1.1rem;cursor:pointer;user-select:none}
+.pa-head:hover{background:#f7f7f5}
+.paction.open .pa-head{background:var(--pl)}
+.pa-num{font-size:11px;font-weight:800;background:var(--s);color:#fff;padding:2px 9px;border-radius:20px;flex-shrink:0}
+.pa-title{font-size:14px;font-weight:800;color:#111;flex:1;line-height:1.3}
+.paarr{font-size:14px;color:#aaa;transition:transform .2s}
+.paction.open .paarr{transform:rotate(90deg);color:var(--s)}
+.pa-body{display:none;padding:.85rem 1.1rem;border-top:.5px solid var(--b)}
+.paction.open .pa-body{display:block}
+.pa-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:.6rem}
+.pa-body ul{padding-left:1.25rem;margin-bottom:.6rem}
+.pa-body li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.35rem}
+.pa-body strong{font-weight:700;color:#111}
+.pa-body em{font-style:italic}
+.pa-body a{color:var(--p);font-weight:600;text-decoration:underline}
+.pa-quote{background:#f7f7f5;border-radius:8px;padding:.75rem 1rem;font-size:13px;color:#444;font-style:italic;margin:.5rem 0;border-left:3px solid var(--pm);line-height:1.65}
+
+/* SOURCE LINKS */
+.source-links{display:flex;flex-direction:column;gap:7px;margin:1rem 0}
+.src-link{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--p);font-weight:700;text-decoration:underline;line-height:1.55}
+.src-link:hover{color:var(--pd)}
+
+/* DISCLAIMER */
+.disclaimer{background:#f7f7f5;border:.5px solid var(--b);border-radius:10px;padding:1rem 1.25rem;margin:2rem 0;font-size:13px;color:#666;line-height:1.7}
+.disclaimer strong{font-weight:700;color:#111}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-3.html">Level 3: Starting Conversations</a><span class="sep">›</span>
+  <span>Key gaps in the energy transition</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep done" href="kol-level-2.html">Level 2 ✓</a>
+  <a class="lstep on" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🔍 Level 3 · Starting Conversations</p>
+<h1>What are the key gaps in the energy transition where public support is most needed?</h1>
+<p class="lead">A just energy transition needs public support — not only for clean energy access, but also for fair participation in energy decisions.</p>
+
+<!-- WHY PUBLIC SUPPORT MATTERS -->
+<h2>Why does public support matter?</h2>
+<div class="bquote">
+  <p>The shift from fossil-fuel dependence to clean, affordable, decentralized energy is not just a technical challenge — it is also a social and political one. Organizations like Greenpeace Thailand emphasize that a "just energy transition" must ensure that <strong>people can access clean, affordable energy and participate in energy-system decisions.</strong></p>
+  <p>Progress will stall unless public voices become part of the policy, governance, and market reform process.</p>
+  <p>
+    <a href="https://www.jetknowledge.org/knowledge/giz-assessment-status-report-just-energy-transition-thailand/" target="_blank">Assessment and Status Report on Just Energy Transition in Thailand — IISD ↗</a><br>
+    <a href="https://www.greenpeace.org/thailand/just-energy-transition/" target="_blank">Just Energy Transition — Greenpeace Thailand ↗</a>
+  </p>
+</div>
+
+<hr>
+
+<!-- GOVERNMENT PROMISES -->
+<div class="alert-box">
+  <div class="alert-icon">🚨</div>
+  <div class="alert-title">Governments made big promises. Now they need to deliver.</div>
+  <p class="alert-body">Across Southeast Asia, almost every government has pledged to switch to renewable energy. But on the ground, <strong>progress is slow — and none are currently on track to meet their commitments.</strong></p>
+  <div class="promises">
+    <div class="promise"><span>🇵🇭</span><div><strong>Philippines</strong> → 35% of electricity from renewables by 2030, 50% by 2040</div></div>
+    <div class="promise"><span>🇹🇭</span><div><strong>Thailand</strong> → 51% clean electricity by 2037, carbon neutrality by 2050</div></div>
+    <div class="promise"><span>🇮🇩</span><div><strong>Indonesia</strong> → 100% renewable electricity within the next 10 years (announced by President Prabowo Subianto at the Indonesia Net Zero Summit)</div></div>
+  </div>
+  <p class="alert-body" style="margin-top:.85rem"><strong>In reality, all three countries are still mostly powered by coal and gas.</strong></p>
+</div>
+
+<h3>Why must they deliver?</h3>
+<p>Because our daily lives depend on it — and because they promised, but are doing the contrary.</p>
+
+<div class="country-blocks">
+
+  <div class="cb">
+    <div class="cb-head" onclick="ctog(this)">
+      <span class="cb-flag">🇵🇭</span>
+      <span class="cb-name">Philippines — what's actually happening</span>
+      <span class="cbarr">›</span>
+    </div>
+    <div class="cb-body">
+      <p>Old coal and gas plants keep getting extensions and subsidies.</p>
+      <p>The power grid is outdated, making it hard for reliable energy to reach homes and communities outside big cities.</p>
+      <p><strong>As long as governments delay the transition, energy infrastructure will remain unreliable and bills will stay high.</strong> The longer we depend on imported gas, the more exposed we are to global price shocks — like when electricity costs soared after the war in Ukraine.</p>
+    </div>
+  </div>
+
+  <div class="cb">
+    <div class="cb-head" onclick="ctog(this)">
+      <span class="cb-flag">🇮🇩</span>
+      <span class="cb-name">Indonesia — what's actually happening</span>
+      <span class="cbarr">›</span>
+    </div>
+    <div class="cb-body">
+      <p>The government keeps changing energy plans — every time leadership shifts, so do the rules. This confuses investors, delays solar and wind projects, and allows new coal plants to move forward.</p>
+      <p><strong>Local communities are rarely part of the decision-making</strong> about the energy systems that directly affect their lives.</p>
+    </div>
+  </div>
+
+  <div class="cb">
+    <div class="cb-head" onclick="ctog(this)">
+      <span class="cb-flag">🇹🇭</span>
+      <span class="cb-name">Thailand — what's actually happening</span>
+      <span class="cbarr">›</span>
+    </div>
+    <div class="cb-body">
+      <p>The government keeps talking about a clean energy future but still approves new gas projects. Instead of investing in local solar, wind, and energy storage, <strong>most funding goes to imported gas</strong> — keeping prices high and pollution strong.</p>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- KEY ISSUES -->
+<h2>The 3 Key Issues Where Civil Society Needs the Public</h2>
+<p>These are the areas where your voice — and your audience's — can make the most difference.</p>
+
+<div class="issues">
+
+  <div class="issue" id="iss1">
+    <div class="issue-head" onclick="itog('iss1')">
+      <span class="issue-num">#1</span>
+      <span class="issue-title">Affordable, local clean energy</span>
+      <span class="iarr">›</span>
+    </div>
+    <div class="issue-body">
+      <ul>
+        <li>Ensure clean energy is accessible not only to corporations but also to <strong>small businesses, schools, hospitals, and farmers</strong>.</li>
+        <li>Invest in <strong>community-owned solar, wind, and microgrids</strong> that reduce dependency on expensive imports and give people control over their energy.</li>
+        <li>Advocate for fair pricing, so renewable electricity becomes <strong>the cheaper, more stable choice</strong> for households — like it has in India and Pakistan.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue" id="iss2">
+    <div class="issue-head" onclick="itog('iss2')">
+      <span class="issue-num">#2</span>
+      <span class="issue-title">Green jobs that include everyone</span>
+      <span class="iarr">›</span>
+    </div>
+    <div class="issue-body">
+      <ul>
+        <li>Demand <strong>training programs and career pathways</strong> in renewable energy that reach women, youth, and informal workers.</li>
+        <li>Make sure the shift away from fossil fuels comes with <strong>retraining, social protection, and alternative livelihoods</strong> for workers and communities who depend on coal or gas today.</li>
+        <li>Encourage businesses and governments to measure and report the <strong>social impact</strong> of green job creation — not just the number of solar panels installed.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue" id="iss3">
+    <div class="issue-head" onclick="itog('iss3')">
+      <span class="issue-num">#3</span>
+      <span class="issue-title">Modern, reliable energy systems for all</span>
+      <span class="iarr">›</span>
+    </div>
+    <div class="issue-body">
+      <ul>
+        <li>Call for massive investment in <strong>upgrading power grids, storage systems, and local connections</strong> so reliable energy can reach everyone — not just big cities.</li>
+        <li>Promote <strong>energy efficiency</strong> and smarter systems that reduce waste and make power more resilient to crises and natural disasters.</li>
+        <li>Ask decision-makers to design energy systems that are <strong>transparent, participatory, and community-driven</strong> — where people have a say in how their energy is produced and used.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- PANEL RECOMMENDATIONS -->
+<h2>Concrete Actions — From the JET &amp; Greenpeace Thailand Panel</h2>
+<p>At The Good Chat Edition 3 Kickoff Event 2025, experts shared specific citizen-led actions and asks. These are applicable across the region.</p>
+
+<div class="panel-actions">
+
+  <div class="paction" id="pa1">
+    <div class="pa-head" onclick="patog('pa1')">
+      <span class="pa-num">1</span>
+      <span class="pa-title">Demand accountability &amp; inclusive policy-making</span>
+      <span class="paarr">›</span>
+    </div>
+    <div class="pa-body">
+      <p>The electricity market has structural concerns — consumers often pay for more energy capacity than they actually consume, because of overproduction, pricing inefficiencies, and hidden subsidies.</p>
+      <ul>
+        <li>Question why the government sets fixed electricity prices without open consultation.</li>
+        <li>Demand public hearings when new energy development plans are drafted.</li>
+        <li>Ask: <strong>how much of your bill is generation vs. infrastructure vs. fossil-import subsidy?</strong></li>
+      </ul>
+      <p><a href="https://climatefinancethai.com/no-just-transition/" target="_blank">Read more about Thailand's Power Development Plan (PDP) ↗</a></p>
+    </div>
+  </div>
+
+  <div class="paction" id="pa2">
+    <div class="pa-head" onclick="patog('pa2')">
+      <span class="pa-num">2</span>
+      <span class="pa-title">Amplify accessible education &amp; campaigning</span>
+      <span class="paarr">›</span>
+    </div>
+    <div class="pa-body">
+      <p>Many people find energy topics too technical — electricity bills, capacity, tariffs, generation mix. This creates a knowledge barrier that keeps the public out of the conversation.</p>
+      <div class="pa-quote">"The public doesn't come to our events because they don't understand energy 101. We must make people understand how bad their energy system is so they'll grow curiosity for the Energy Transition."</div>
+      <p>What you can do:</p>
+      <ul>
+        <li><strong>Share infographics</strong> and short posts that explain: "What is a PDP?", "What are renewables?", "Why does my electricity cost go up when I use less?"</li>
+        <li><strong>Invite your audience</strong> to follow climate NGOs, attend webinars, and share key messages.</li>
+        <li><strong>Organize or attend community "energy cafés"</strong> — casual sessions where bills, solar options, and savings are discussed.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="paction" id="pa3">
+    <div class="pa-head" onclick="patog('pa3')">
+      <span class="pa-num">3</span>
+      <span class="pa-title">Champion &amp; adopt renewable options at home</span>
+      <span class="paarr">›</span>
+    </div>
+    <div class="pa-body">
+      <p>Public support is needed not only in advocacy but also through action. Households that adopt solar (or energy-efficient appliances, community micro-grids) send a signal that <strong>demand for clean energy is real.</strong></p>
+      <div class="pa-quote">"If you have the ability to install solar panels, do it. This kind of real-world example builds trust."</div>
+      <ul>
+        <li><strong>Encourage peer networks</strong> — people who install rooftop solar can share their costs, savings, and experiences. The more visible these choices become, the more social norms shift.</li>
+        <li>Help people understand that <strong>renewable energy is one of the fastest-growing industries</strong> — with real business opportunities for micro-entrepreneurs.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="paction" id="pa4">
+    <div class="pa-head" onclick="patog('pa4')">
+      <span class="pa-num">4</span>
+      <span class="pa-title">Build social demand ahead of elections &amp; policy moments</span>
+      <span class="paarr">›</span>
+    </div>
+    <div class="pa-body">
+      <ul>
+        <li>Tell voters: <em>"At election time, ask your candidate: what will you do about electricity costs, renewable energy access, and solar incentives?"</em></li>
+        <li>Encourage community networks to adopt energy transition as part of their agenda: <em>"I want affordable clean power for my family, my children's health, and our local environment."</em></li>
+        <li>Use <strong>local environment stories</strong> — how rivers and lands are impacted by fossil infrastructure, how fish stocks, health, and air quality are affected. Transforming abstract fossil-fuel topics into family and livelihoods stories speaks powerfully in SEA.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="paction" id="pa5">
+    <div class="pa-head" onclick="patog('pa5')">
+      <span class="pa-num">5</span>
+      <span class="pa-title">Push for systemic change — not just individual actions</span>
+      <span class="paarr">›</span>
+    </div>
+    <div class="pa-body">
+      <p>Focusing only on individual actions (turning off lights, reducing consumption) is important but <strong>insufficient</strong> if the system — pricing, grid, generation mix, policy — remains fossil-based.</p>
+      <ul>
+        <li>Call on policymakers to shift generation from fossil to renewables.</li>
+        <li>Demand regulatory reform: decentralized energy, community ownership of solar and power co-ops.</li>
+        <li>Support local-level collective action: neighborhood solar projects, community-shared batteries, local energy forums.</li>
+      </ul>
+      <div class="pquote" style="margin-top:1rem"><p>The transition must be inclusive and tackle the governance, market, and institutional dimensions of the current energy system.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="disclaimer">
+  <strong>ℹ️ About this page:</strong> This page helps KOLs and civil society identify where public pressure can accelerate the energy transition. Content created with reference to public resources from <a href="https://caseforsea.org/" target="_blank" style="color:var(--p);font-weight:700">Case for SEA ↗</a>.
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 3 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-level-3.html">
+      <div class="pn-ey">← Back to</div>
+      <div class="pn-title">Level 3 overview</div>
+    </a>
+    <a class="pn-card" href="kol-l3-campaign.html">
+      <div class="pn-ey">Also in Level 3</div>
+      <div class="pn-title">🚀 How to launch a first campaign</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l3-topics.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">💡 Top topics to start conversations</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function ctog(head){head.parentElement.classList.toggle('open')}
+function itog(id){document.getElementById(id).classList.toggle('open')}
+function patog(id){document.getElementById(id).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
