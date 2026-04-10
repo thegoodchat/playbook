@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why are people excited about solar energy? — KOL Level 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;max-width:600px;font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:800;color:#111;margin-bottom:.5rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* KEY INSIGHT */
+.key-box{background:var(--p);border-radius:12px;padding:1.25rem 1.4rem;margin-bottom:2rem}
+.key-icon{font-size:20px;margin-bottom:.5rem}
+.key-text{font-size:14px;color:rgba(255,255,255,.88);line-height:1.75}
+.key-text strong{color:#fff;font-weight:800}
+
+/* CASE STUDY BLOCK */
+.case{border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.case-head{padding:1.1rem 1.25rem;border-bottom:.5px solid var(--b)}
+.case-head.ph{background:#fff5ec}
+.case-head.th{background:var(--pl)}
+.case-flag{font-size:22px;margin-bottom:.4rem}
+.case-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.case-head.ph .case-label{color:var(--s)}
+.case-head.th .case-label{color:var(--p)}
+.case-title{font-size:17px;font-weight:800;line-height:1.2}
+.case-head.ph .case-title{color:var(--pd)}
+.case-head.th .case-title{color:var(--p)}
+.case-body{padding:1.25rem}
+.case-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.case-body strong{font-weight:700;color:#111}
+
+/* STORY CARDS within case study */
+.stories{display:flex;flex-direction:column;gap:10px;margin:1rem 0}
+.story{border:.5px solid var(--b);border-radius:10px;overflow:hidden}
+.story-head{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1rem;cursor:pointer;user-select:none}
+.story-head:hover{background:#f7f7f5}
+.story.open .story-head{background:var(--pl)}
+.story-icon{font-size:18px;flex-shrink:0;margin-right:10px}
+.story-title{font-size:14px;font-weight:800;color:#111;flex:1}
+.sarr{font-size:14px;color:#aaa;transition:transform .2s}
+.story.open .sarr{transform:rotate(90deg);color:var(--s)}
+.story-body{display:none;padding:1rem;border-top:.5px solid var(--b)}
+.story.open .story-body{display:block}
+.story-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:.6rem}
+.story-body strong{font-weight:700;color:#111}
+
+/* FELLOWS ROW */
+.fellows{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0}
+.fellow{display:inline-flex;align-items:center;gap:6px;background:var(--pl);border:.5px solid var(--pm);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--pd)}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* TAKEAWAY */
+.takeaway{background:#fff5ec;border:.5px solid #fcd4a8;border-radius:10px;padding:1.1rem 1.25rem;margin:1.5rem 0}
+.takeaway .tw-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--s);margin-bottom:.5rem}
+.takeaway p{font-size:13px;color:#6b4c00;line-height:1.7;margin-bottom:.4rem}
+.takeaway p:last-child{margin-bottom:0}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-2.html">Level 2: Your Entry Point</a><span class="sep">›</span>
+  <span>Why solar energy?</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep on" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">☀️ Level 2 · Your Entry Point</p>
+<h1>Why are people interested and excited about solar energy?</h1>
+<p class="lead">When we talk about solar energy, we're not only talking about electricity. We're talking about a powerful community tool that can drive local innovation.</p>
+
+<div class="key-box">
+  <div class="key-icon">🔑</div>
+  <p class="key-text"><strong>Direct discussions about renewable energy — particularly solar energy — have consistently resonated with our fellows' audiences.</strong> Solar energy is widely seen as a source of national pride. Stories that celebrate local solar advancements are especially engaging because they feel close, real, and achievable.</p>
+</div>
+
+<hr>
+
+<!-- PHILIPPINES CASE STUDY -->
+<div class="case">
+  <div class="case-head ph">
+    <div class="case-flag">🇵🇭</div>
+    <div class="case-label">Case Study · Philippines</div>
+    <div class="case-title">From high electricity bills to national pride</div>
+  </div>
+  <div class="case-body">
+    <p>In Edition 1, several Good Chat fellows in the Philippines explored their communities' interest in solar energy by facilitating discussions on how solar power could be used to power homes.</p>
+
+    <div class="fellows">
+      <span class="fellow">Karl Bautista</span>
+      <span class="fellow">Frances Cabatuando</span>
+      <span class="fellow">Buji Babiera</span>
+    </div>
+
+    <p>These conversations engaged <strong>hundreds of people</strong> who saw solar as a key solution addressing real concerns: high electricity costs, an unstable grid, and a genuine interest from home improvement enthusiasts.</p>
+
+    <p>In Edition 2, Buji Babiera continued the conversation by sharing insights from his visits to solar farms across the Philippines. A new observation emerged — his community didn't just respond positively to solar energy. They began sharing about solar farms in <em>their own provinces</em>.</p>
+
+    <div class="pquote">
+      <p>Many began viewing solar as a homegrown innovation — something that embodies Filipino ingenuity and nationalism. Not just a climate solution, but a source of national pride.</p>
+    </div>
+
+    <p>What started as a conversation about electricity costs became something much bigger: a community movement proud of what the Philippines is building.</p>
+  </div>
+</div>
+
+<!-- THAILAND CASE STUDY -->
+<div class="case">
+  <div class="case-head th">
+    <div class="case-flag">🇹🇭</div>
+    <div class="case-label">Case Study · Thailand</div>
+    <div class="case-title">Joe from Jeban Family — telling local stories that move people</div>
+  </div>
+  <div class="case-body">
+    <p>Joe took a unique approach to inspire his audience in Thailand to care about renewable energy. Instead of presenting abstract statistics or Western-based projects, he sought out <strong>real, local stories</strong> — of community leaders who had taken bold steps to make their communities energy-sufficient.</p>
+
+    <div class="stories">
+
+      <div class="story" id="st1">
+        <div class="story-head" onclick="stog('st1')">
+          <span class="story-icon">🏝️</span>
+          <span class="story-title">Koh Jik — the island that built its own solar solution</span>
+          <span class="sarr">›</span>
+        </div>
+        <div class="story-body">
+          <p>Koh Jik is a small island that had faced <strong>decades of struggle</strong> to join Thailand's National Electric Grid. When their lobbying efforts failed, the islanders decided to take matters into their own hands.</p>
+          <p>They raised funds and embraced solar power — creating their own energy solution from scratch.</p>
+          <p>Joe's storytelling didn't focus on the technical aspects. He painted a vivid picture of the islanders' <strong>determination, their harmony with nature, and their belief in their community's ability to chart its own future.</strong></p>
+          <p>His audience was captivated by this example of grassroots innovation — proof that sustainability could grow from the ground up. For many, it was a source of pride, showcasing Thai ingenuity and reinforcing the idea that solutions could come from within their own country.</p>
+        </div>
+      </div>
+
+      <div class="story" id="st2">
+        <div class="story-head" onclick="stog('st2')">
+          <span class="story-icon">🏠</span>
+          <span class="story-title">Phi Suea House — off-grid living in Chiang Mai</span>
+          <span class="sarr">›</span>
+        </div>
+        <div class="story-body">
+          <p>The Phi Suea House in Chiang Mai is an off-grid home powered by <strong>solar hydrogen</strong>. More than just a sustainable marvel, it represents a modular concept born in Chiang Mai for residential developments — proof that construction projects could be sustainable <em>and</em> cheaper.</p>
+          <p>Joe's audience was intrigued not only by the technology but by the hopeful message: <strong>Thailand was already capable of producing environmentally friendly, cost-effective energy solutions.</strong></p>
+        </div>
+      </div>
+
+      <div class="story" id="st3">
+        <div class="story-head" onclick="stog('st3')">
+          <span class="story-icon">✊</span>
+          <span class="story-title">From stories to action — the Energy Justice Thailand petition</span>
+          <span class="sarr">›</span>
+        </div>
+        <div class="story-body">
+          <p>Joe used these stories as a bridge to introduce his audience to the <strong>Energy-Justice-Thailand petition</strong>, which advocates for greater access to renewable energy solutions in the country.</p>
+          <p>His storytelling transformed what might have been a dry call to action into something personal, relatable, and urgent. The stories gave people a reason to care — then gave them something to do about it.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="tw-title">💡 The takeaway for you as a KOL</div>
+  <p>Joe didn't position himself as an expert or lecturer. <strong>He became a bridge</strong> — connecting real stories to real people and turning conversations into action.</p>
+  <p>His ability to make sustainability feel local, achievable, and deeply personal has had a lasting impact. You don't need to understand every policy detail. You need to find the story that makes your audience feel something.</p>
+  <p><strong>Solar energy is your entry point. What's the local story in your community?</strong></p>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 2 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-level-2.html">
+      <div class="pn-ey">← Back to</div>
+      <div class="pn-title">Level 2 overview</div>
+    </a>
+    <a class="pn-card" href="kol-l2-who-am-i.html">
+      <div class="pn-ey">Also in Level 2</div>
+      <div class="pn-title">🪞 Who am I? What role do I want to play?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l2-conversation.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">💬 The Power of Conversations</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function stog(id){document.getElementById(id).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
