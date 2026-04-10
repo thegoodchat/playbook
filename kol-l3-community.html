@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community Activities to Kickstart Conversations — KOL Level 3</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:1.5rem;font-style:italic;max-width:600px}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+ul{padding-left:1.25rem;margin-bottom:.75rem}
+li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.3rem}
+li strong{font-weight:700;color:#111}
+
+/* INTRO */
+.intro-box{background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:2rem;font-size:14px;color:var(--pd);line-height:1.75}
+.intro-box strong{font-weight:700;color:var(--p)}
+.intro-ps{font-size:13px;color:#777;font-style:italic;margin-top:.6rem}
+
+/* ACTIVITY ACCORDIONS */
+.activities{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem}
+.act{border:.5px solid var(--b);border-radius:12px;overflow:hidden;transition:border-color .15s}
+.act:hover{border-color:var(--pm)}
+.act.open{border-color:var(--p)}
+.act-head{display:flex;align-items:center;gap:14px;padding:1.1rem 1.25rem;cursor:pointer;user-select:none}
+.act-head:hover{background:#f7f7f5}
+.act.open .act-head{background:var(--pl)}
+.act-emoji{font-size:24px;flex-shrink:0}
+.act-meta{flex:1}
+.act-title{font-size:16px;font-weight:800;color:#111;line-height:1.25}
+.act.open .act-title{color:var(--p)}
+.act-sub{font-size:12px;color:#888;margin-top:2px}
+.aarr{font-size:14px;color:#aaa;transition:transform .2s;flex-shrink:0}
+.act.open .aarr{transform:rotate(90deg);color:var(--s)}
+.act-body{display:none;padding:1.25rem;border-top:.5px solid var(--b)}
+.act.open .act-body{display:block}
+.act-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.act-body strong{font-weight:700;color:#111}
+.act-body em{font-style:italic}
+.act-body ul{padding-left:1.25rem;margin-bottom:.75rem}
+.act-body li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.4rem}
+
+.act-section{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--s);margin-bottom:.4rem;margin-top:1rem}
+.act-section:first-child{margin-top:0}
+
+/* PROMPT CHIPS */
+.prompts{display:flex;flex-direction:column;gap:6px;margin:.75rem 0}
+.prompt{background:#f7f7f5;border:.5px solid var(--b);border-radius:8px;padding:.65rem 1rem;font-size:13px;color:#444;font-style:italic}
+
+/* EXAMPLE CHIP */
+.ex-chip{display:flex;gap:10px;align-items:flex-start;background:var(--pl);border:.5px solid var(--pm);border-radius:9px;padding:.85rem 1rem;margin:.75rem 0}
+.ex-chip-body{font-size:13px;color:var(--pd);line-height:1.7}
+.ex-chip-body strong{font-weight:700;color:var(--p)}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:.85rem 0}
+.stat-item{background:#f7f7f5;border-radius:9px;padding:.75rem .9rem;text-align:center}
+.stat-num{font-size:20px;font-weight:800;color:var(--p);letter-spacing:-.02em;margin-bottom:2px}
+.stat-label{font-size:11px;color:#555;line-height:1.45}
+
+/* STEP LIST */
+.steps-list{display:flex;flex-direction:column;gap:10px;margin:.75rem 0}
+.step-item{display:flex;gap:12px;align-items:flex-start}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--p);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-text{font-size:13px;color:#444;line-height:1.7;flex:1}
+.step-text strong{font-weight:700;color:#111}
+.step-text em{font-style:italic}
+
+/* EVENT TABLE */
+.events-section{margin-bottom:2rem}
+.event-cards{display:flex;flex-direction:column;gap:10px}
+.ecard{border:.5px solid var(--b);border-radius:10px;padding:1rem 1.1rem;transition:border-color .15s}
+.ecard:hover{border-color:var(--pm)}
+.ecard-title{font-size:14px;font-weight:800;color:#111;margin-bottom:.4rem}
+.ecard-desc{font-size:13px;color:#555;line-height:1.65}
+
+/* CONTRIBUTE BOX */
+.contribute{border:.5px solid var(--b);border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:2rem;flex-wrap:wrap}
+.contrib-text{font-size:13px;font-weight:700;color:#111}
+.contrib-sub{font-size:12px;color:#777;font-weight:400;margin-top:2px}
+.contrib-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--p);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.contrib-btn:hover{background:var(--pd)}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-3.html">Level 3: Starting Conversations</a><span class="sep">›</span>
+  <span>Community activities</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep done" href="kol-level-2.html">Level 2 ✓</a>
+  <a class="lstep on" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🤝 Level 3 · Starting Conversations</p>
+<h1>Community activities to kickstart conversations with my audience</h1>
+<p class="lead">To bring energy transition conversations down to earth, we need community spaces that invite citizens to connect through lived experience.</p>
+
+<div class="intro-box">
+  💡 To make the energy transition real and relatable, we need to create <strong>spaces where citizens can talk, reflect, and imagine together</strong> what this transition means for their daily lives.<br><br>
+  Below are formats that <em>The Good Chat</em> and partners have tested successfully across Southeast Asia, along with global examples. Each is easy to adapt, replicate, and combine depending on your community's size, context, and resources.
+  <div class="intro-ps">PS: don't hesitate to contribute to this list by sharing your event formats with us 😊</div>
+</div>
+
+<!-- ACTIVITIES -->
+<div class="activities">
+
+  <!-- 1. JOURNALING -->
+  <div class="act" id="a1">
+    <div class="act-head" onclick="atog('a1')">
+      <span class="act-emoji">✏️</span>
+      <div class="act-meta">
+        <div class="act-title">Journaling Prompts</div>
+        <div class="act-sub">Reflection before conversation</div>
+      </div>
+      <span class="aarr">›</span>
+    </div>
+    <div class="act-body">
+      <p><strong>Objective:</strong> Help participants connect personally with energy and climate before engaging in group dialogue.</p>
+      <div class="act-section">How it works</div>
+      <p>Share 2–3 short writing prompts and give participants 10–15 minutes to reflect and write freely. Then invite them to share one insight, surprise, or feeling that emerged.</p>
+      <div class="prompts">
+        <div class="prompt">"When was the last time I thought about how much energy I use?"</div>
+        <div class="prompt">"What part of my daily routine depends most on electricity?"</div>
+        <div class="prompt">"How much do I worry about my energy costs?"</div>
+      </div>
+      <div class="act-section">Why it works</div>
+      <p>Journaling lowers the pressure to have the "right answer." It makes the energy transition personal, grounded in lived experience, and sets the tone for open, thoughtful discussion.</p>
+      <p><em>Inspired by climate circles and "inner transition" practices used by <strong>Wellbeing Journey (Indonesia)</strong>, the <strong>Transition Towns Movement (UK)</strong>, and <strong>Climate Cafés (EU)</strong>.</em></p>
+    </div>
+  </div>
+
+  <!-- 2. BOOK CLUBS -->
+  <div class="act" id="a2">
+    <div class="act-head" onclick="atog('a2')">
+      <span class="act-emoji">📚</span>
+      <div class="act-meta">
+        <div class="act-title">Book Clubs</div>
+        <div class="act-sub">Leverage books to make people care about climate and energy</div>
+      </div>
+      <span class="aarr">›</span>
+    </div>
+    <div class="act-body">
+      <p><strong>Objective:</strong> Use reading as a starting point for reflection and dialogue — helping communities connect familiar topics like parenting, family values, and everyday care with broader issues like climate change and the energy transition.</p>
+      <div class="act-section">How it works</div>
+      <ul>
+        <li>Invite participants to <strong>choose and read books related to topics your community cares about.</strong></li>
+        <li>During the book club, guide members to reflect through a new lens: "How do the values in this book connect to caring for our planet?"</li>
+        <li>Encourage participants to share personal experiences, linking lessons from the book to real-life challenges like air pollution, rising temperatures, or energy use at home.</li>
+        <li>Organize <strong>book challenges or competitions</strong> where members nominate, read, and discuss multiple books — each time drawing climate and energy connections.</li>
+      </ul>
+      <div class="ex-chip">
+        <span style="font-size:20px;flex-shrink:0">🇮🇩</span>
+        <div class="ex-chip-body"><strong>Puty Puar</strong>, founder of Indonesia's 90,000-member <em>Buibu Baca Buku</em> community, invited mothers to read books on motherhood, religion, and education through the climate lens. She launched book competitions that rewarded active readers and storytellers — turning her community's passion for books into a powerful engine of climate literacy.</div>
+      </div>
+      <div class="act-section">Why it works</div>
+      <p>Book clubs create <strong>safe, trusted spaces</strong> where participants explore new ideas through stories that already feel relevant to their lives.</p>
+    </div>
+  </div>
+
+  <!-- 3. SURVEYS -->
+  <div class="act" id="a3">
+    <div class="act-head" onclick="atog('a3')">
+      <span class="act-emoji">🌐</span>
+      <div class="act-meta">
+        <div class="act-title">Online Surveys, Story Boxes &amp; Q&amp;A Sessions</div>
+        <div class="act-sub">Listening at scale</div>
+      </div>
+      <span class="aarr">›</span>
+    </div>
+    <div class="act-body">
+      <p><strong>Objective:</strong> Collect public perceptions, stories, and questions about energy in accessible, low-barrier ways.</p>
+      <div class="act-section">How it works</div>
+      <ul>
+        <li>Launch a <strong>short survey</strong> on Instagram Stories asking: "What's your biggest concern about electricity costs?" or "Would you install solar panels if it were affordable?"</li>
+        <li>Create a <strong>story box</strong> or open Q&amp;A space where followers can share experiences anonymously.</li>
+        <li>Host a <strong>live Q&amp;A session</strong> with an expert or local advocate to respond to common questions.</li>
+      </ul>
+      <div class="ex-chip">
+        <span style="font-size:20px;flex-shrink:0">🇹🇭</span>
+        <div class="ex-chip-body"><strong>Maria Lynn Ehren</strong> (1M+ followers) used Instagram Stories surveys and anonymous questionnaires to understand her audience's attitudes on energy and climate. The results were striking:</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-num">92%</div><div class="stat-label">concerned about rising electricity costs</div></div>
+        <div class="stat-item"><div class="stat-num">80%</div><div class="stat-label">trying to cut energy use</div></div>
+        <div class="stat-item"><div class="stat-num">63.8%</div><div class="stat-label">know fossil fuels cause climate change</div></div>
+      </div>
+      <p><em>This tactic shows that conversations at scale are possible. When designed intentionally, surveys surface collective narratives and invite people into the climate conversation on their own terms.</em></p>
+      <div class="act-section">Why it works</div>
+      <p>These activities make people feel heard while giving organizers valuable insights. They also create data and testimonials that can feed future campaigns.</p>
+    </div>
+  </div>
+
+  <!-- 4. CARD GAME -->
+  <div class="act" id="a4">
+    <div class="act-head" onclick="atog('a4')">
+      <span class="act-emoji">🃏</span>
+      <div class="act-meta">
+        <div class="act-title">The Good Chat Card Game</div>
+        <div class="act-sub">Turning small talks into courageous talks</div>
+      </div>
+      <span class="aarr">›</span>
+    </div>
+    <div class="act-body">
+      <p><strong>Objective:</strong> Help people start meaningful, relatable conversations about the energy transition — anywhere, with anyone.</p>
+      <div class="act-section">What it is</div>
+      <p>A <strong>conversation-based learning tool</strong> designed to make discussions about climate and energy feel natural, personal, and engaging. The game includes question cards and scenario prompts that guide players to reflect on habits, values, and hopes — while gradually linking them to larger systemic issues like clean energy and sustainability.</p>
+      <div class="act-section">Learning goals</div>
+      <ul>
+        <li><strong>Demystify the energy transition</strong> by breaking it into personal, accessible conversations</li>
+        <li><strong>Build empathy and curiosity</strong> — helping people listen to each other's perspectives</li>
+        <li><strong>Connect the personal and the systemic</strong> — showing how daily experiences relate to global change</li>
+        <li><strong>Normalize climate conversations</strong> so talking about energy becomes part of everyday life</li>
+      </ul>
+      <div class="act-section">How it works</div>
+      <p>Played in small groups of 4–8 people, in person or online. Sessions last 30–90 minutes. Facilitators select cards depending on the context — community event, classroom, or digital session.</p>
+      <div class="act-section">Why it works</div>
+      <p>The format is inclusive, low-pressure, and fun. It doesn't aim to convince people — it aims to <strong>make them care and talk.</strong> These repeated, honest conversations between friends, colleagues, or strangers help create the social momentum needed for collective action.</p>
+    </div>
+  </div>
+
+  <!-- 5. SMALL GROUP DEEP DIVES -->
+  <div class="act" id="a5">
+    <div class="act-head" onclick="atog('a5')">
+      <span class="act-emoji">👥</span>
+      <div class="act-meta">
+        <div class="act-title">Small Group Deep Dives</div>
+        <div class="act-sub">Focused gatherings around everyday energy concerns</div>
+      </div>
+      <span class="aarr">›</span>
+    </div>
+    <div class="act-body">
+      <p><strong>Objective:</strong> Engage small groups around practical, relatable topics — guiding them to see how personal struggles connect to the larger energy system.</p>
+      <div class="act-section">What it is</div>
+      <p>Intimate, discussion-based events (10–25 participants) that begin with a concrete problem — aircon bills, fuel prices, electric vehicles — and evolve into conversations about <strong>how systemic change could make life easier for everyone.</strong></p>
+      <div class="act-section">How it works</div>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Start where people are.</strong> Open with the practical question that brought them together: "How can we save on electricity bills?" or "Is it worth investing in an EV?"</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Let participants share experiences.</strong> These stories build trust and reveal how many people face the same constraints — high bills, limited options, unfair pricing.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Invite a speaker who can connect the dots.</strong> A relatable expert — designer, engineer, influencer, or homeowner — helps people see these issues are symptoms of <em>a system that still relies on expensive, imported, and polluting energy.</em></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>End with a sense of direction.</strong> Ask: "What could change if we pushed for fairer energy pricing or local solar access?" Share examples of collective solutions and encourage participants to host the next conversation.</div>
+        </div>
+      </div>
+      <div class="ex-chip">
+        <span style="font-size:20px;flex-shrink:0">✨</span>
+        <div class="ex-chip-body">This format worked beautifully in the <strong>Living Loving × Good Chat</strong> collaboration, where a discussion about cooling costs evolved into a conversation about energy justice and sustainable housing.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- EVENT IDEAS TABLE -->
+<h2>Event Ideas &amp; Formats</h2>
+<p>Seven ready-to-run event formats — adapt them to your community, context, and style.</p>
+
+<div class="event-cards">
+  <div class="ecard"><div class="ecard-title">💨 Cool Smarter: The True Cost of Aircon</div><div class="ecard-desc">A discussion on how air conditioning drives household expenses and emissions. Participants share cooling hacks while a guest speaker explains how energy efficiency and national power systems shape what we pay. Ends with a reflection on how better policy and grid access could make comfort affordable for all.</div></div>
+  <div class="ecard"><div class="ecard-title">🚗 Drive the Future: Electric Vehicles — good for me and the planet?</div><div class="ecard-desc">Start with curiosity around EVs — cost, charging, performance — then guide the conversation toward what's needed to make EVs accessible beyond big cities: renewable grids, charging infrastructure, and fair transition policies.</div></div>
+  <div class="ecard"><div class="ecard-title">🏠 Home Energy Consumption Diary</div><div class="ecard-desc">A journaling-based meet-up where participants track their energy use for a week, then discuss what surprised them most. Facilitators link personal habits to national energy dependence and open a discussion on how citizens can advocate for local solar and energy reforms.</div></div>
+  <div class="ecard"><div class="ecard-title">🔌 Plugged In: Why Does Our Electricity Cost So Much?</div><div class="ecard-desc">An explainer-style session with an energy analyst breaking down where your electricity bill really goes — generation, import, infrastructure, and fossil fuel subsidies — followed by a community discussion on how citizens can push for fairer, cleaner energy pricing.</div></div>
+  <div class="ecard"><div class="ecard-title">☀️ Is Rooftop Solar Really Revolutionary in My Neighborhood?</div><div class="ecard-desc">Invite 2–3 local residents or entrepreneurs who have installed solar panels to share their experiences. Use their stories to open a conversation on how citizens can become energy producers and what policy changes would make it easier.</div></div>
+  <div class="ecard"><div class="ecard-title">🛵 How to Reduce My Commuting Costs?</div><div class="ecard-desc">A casual session for motorcycle riders, delivery workers, and commuters exploring rising fuel costs, e-bikes, and public transport options. A guest speaker connects these struggles to the larger need for sustainable mobility policies and clean energy infrastructure.</div></div>
+  <div class="ecard"><div class="ecard-title">💡 Energy Myths &amp; Realities</div><div class="ecard-desc">A myth-busting Q&amp;A session with an expert or influencer answering common misconceptions about renewables, costs, and access. Encourages participants to share their own questions — turning skepticism into collective learning.</div></div>
+</div>
+
+<div class="contribute" style="margin-top:1.5rem">
+  <div>
+    <div class="contrib-text">Have an event format that worked for your community?</div>
+    <div class="contrib-sub">Share it with us and help grow this list.</div>
+  </div>
+  <a class="contrib-btn" href="mailto:hello@thegoodchat.org?subject=Event%20Format%20Suggestion">Share your format →</a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 3 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l3-campaign.html">
+      <div class="pn-ey">← Previous</div>
+      <div class="pn-title">🚀 How to launch a first campaign</div>
+    </a>
+    <a class="pn-card" href="kol-l3-storytelling.html">
+      <div class="pn-ey">Also in Level 3</div>
+      <div class="pn-title">🎭 3 storytelling tactics</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l3-data.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">📊 How can I know if my campaign is working?</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function atog(id){document.getElementById(id).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
