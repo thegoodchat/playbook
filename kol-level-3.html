@@ -14,7 +14,6 @@
 body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
 a{text-decoration:none;color:inherit}
 
-/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
 .logo{font-size:13px;font-weight:800;color:var(--p)}
 .nright{display:flex;align-items:center;gap:12px}
@@ -33,21 +32,18 @@ nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
 .sr-title{font-size:13px;font-weight:700;color:#111}
 .sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
 
-/* BREADCRUMB */
 .crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
 .crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
 .crumb a{color:var(--p)}
 .crumb a:hover{text-decoration:underline}
 .crumb .sep{color:#ccc}
 
-/* LEVEL STRIP */
 .lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
 .lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
 .lstep:hover{border-color:var(--pm);color:var(--p)}
 .lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
 .lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
 
-/* HERO */
 .pill{display:inline-flex;align-items:center;gap:7px;background:var(--pl);border:.5px solid var(--pm);border-radius:20px;padding:4px 12px;margin-bottom:1rem}
 .pill i{width:7px;height:7px;border-radius:50%;background:var(--p);font-style:normal}
 .pill span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p)}
@@ -55,11 +51,9 @@ h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:
 .lead{font-size:14px;color:#555;line-height:1.7;max-width:540px;margin-bottom:.4rem}
 .note{font-size:13px;color:#aaa;font-style:italic;margin-bottom:2rem}
 
-/* CONTEXT BOX */
 .ctx-box{background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1rem 1.25rem;margin-bottom:2rem;font-size:14px;color:var(--pd);line-height:1.7}
 .ctx-box strong{font-weight:700;color:var(--p)}
 
-/* SCROLL HINT HEADER */
 .scroll-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
 .scroll-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa}
 .scroll-hint{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--s)}
@@ -67,7 +61,6 @@ h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:
 .scroll-hint-dots span{width:18px;height:3px;border-radius:2px;background:var(--pm)}
 .scroll-hint-dots span.on{background:var(--s)}
 
-/* SCROLL TRACK */
 .scroll-track{position:relative;margin:0 -1.25rem;margin-bottom:2rem}
 .scroll-track::after{content:'';position:absolute;top:0;right:0;width:60px;height:100%;background:linear-gradient(to right,transparent,#fff);pointer-events:none;z-index:2}
 .scroll-inner{display:flex;gap:12px;overflow-x:auto;padding:4px 1.25rem 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
@@ -75,7 +68,6 @@ h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:
 .scroll-inner::-webkit-scrollbar-track{background:var(--pm);border-radius:2px;margin:0 1.25rem}
 .scroll-inner::-webkit-scrollbar-thumb{background:var(--s);border-radius:2px}
 
-/* CARDS */
 .scard{flex-shrink:0;width:190px;border:.5px solid var(--b);border-radius:12px;overflow:hidden;scroll-snap-align:start;text-decoration:none;transition:border-color .15s,transform .15s;display:flex;flex-direction:column}
 .scard:hover{border-color:var(--pm);transform:translateY(-2px)}
 .scard-img{height:120px;overflow:hidden;background:var(--pm);position:relative}
@@ -90,12 +82,10 @@ h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:
 .scard-cta span:last-child{font-size:13px;color:#ccc;transition:color .15s}
 .scard:hover .scard-cta span:last-child{color:var(--s)}
 
-/* PROGRESS DOTS */
 .progress-dots{display:flex;justify-content:center;gap:5px;margin-top:-8px;margin-bottom:2rem}
 .pdot{width:6px;height:6px;border-radius:50%;background:var(--pm);border:none;padding:0;cursor:pointer;transition:all .2s}
 .pdot.on{background:var(--s);width:18px;border-radius:3px}
 
-/* PREV/NEXT LEVEL NAV */
 .level-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
 .lnav-card{border:.5px solid var(--b);border-radius:10px;padding:.85rem 1rem;text-decoration:none;transition:border-color .15s}
 .lnav-card:hover{border-color:var(--pm)}
@@ -105,7 +95,6 @@ h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:
 .lnav-title{font-size:13px;font-weight:800;color:#111}
 .lnav-card.next .lnav-title{color:#fff}
 
-/* QUIZ BAR */
 .qbar{background:#fff5ec;border:.5px solid #fcd4a8;border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .qt{font-size:13px;font-weight:600;color:var(--pd)}
 .qt span{font-weight:400;color:#777;font-size:12px;display:block;margin-top:2px}
@@ -155,7 +144,7 @@ footer span{font-size:11px;color:#999;font-weight:500}
 </div>
 
 <div class="scroll-header">
-  <span class="scroll-label">6 pages in this level</span>
+  <span class="scroll-label">5 pages in this level</span>
   <div class="scroll-hint">
     <span>Scroll</span>
     <div class="scroll-hint-dots">
@@ -284,16 +273,13 @@ var inner = document.getElementById('scroll-inner');
 var cards = inner.querySelectorAll('.scard');
 var dots = document.querySelectorAll('.pdot');
 var hintDots = document.querySelectorAll('.scroll-hint-dots span');
-
-function scrollTo(i){
-  cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
-}
+function scrollTo(i){cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});}
 function updateDots(){
   var cardW = cards[0].offsetWidth + 12;
   var idx = Math.round(inner.scrollLeft / cardW);
   idx = Math.max(0, Math.min(idx, cards.length - 1));
-  dots.forEach(function(d,i){ d.classList.toggle('on', i===idx); });
-  hintDots.forEach(function(d,i){ d.classList.toggle('on', i===idx); });
+  dots.forEach(function(d,i){d.classList.toggle('on',i===idx);});
+  hintDots.forEach(function(d,i){d.classList.toggle('on',i===idx);});
 }
 inner.addEventListener('scroll', updateDots, {passive:true});
 </script>
