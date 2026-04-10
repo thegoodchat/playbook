@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Level 4: Engaging & Mobilizing — KOL Path</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--pl);border:.5px solid var(--pm);border-radius:20px;padding:4px 12px;margin-bottom:1rem}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--p);font-style:normal}
+.pill span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p)}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.6rem}
+.lead{font-size:14px;color:#555;line-height:1.7;max-width:540px;margin-bottom:.4rem}
+.note{font-size:13px;color:#aaa;font-style:italic;margin-bottom:2rem}
+.ctx-box{background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1rem 1.25rem;margin-bottom:2rem;font-size:14px;color:var(--pd);line-height:1.7}
+.ctx-box strong{font-weight:700;color:var(--p)}
+.scroll-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.scroll-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa}
+.scroll-hint{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--s)}
+.scroll-hint-dots{display:flex;gap:3px}
+.scroll-hint-dots span{width:18px;height:3px;border-radius:2px;background:var(--pm)}
+.scroll-hint-dots span.on{background:var(--s)}
+.scroll-track{position:relative;margin:0 -1.25rem;margin-bottom:2rem}
+.scroll-track::after{content:'';position:absolute;top:0;right:0;width:60px;height:100%;background:linear-gradient(to right,transparent,#fff);pointer-events:none;z-index:2}
+.scroll-inner{display:flex;gap:12px;overflow-x:auto;padding:4px 1.25rem 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.scroll-inner::-webkit-scrollbar{height:3px}
+.scroll-inner::-webkit-scrollbar-track{background:var(--pm);border-radius:2px;margin:0 1.25rem}
+.scroll-inner::-webkit-scrollbar-thumb{background:var(--s);border-radius:2px}
+.scard{flex-shrink:0;width:190px;border:.5px solid var(--b);border-radius:12px;overflow:hidden;scroll-snap-align:start;text-decoration:none;transition:border-color .15s,transform .15s;display:flex;flex-direction:column}
+.scard:hover{border-color:var(--pm);transform:translateY(-2px)}
+.scard-img{height:120px;overflow:hidden;background:var(--pm);position:relative}
+.scard-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:36px}
+.scard-num{position:absolute;top:8px;left:8px;background:var(--p);color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px}
+.scard-body{padding:.85rem;flex:1;display:flex;flex-direction:column;gap:5px}
+.scard-icon{font-size:16px}
+.scard-title{font-size:13px;font-weight:800;color:#111;line-height:1.35;flex:1}
+.scard-desc{font-size:11px;color:#888;line-height:1.5}
+.scard-cta{display:flex;align-items:center;justify-content:space-between;padding:.6rem .85rem;border-top:.5px solid var(--b);background:#fafafa}
+.scard-cta span:first-child{font-size:11px;font-weight:700;color:var(--p)}
+.scard-cta span:last-child{font-size:13px;color:#ccc;transition:color .15s}
+.scard:hover .scard-cta span:last-child{color:var(--s)}
+.progress-dots{display:flex;justify-content:center;gap:5px;margin-top:-8px;margin-bottom:2rem}
+.pdot{width:6px;height:6px;border-radius:50%;background:var(--pm);border:none;padding:0;cursor:pointer;transition:all .2s}
+.pdot.on{background:var(--s);width:18px;border-radius:3px}
+.level-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
+.lnav-card{border:.5px solid var(--b);border-radius:10px;padding:.85rem 1rem;text-decoration:none;transition:border-color .15s}
+.lnav-card:hover{border-color:var(--pm)}
+.lnav-card.next{background:var(--p);border-color:var(--p)}
+.lnav-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.lnav-card.next .lnav-ey{color:rgba(255,255,255,.6)}
+.lnav-title{font-size:13px;font-weight:800;color:#111}
+.lnav-card.next .lnav-title{color:#fff}
+.qbar{background:#fff5ec;border:.5px solid #fcd4a8;border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.qt{font-size:13px;font-weight:600;color:var(--pd)}
+.qt span{font-weight:400;color:#777;font-size:12px;display:block;margin-top:2px}
+.qbtn{padding:8px 16px;background:var(--s);color:#fff;font-size:12px;font-weight:700;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block}
+footer{margin-top:1.75rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <span>Level 4: Engaging &amp; Mobilizing</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep done" href="kol-level-2.html">Level 2 ✓</a>
+  <a class="lstep done" href="kol-level-3.html">Level 3 ✓</a>
+  <a class="lstep on" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<div class="pill"><i></i><span>Level 4 · KOL Path</span></div>
+<h1>Engaging &amp; Mobilizing</h1>
+<p class="lead">This level helps you deepen engagement, build trust, and support your community in taking collective action.</p>
+<p class="note">5 pages · Collaborate, experiment, and support collective action with care</p>
+
+<div class="ctx-box">
+  You're moving from starting conversations to <strong>sustaining them</strong>. This level is about building real relationships — and helping your community move from caring to acting.
+</div>
+
+<div class="scroll-header">
+  <span class="scroll-label">5 pages in this level</span>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-hint-dots">
+      <span class="on"></span><span></span><span></span><span></span><span></span>
+    </div>
+    <span>→</span>
+  </div>
+</div>
+
+<div class="scroll-track">
+  <div class="scroll-inner" id="scroll-inner">
+
+    <a class="scard" href="kol-l4-events.html">
+      <div class="scard-img"><div class="scard-img-ph">🎪</div><div class="scard-num">01</div></div>
+      <div class="scard-body">
+        <div class="scard-icon">🎪</div>
+        <div class="scard-title">Why and how to run meaningful events?</div>
+        <div class="scard-desc">Turning gatherings into movements</div>
+      </div>
+      <div class="scard-cta"><span>Read</span><span>›</span></div>
+    </a>
+
+    <a class="scard" href="kol-l4-cta.html">
+      <div class="scard-img"><div class="scard-img-ph">📣</div><div class="scard-num">02</div></div>
+      <div class="scard-body">
+        <div class="scard-icon">📣</div>
+        <div class="scard-title">What is a call to action?</div>
+        <div class="scard-desc">Getting people to do something — anything</div>
+      </div>
+      <div class="scard-cta"><span>Read</span><span>›</span></div>
+    </a>
+
+    <a class="scard" href="kol-l4-negative.html">
+      <div class="scard-img"><div class="scard-img-ph">🛡️</div><div class="scard-num">03</div></div>
+      <div class="scard-body">
+        <div class="scard-icon">🛡️</div>
+        <div class="scard-title">How to manage negative comments?</div>
+        <div class="scard-desc">Staying grounded when the comments get spicy</div>
+      </div>
+      <div class="scard-cta"><span>Read</span><span>›</span></div>
+    </a>
+
+    <a class="scard" href="kol-l4-equip.html">
+      <div class="scard-img"><div class="scard-img-ph">🧰</div><div class="scard-num">04</div></div>
+      <div class="scard-body">
+        <div class="scard-icon">🧰</div>
+        <div class="scard-title">How to equip my community to run their own local actions?</div>
+        <div class="scard-desc">From follower to leader</div>
+      </div>
+      <div class="scard-cta"><span>Read</span><span>›</span></div>
+    </a>
+
+    <a class="scard" href="kol-l4-relationship.html">
+      <div class="scard-img"><div class="scard-img-ph">🤍</div><div class="scard-num">05</div></div>
+      <div class="scard-body">
+        <div class="scard-icon">🤍</div>
+        <div class="scard-title">How to build a closer relationship with my audience?</div>
+        <div class="scard-desc">Community building through climate conversations</div>
+      </div>
+      <div class="scard-cta"><span>Read</span><span>›</span></div>
+    </a>
+
+  </div>
+</div>
+
+<div class="progress-dots">
+  <button class="pdot on" onclick="scrollTo(0)"></button>
+  <button class="pdot" onclick="scrollTo(1)"></button>
+  <button class="pdot" onclick="scrollTo(2)"></button>
+  <button class="pdot" onclick="scrollTo(3)"></button>
+  <button class="pdot" onclick="scrollTo(4)"></button>
+</div>
+
+<div class="level-nav">
+  <a class="lnav-card" href="kol-level-3.html">
+    <div class="lnav-ey">← Previous level</div>
+    <div class="lnav-title">Level 3: Starting Conversations</div>
+  </a>
+  <a class="lnav-card next" href="kol-level-5.html">
+    <div class="lnav-ey">Next level →</div>
+    <div class="lnav-title">Level 5: Scale &amp; Accelerate</div>
+  </a>
+</div>
+
+<div class="qbar">
+  <div class="qt">Take the quiz &amp; get your certificate<span>Test what you've learned and earn a certificate from The Good Chat Playbook team.</span></div>
+  <a href="https://makesense.typeform.com/to/AO0X5upD" target="_blank" class="qbtn">Take the quiz →</a>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+var inner = document.getElementById('scroll-inner');
+var cards = inner.querySelectorAll('.scard');
+var dots = document.querySelectorAll('.pdot');
+var hintDots = document.querySelectorAll('.scroll-hint-dots span');
+function scrollTo(i){cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});}
+function updateDots(){
+  var cardW = cards[0].offsetWidth + 12;
+  var idx = Math.round(inner.scrollLeft / cardW);
+  idx = Math.max(0, Math.min(idx, cards.length - 1));
+  dots.forEach(function(d,i){d.classList.toggle('on',i===idx);});
+  hintDots.forEach(function(d,i){d.classList.toggle('on',i===idx);});
+}
+inner.addEventListener('scroll', updateDots, {passive:true});
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
