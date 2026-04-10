@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Story, Your Why — KOL Level 2</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;max-width:600px;font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:800;color:#111;margin-bottom:.5rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* OVERVIEW PILLS */
+.overview{display:flex;flex-direction:column;gap:8px;margin-bottom:2rem}
+.ov-item{display:flex;align-items:flex-start;gap:10px;background:var(--pl);border:.5px solid var(--pm);border-radius:9px;padding:.75rem 1rem;font-size:13px;color:var(--pd);line-height:1.6}
+.ov-num{font-size:12px;font-weight:800;background:var(--p);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+/* OPENING PROSE */
+.opening{font-size:15px;color:#333;line-height:1.85;padding:1.25rem 1.5rem;background:#f7f7f5;border-radius:10px;border:.5px solid var(--b);margin-bottom:2rem}
+.opening em{font-style:italic;color:var(--p)}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2rem}
+.step{border:.5px solid var(--b);border-radius:12px;overflow:hidden}
+.step-head{display:flex;align-items:center;gap:14px;padding:1.1rem 1.25rem;background:var(--p);cursor:pointer;user-select:none}
+.step-num{font-size:13px;font-weight:800;color:rgba(255,255,255,.6)}
+.step-title{font-size:16px;font-weight:800;color:#fff;flex:1}
+.sarr{font-size:16px;color:rgba(255,255,255,.5);transition:transform .2s}
+.step.open .sarr{transform:rotate(90deg);color:rgba(255,255,255,.9)}
+.step.open .step-head{background:var(--pd)}
+.step-body{display:none;padding:1.25rem}
+.step.open .step-body{display:block}
+.step-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.step-body strong{font-weight:700;color:#111}
+.step-body em{font-style:italic}
+
+/* VALUE CHIPS */
+.values{display:flex;flex-direction:column;gap:10px;margin:1rem 0}
+.vchip{border:.5px solid var(--b);border-radius:9px;padding:.85rem 1rem;transition:border-color .15s}
+.vchip:hover{border-color:var(--pm)}
+.vc-head{font-size:14px;font-weight:800;color:var(--p);margin-bottom:.3rem}
+.vc-body{font-size:13px;color:#555;line-height:1.6}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* EXAMPLES ROW */
+.examples{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:1rem 0}
+.ex-chip{background:#f7f7f5;border:.5px solid var(--b);border-radius:8px;padding:.75rem .9rem}
+.ex-role{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--s);margin-bottom:.3rem}
+.ex-text{font-size:12px;color:#444;line-height:1.55}
+
+/* EXERCISE SECTION */
+.exercise-box{display:grid;grid-template-columns:44px 1fr;border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin:1.5rem 0}
+.ex-sidebar{background:var(--s);padding:1.25rem .6rem;display:flex;align-items:flex-start;justify-content:center}
+.ex-sidebar-text{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+.ex-content{padding:1.25rem}
+.ex-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.5rem}
+.ex-title{font-size:16px;font-weight:800;color:var(--p);margin-bottom:.75rem;line-height:1.3}
+.ex-content p{font-size:13px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.ex-content strong{font-weight:700;color:#111}
+.ex-content em{font-style:italic}
+.ex-pdf{display:inline-flex;align-items:center;gap:7px;margin-top:.5rem;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:8px;padding:7px 14px;background:var(--pl);text-decoration:none}
+.ex-pdf:hover{background:var(--pm)}
+
+/* CIVIC ACTIONS */
+.actions-tabs{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
+.atab{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;border:.5px solid var(--b);background:none;cursor:pointer;color:#666;transition:all .15s}
+.atab:hover{border-color:var(--pm);color:var(--p)}
+.atab.on{background:var(--p);color:#fff;border-color:var(--p)}
+.actions-panel{display:none}
+.actions-panel.vis{display:block}
+
+.action-table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:13px}
+.action-table th{text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.6rem .9rem;border-bottom:.5px solid var(--b);color:#aaa}
+.action-table td{padding:.75rem .9rem;border-bottom:.5px solid var(--b);vertical-align:top;line-height:1.65}
+.action-table tr:last-child td{border-bottom:none}
+.action-table tr:hover td{background:#f7f7f5}
+.action-table td:first-child{font-weight:700;color:#111;width:38%}
+.action-table td:last-child{color:#555;font-style:italic}
+.action-note{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--pd);background:var(--pl);border:.5px solid var(--pm);border-radius:8px;padding:.75rem 1rem;line-height:1.6}
+
+/* COMPLETE BANNER */
+.complete-box{background:var(--p);border-radius:12px;padding:1.5rem;margin-top:2.5rem;text-align:center}
+.cb-icon{font-size:28px;margin-bottom:.5rem}
+.cb-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:.4rem}
+.cb-sub{font-size:13px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:1.1rem}
+.cb-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--s);color:#fff;font-size:13px;font-weight:800;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;text-decoration:none}
+.cb-btn:hover{background:#e07a18}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-2.html">Level 2: Your Entry Point</a><span class="sep">›</span>
+  <span>Your Story, Your Why</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep on" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🪞 Level 2 · Your Entry Point</p>
+<h1>Your Story, Your Why — Finding Your Place in the Movement</h1>
+<p class="lead">It starts with you. When you turn your story into a message, your voice becomes a force for collective change.</p>
+
+<div class="overview">
+  <div class="ov-item"><div class="ov-num">1</div>Identifying <strong>your 'why'</strong> — connecting personal experience and values to the climate movement</div>
+  <div class="ov-item"><div class="ov-num">2</div>Finding <strong>your unique voice</strong> — the first steps in identifying a natural, authentic way to discuss climate topics</div>
+  <div class="ov-item"><div class="ov-num">3</div>A <strong>mini-list of civic actions</strong> — to integrate into regular online and offline dialogue</div>
+</div>
+
+<div class="opening">
+  We often think of the climate movement as something big and far away — something led by scientists, activists, or policymakers. But honestly? It's much closer than we think.<br><br>
+  Sometimes it begins with something small. The way the air smells before a storm. The street in Bangkok flooding again after one heavy rain. The rising cost of food that used to feel so normal.<br><br>
+  Or maybe it's not dramatic at all. Just that quiet ache when you realize <em>the world you love might not stay the same.</em><br><br>
+  That's where purpose starts — from noticing what matters to you.
+</div>
+
+<hr>
+
+<div class="steps">
+
+  <div class="step" id="st1">
+    <div class="step-head" onclick="stog('st1')">
+      <span class="step-num">Step 1</span>
+      <span class="step-title">Begin with your personal story</span>
+      <span class="sarr">›</span>
+    </div>
+    <div class="step-body">
+      <p>Forget the statistics for a moment. <strong>What was your turning point?</strong></p>
+      <p>Was it seeing your neighborhood in Jakarta flooded one too many times? Watching fishermen in your hometown struggle to predict the tides? Or maybe it was something gentler — like remembering how your grandma saved every scrap of food because she understood the value of enough.</p>
+      <div class="pquote"><p>These moments aren't random. They're clues to your why. When you speak from them — with honesty, vulnerability, even humor — you help others see themselves in the story. That's where connection begins.</p></div>
+    </div>
+  </div>
+
+  <div class="step" id="st2">
+    <div class="step-head" onclick="stog('st2')">
+      <span class="step-num">Step 2</span>
+      <span class="step-title">Identify your values — your inner compass</span>
+      <span class="sarr">›</span>
+    </div>
+    <div class="step-body">
+      <p>Ask yourself: <strong>What makes me angry, or protective, or hopeful? What kind of world do I want to help build?</strong></p>
+      <div class="values">
+        <div class="vchip">
+          <div class="vc-head">Care</div>
+          <div class="vc-body">For people, food, craft, or community. Seeing how some in Manila live with blackouts or flooding while others barely notice.</div>
+        </div>
+        <div class="vchip">
+          <div class="vc-head">Fairness</div>
+          <div class="vc-body">Standing up for those most affected by floods, heatwaves, and rising costs of living.</div>
+        </div>
+        <div class="vchip">
+          <div class="vc-head">Creativity</div>
+          <div class="vc-body">Finding beauty in repair, reinvention, reuse. Reimagining how we live, design, and consume.</div>
+        </div>
+      </div>
+      <p>When you name your values, you start to see how they naturally link to the climate movement. <strong>You don't have to force it. Your values are already your connection point.</strong></p>
+    </div>
+  </div>
+
+  <div class="step" id="st3">
+    <div class="step-head" onclick="stog('st3')">
+      <span class="step-num">Step 3</span>
+      <span class="step-title">Connect the personal to the bigger picture</span>
+      <span class="sarr">›</span>
+    </div>
+    <div class="step-body">
+      <p>Once you know why you care, zoom out: <em>What systems around you could change so that caring isn't just personal — it's possible for everyone in our countries?</em></p>
+      <div class="examples">
+        <div class="ex-chip">
+          <div class="ex-role">If you're a chef</div>
+          <div class="ex-text">Supporting local farmers and pushing for fair food supply chains.</div>
+        </div>
+        <div class="ex-chip">
+          <div class="ex-role">If you're a designer</div>
+          <div class="ex-text">Asking how brands can build circular production instead of endless consumption.</div>
+        </div>
+        <div class="ex-chip">
+          <div class="ex-role">If you're a wellness creator</div>
+          <div class="ex-text">Exploring how access to clean air, safe water, and rest is a basic right — not a luxury.</div>
+        </div>
+      </div>
+      <div class="pquote"><p>Your story is the spark. But your influence can fuel systemic imagination — the kind that asks, "What if we all lived differently?"</p></div>
+    </div>
+  </div>
+
+  <div class="step" id="st4">
+    <div class="step-head" onclick="stog('st4')">
+      <span class="step-num">Step 4</span>
+      <span class="step-title">Lead with hope, but stay grounded</span>
+      <span class="sarr">›</span>
+    </div>
+    <div class="step-body">
+      <p><strong>Hope isn't naïve. It's strategy.</strong></p>
+      <p>When you show your community what trying looks like — biking through traffic, cutting down waste, joining a neighborhood clean-up — you're making climate action visible.</p>
+      <p>In Southeast Asia, we already know what resilience looks like. It's the street vendors adapting to the heat, the barangay that rebuilds after every storm, the kampung spirit that refuses to disappear.</p>
+      <p>That's the heart of systemic change — communities that never stop believing we can do better together.</p>
+    </div>
+  </div>
+
+  <div class="step" id="st5">
+    <div class="step-head" onclick="stog('st5')">
+      <span class="step-num">Step 5</span>
+      <span class="step-title">From me to we</span>
+      <span class="sarr">›</span>
+    </div>
+    <div class="step-body">
+      <p>Personal change alone won't fix the climate crisis — but it can shift culture. And culture is what opens the door to policy, innovation, and collective power.</p>
+      <p>When you share your story, others start to share theirs. When you collaborate — with farmers, teachers, city planners, fellow creators — the conversation expands.</p>
+      <div class="pquote"><p>What began as your why becomes our way forward. Change scales not from the top down, but from the inside out.</p></div>
+      <p>You don't have to be an activist to make an impact. You just have to care deeply enough to connect your story to the bigger one — the one we're all still writing.</p>
+      <p>Because movements aren't built on perfection. They're built on people — in Bangkok, Jakarta, Manila — who start where they are, use what they have, and lead with heart.</p>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- EXERCISE -->
+<div class="exercise-box">
+  <div class="ex-sidebar"><span class="ex-sidebar-text">Exercise</span></div>
+  <div class="ex-content">
+    <div class="ex-label">🔑 Marshall Ganz · Harvard</div>
+    <div class="ex-title">The Story of Self, Us and Now</div>
+    <p>To build an energy transition story that relates to your community, you must first find your personal story. The model we'll follow was developed by <strong>Marshall Ganz</strong> — a Harvard professor who has worked with people to help them become stronger organisers for change. He calls it <strong>"Public Narrative."</strong></p>
+    <p><em>"A good public story is drawn from the series of choice points that have structured the 'plot' of your life — the challenges you faced, choices you made, and outcomes you experienced."</em></p>
+    <a class="ex-pdf" href="https://350.org/wp-content/uploads/2020/10/350-storytelling-toolkit_EN.pdf" target="_blank">📄 Download the 350.org Storytelling Toolkit ↗</a>
+  </div>
+</div>
+
+<hr>
+
+<!-- CIVIC ACTIONS -->
+<h2>Mini-Lists of Accessible Civic Actions</h2>
+<p>Three tiers of action — pick what feels right for where you are right now.</p>
+
+<div class="actions-tabs">
+  <button class="atab on" onclick="showAction('everyday',this)">🌱 Everyday Life</button>
+  <button class="atab" onclick="showAction('community',this)">🤝 Community</button>
+  <button class="atab" onclick="showAction('systemic',this)">🌍 Systemic & Creative</button>
+</div>
+
+<div class="actions-panel vis" id="ap-everyday">
+  <p style="font-size:13px;color:#555;margin-bottom:1rem">Simple, story-worthy habits that normalize caring — easy to mention in casual talk, captions, or content.</p>
+  <table class="action-table">
+    <thead><tr><th>Action</th><th>How to include it in daily talk</th></tr></thead>
+    <tbody>
+      <tr><td>Buy local / seasonal</td><td>"Been loving how mangoes taste extra sweet this season — eating with the rhythm of nature just hits different."</td></tr>
+      <tr><td>Repair / reuse / swap</td><td>"My tote's older than my Instagram. Still works fine."</td></tr>
+      <tr><td>Walk / bike / use public transport</td><td>"I started taking the Skytrain again — weirdly peaceful when you don't rush."</td></tr>
+      <tr><td>Support small producers</td><td>"Got this from a local farmer's market — feels good knowing who grew it."</td></tr>
+      <tr><td>Slow down consumption</td><td>"Trying to wait 24 hours before I buy something online. Surprisingly freeing."</td></tr>
+    </tbody>
+  </table>
+  <div class="action-note"><span>💬</span>These open the door for climate conversation without heavy language — they model mindset, not moralizing.</div>
+</div>
+
+<div class="actions-panel" id="ap-community">
+  <p style="font-size:13px;color:#555;margin-bottom:1rem">Actions that shift from <em>me</em> to <em>we</em> — useful for creators who host, collaborate, or organize.</p>
+  <table class="action-table">
+    <thead><tr><th>Action</th><th>How to bring it up</th></tr></thead>
+    <tbody>
+      <tr><td>Join / host a cleanup or tree planting</td><td>"We're doing a small riverside cleanup this weekend — join if you're free!"</td></tr>
+      <tr><td>Neighborhood swap / food share</td><td>"We traded snacks across the street yesterday — everyone brought something homemade."</td></tr>
+      <tr><td>Community fridge or pantry</td><td>"Our local café set up a free-fridge corner. I drop off extras sometimes."</td></tr>
+      <tr><td>Skill-sharing / repair club</td><td>"Started a fix-it Sunday — people bring things, and we learn together."</td></tr>
+      <tr><td>Local storytelling / mapping</td><td>"We're collecting stories of old trees in our area. It's like memory-keeping for the neighborhood."</td></tr>
+    </tbody>
+  </table>
+  <div class="action-note"><span>💬</span>These sound like culture, not activism — ideal for normalizing civic engagement through warmth and belonging.</div>
+</div>
+
+<div class="actions-panel" id="ap-systemic">
+  <p style="font-size:13px;color:#555;margin-bottom:1rem">When your platform has reach — these spark reflection about systems, not just individuals.</p>
+  <table class="action-table">
+    <thead><tr><th>Action</th><th>How to make it accessible</th></tr></thead>
+    <tbody>
+      <tr><td>Ask "Where did this come from?"</td><td>"Every time I buy something new, I try to picture the hands that made it."</td></tr>
+      <tr><td>Spotlight others on your platform</td><td>"Met a young creator working on solar lamps for rural homes — stories like this deserve space."</td></tr>
+      <tr><td>Advocate gently</td><td>"Wouldn't it be cool if Bangkok had more shade trees for cyclists?"</td></tr>
+      <tr><td>Collaborate with purpose</td><td>"Next collab? Maybe with a brand that's rethinking packaging."</td></tr>
+      <tr><td>Join local discussions or petitions</td><td>"Our district's testing flood sensors — small, but these things add up."</td></tr>
+    </tbody>
+  </table>
+  <div class="action-note"><span>💬</span>This set helps creators link lifestyle content with systemic imagination — framing civic action as part of modern creativity.</div>
+</div>
+
+<div class="complete-box">
+  <div class="cb-icon">🎉</div>
+  <div class="cb-title">You've completed Level 2!</div>
+  <p class="cb-sub">You've found your entry point — your why, your voice, and your first actions. Level 3 is where you learn how to actually start the conversation.</p>
+  <a class="cb-btn" href="kol-level-3.html">Start Level 3 →</a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 2 — All pages</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l2-solar.html">
+      <div class="pn-ey">2.1</div>
+      <div class="pn-title">☀️ Why solar energy?</div>
+    </a>
+    <a class="pn-card" href="kol-l2-conversation.html">
+      <div class="pn-ey">2.2</div>
+      <div class="pn-title">💬 The Power of Conversations</div>
+    </a>
+    <a class="pn-card" href="kol-l2-imposter.html">
+      <div class="pn-ey">2.3</div>
+      <div class="pn-title">💪 Imposter syndrome</div>
+    </a>
+    <a class="pn-card" href="kol-l2-organizations.html">
+      <div class="pn-ey">2.4</div>
+      <div class="pn-title">🌿 Climate organizations</div>
+    </a>
+    <a class="pn-card" href="kol-l2-who-am-i.html">
+      <div class="pn-ey">2.5 · You are here</div>
+      <div class="pn-title">🪞 Your Story, Your Why</div>
+    </a>
+    <a class="pn-card highlight" href="kol-level-3.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">Level 3: Starting Conversations</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function stog(id){document.getElementById(id).classList.toggle('open')}
+function showAction(id,btn){
+  document.querySelectorAll('.actions-panel').forEach(function(p){p.classList.remove('vis')});
+  document.querySelectorAll('.atab').forEach(function(b){b.classList.remove('on')});
+  document.getElementById('ap-'+id).classList.add('vis');
+  btn.classList.add('on');
+}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
