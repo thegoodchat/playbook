@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3 Storytelling Tactics to Get People's Attention — KOL Level 3</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:.75rem;font-style:italic;max-width:600px}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* INTRO */
+.intro-text{font-size:15px;color:#333;line-height:1.85;margin-bottom:1.5rem}
+.intro-text em{font-style:italic;color:var(--p)}
+
+/* JUMP LINKS */
+.jumps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2.5rem}
+.jump{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--p);background:var(--pl);border:.5px solid var(--pm);border-radius:20px;padding:6px 14px;text-decoration:none;transition:background .15s}
+.jump:hover{background:var(--pm)}
+.jump-num{font-size:10px;font-weight:800;background:var(--p);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* TACTIC BLOCKS */
+.tactic{border-radius:14px;overflow:hidden;margin-bottom:2rem}
+.tactic-head{padding:1.5rem}
+.t1 .tactic-head{background:var(--p)}
+.t2 .tactic-head{background:#fff5ec;border:.5px solid #fcd4a8}
+.t3 .tactic-head{background:#f7f7f5;border:.5px solid var(--b)}
+.tactic-label{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.t1 .tactic-label{color:rgba(255,255,255,.6)}
+.t2 .tactic-label{color:var(--s)}
+.t3 .tactic-label{color:#888}
+.tactic-num{font-size:42px;font-weight:800;line-height:1;margin-bottom:.4rem}
+.t1 .tactic-num{color:rgba(255,255,255,.2)}
+.t2 .tactic-num{color:#fcd4a8}
+.t3 .tactic-num{color:#ddd}
+.tactic-title{font-size:22px;font-weight:800;line-height:1.2;margin-bottom:.5rem}
+.t1 .tactic-title{color:#fff}
+.t2 .tactic-title{color:var(--pd)}
+.t3 .tactic-title{color:var(--p)}
+.tactic-hook{font-size:14px;line-height:1.7;font-style:italic}
+.t1 .tactic-hook{color:rgba(255,255,255,.8)}
+.t2 .tactic-hook{color:#8a4a00}
+.t3 .tactic-hook{color:#555}
+
+.tactic-body{padding:1.5rem;border:.5px solid var(--b);border-top:none;border-radius:0 0 14px 14px;background:#fff}
+.tactic-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.tactic-body strong{font-weight:700;color:#111}
+.tactic-body em{font-style:italic}
+
+/* BEFORE / AFTER */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1rem 0}
+.ba-card{border-radius:9px;padding:.85rem 1rem}
+.ba-before{background:#fef3f2;border:.5px solid #fecaca}
+.ba-after{background:var(--pl);border:.5px solid var(--pm)}
+.ba-label{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem}
+.ba-before .ba-label{color:#9b1c1c}
+.ba-after .ba-label{color:var(--p)}
+.ba-text{font-size:13px;color:#444;line-height:1.65;font-style:italic}
+.ba-before .ba-text{color:#9b1c1c}
+.ba-after .ba-text{color:var(--pd)}
+
+/* TRY THIS */
+.try-this{background:var(--p);border-radius:10px;padding:1rem 1.25rem;margin:1rem 0}
+.try-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.4rem}
+.try-text{font-size:14px;font-weight:700;color:#fff;font-style:italic;line-height:1.6}
+
+/* POP CULTURE EXAMPLES */
+.pc-examples{display:flex;flex-direction:column;gap:12px;margin:1rem 0}
+.pce{border:.5px solid var(--b);border-radius:10px;overflow:hidden}
+.pce-head{padding:.85rem 1.1rem;background:#f7f7f5;border-bottom:.5px solid var(--b)}
+.pce-emoji{font-size:16px;margin-right:6px}
+.pce-title{font-size:14px;font-weight:800;color:#111;display:inline}
+.pce-body{padding:.85rem 1.1rem}
+.pce-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:.6rem}
+.pce-body strong{font-weight:700;color:#111}
+.pce-values{display:flex;flex-wrap:wrap;gap:5px;margin:.5rem 0}
+.pce-val{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--pl);color:var(--p);border:.5px solid var(--pm)}
+
+/* INVISIBLE EXAMPLES */
+.inv-examples{display:flex;flex-direction:column;gap:8px;margin:1rem 0}
+.inv-ex{font-family:'Raleway',sans-serif;font-size:13px;font-style:italic;color:var(--pd);background:var(--pl);border-left:3px solid var(--s);padding:.65rem 1rem;border-radius:0 8px 8px 0}
+
+/* WHY BOX */
+.why-box{border:.5px solid var(--b);border-radius:10px;padding:1rem 1.25rem;margin:1.25rem 0;background:#f7f7f5}
+.why-box p{font-size:13px;color:#444;line-height:1.75;margin-bottom:.4rem}
+.why-box strong{font-weight:700;color:#111}
+.why-box em{font-style:italic}
+
+/* REMEMBER */
+.remember{background:var(--p);border-radius:12px;padding:1.5rem;margin-top:2rem}
+.rem-title{font-size:14px;font-weight:800;color:#fff;margin-bottom:.85rem;display:flex;align-items:center;gap:6px}
+.rem-points{display:flex;flex-direction:column;gap:10px}
+.rem-point{font-size:13px;color:rgba(255,255,255,.88);line-height:1.7;padding:.75rem 1rem;background:rgba(255,255,255,.08);border-radius:8px}
+.rem-point strong{color:#fff;font-weight:800}
+.rem-closer{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;margin-top:1rem;font-style:italic}
+
+/* LEVEL COMPLETE */
+.level-complete{background:var(--pl);border:.5px solid var(--pm);border-radius:12px;padding:1.5rem;margin-top:2rem;text-align:center}
+.lc-icon{font-size:28px;margin-bottom:.5rem}
+.lc-title{font-size:16px;font-weight:800;color:var(--p);margin-bottom:.4rem}
+.lc-sub{font-size:13px;color:#555;line-height:1.65;margin-bottom:1.1rem}
+.lc-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--p);color:#fff;font-size:13px;font-weight:800;font-family:'Raleway',sans-serif;border:none;border-radius:8px;cursor:pointer;text-decoration:none}
+.lc-btn:hover{background:var(--pd)}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-3.html">Level 3: Starting Conversations</a><span class="sep">›</span>
+  <span>3 Storytelling Tactics</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep done" href="kol-level-2.html">Level 2 ✓</a>
+  <a class="lstep on" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🎭 Level 3 · Starting Conversations</p>
+<h1>3 storytelling tactics to get people's attention</h1>
+<p class="lead">Before you ask people to act, you have to earn their attention. Here are three tactics to open the door.</p>
+
+<p class="intro-text">You don't need to be an activist to care. You just need to care <em>loudly</em> — in your own language, through your own vibe. This is for creators, meme lords, musicians, gamers, beauty vloggers, food reviewers — anyone with a mic and a mood who wants to make "climate" part of the story without losing your followers.</p>
+<p class="intro-text">Climate talk doesn't have to sound like a policy briefing. It can sound like your next vlog, your next post, your next collab. You don't have to turn into a "climate creator." You just have to make your existing content a little more <em>conscious</em> and a lot more <em>connected.</em></p>
+
+<div class="jumps">
+  <a class="jump" href="#t1"><div class="jump-num">1</div>Offering New Futures</a>
+  <a class="jump" href="#t2"><div class="jump-num">2</div>Repurposing Popular Culture</a>
+  <a class="jump" href="#t3"><div class="jump-num">3</div>Making the Invisible Visible</a>
+</div>
+
+<!-- TACTIC 1 -->
+<div class="tactic t1" id="t1">
+  <div class="tactic-head">
+    <div class="tactic-label">Tactic 1 of 3</div>
+    <div class="tactic-num">01</div>
+    <div class="tactic-title">Offering New Futures</div>
+    <div class="tactic-hook">People tune out doom. They lean in to possibility.</div>
+  </div>
+  <div class="tactic-body">
+    <p>When you talk about climate, don't start with what's dying. Start with what's <strong>being reborn</strong>. Paint futures your followers actually want to live in. Tell them about more livable cities, fairer systems, better air, more time to nap.</p>
+
+    <div class="ba-grid">
+      <div class="ba-card ba-before">
+        <div class="ba-label">❌ Instead of this</div>
+        <div class="ba-text">"We need to reduce carbon emissions."</div>
+      </div>
+      <div class="ba-card ba-after">
+        <div class="ba-label">✅ Try this</div>
+        <div class="ba-text">"Imagine your city so cool you can walk to the convenience store without melting."</div>
+      </div>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-card ba-before">
+        <div class="ba-label">❌ Instead of this</div>
+        <div class="ba-text">"Act now before it's too late."</div>
+      </div>
+      <div class="ba-card ba-after">
+        <div class="ba-label">✅ Try this</div>
+        <div class="ba-text">"What if we built a version of the future our grandkids would actually brag about?"</div>
+      </div>
+    </div>
+
+    <p>Dream out loud. Remix sustainability with lifestyle, tech, food, or love. Make it feel like a trend we can all opt into — not homework from a climate conference.</p>
+  </div>
+</div>
+
+<!-- TACTIC 2 -->
+<div class="tactic t2" id="t2">
+  <div class="tactic-head">
+    <div class="tactic-label">Tactic 2 of 3</div>
+    <div class="tactic-num">02</div>
+    <div class="tactic-title">Repurposing Popular Cultural Narratives</div>
+    <div class="tactic-hook">Every viral trend carries a hidden belief about how life should feel. That's what we call a cultural narrative. You can remix it.</div>
+  </div>
+  <div class="tactic-body">
+    <p>When something trends — a cooking hack, a city meme, a #CleanTok reel — it's because it resonates with shared desires: to feel safe, cared for, efficient, or in control. These same emotional drivers can power climate and sustainability stories.</p>
+    <p>As a creator, you can <strong>reuse these emotional storylines</strong> to talk about climate in a way that feels natural to your audience. You don't need to invent a new message. You just need to <strong>translate existing pop-culture feelings into climate meanings.</strong></p>
+
+    <div class="pc-examples">
+
+      <div class="pce">
+        <div class="pce-head">
+          <span class="pce-emoji">🍜</span>
+          <span class="pce-title">Example: Nutrition &amp; Food Security</span>
+        </div>
+        <div class="pce-body">
+          <p>Food content is everywhere — recipe reels, healthy eating journeys. Behind every dish is a web of climate stories: where the ingredients come from, how extreme weather affects crops, who still gets to eat well when prices spike.</p>
+          <div class="pce-values">
+            <span class="pce-val">pleasure</span>
+            <span class="pce-val">nourishment</span>
+            <span class="pce-val">care</span>
+            <span class="pce-val">access</span>
+            <span class="pce-val">authenticity</span>
+          </div>
+          <div class="try-this">
+            <div class="try-label">💡 Try this</div>
+            <div class="try-text">"Your favorite comfort food might be climate's next endangered species."</div>
+          </div>
+          <p style="margin-top:.75rem">Then unpack it visually. Show the farmer behind the ingredient, the flooded rice field, or the food stall adapting to drought. You're not just talking about "food security" — you're showing that <strong>climate care = keeping everyone fed.</strong></p>
+        </div>
+      </div>
+
+      <div class="pce">
+        <div class="pce-head">
+          <span class="pce-emoji">🏠</span>
+          <span class="pce-title">Example: Home Care &amp; Organization</span>
+        </div>
+        <div class="pce-body">
+          <p>TikToks about cleaning, decluttering, and "aesthetic rest" are secretly about control in a chaotic world. People love seeing a messy room transformed — it's visual proof that care and order are possible.</p>
+          <p>That's the perfect metaphor for climate action at home scale: <strong>tidying up the planet.</strong></p>
+          <div class="pce-values">
+            <span class="pce-val">calmness</span>
+            <span class="pce-val">control</span>
+            <span class="pce-val">safety</span>
+            <span class="pce-val">small wins</span>
+          </div>
+          <div class="try-this">
+            <div class="try-label">💡 Try this</div>
+            <div class="try-text">"Cleaning your home? Try cleaning your air too."</div>
+          </div>
+          <p style="margin-top:.75rem">Use the same emotional arc — from overwhelm to peace. You're not preaching, you're showing that sustainability <em>feels</em> like serenity.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="why-box">
+      <p><strong>🌏 Why this tactic matters:</strong> You're not inventing a new story. You're <strong>remixing old ones with new meaning.</strong> When your audience sees that climate themes fit naturally into their favorite cultural languages — food, home life, gaming — the message feels familiar instead of foreign.</p>
+      <p>Culture is already climate. <em>Just in disguise.</em> You're not forcing a new agenda. You're decoding what's been hiding in plain sight.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TACTIC 3 -->
+<div class="tactic t3" id="t3">
+  <div class="tactic-head">
+    <div class="tactic-label">Tactic 3 of 3</div>
+    <div class="tactic-num">03</div>
+    <div class="tactic-title">Making the Invisible Visible</div>
+    <div class="tactic-hook">The most powerful stories reveal what people don't usually see.</div>
+  </div>
+  <div class="tactic-body">
+    <p>Show the factory worker behind your outfit. The flood map behind your weekend road trip. The auntie who still separates recyclables by hand.</p>
+    <p><strong>Visibility is empathy — and empathy is action.</strong></p>
+
+    <div class="inv-examples">
+      <div class="inv-ex">"What you don't see when you turn on your AC."</div>
+      <div class="inv-ex">"Meet the real MVPs keeping your mango sticky rice possible."</div>
+    </div>
+
+    <p>This isn't guilt-tripping. It's <strong>perspective-flipping.</strong> Once people <em>see</em>, they can't unsee — and that's how movements start.</p>
+    <p>You don't have to be dramatic or heavy. You just have to point the camera at what's already there.</p>
+  </div>
+</div>
+
+<!-- REMEMBER -->
+<div class="remember">
+  <div class="rem-title">🔁 Remember</div>
+  <div class="rem-points">
+    <div class="rem-point"><strong>Be honest, specific, and consistent.</strong> Climate storytelling works when it feels human — grounded in your real life, not a policy briefing.</div>
+    <div class="rem-point"><strong>Make people see themselves in the story.</strong> Where caring for the planet feels like caring for home, friends, food, and daily joy.</div>
+    <div class="rem-point"><strong>You're helping people imagine</strong> how good it could feel to live differently — together.</div>
+  </div>
+  <div class="rem-closer">You don't have to turn into a climate creator. You just have to be yourself, with a little more intention. That's enough to shift culture.</div>
+</div>
+
+<div class="level-complete">
+  <div class="lc-icon">🎉</div>
+  <div class="lc-title">You've completed Level 3!</div>
+  <p class="lc-sub">You've got the topics, the tactics, and the tools to measure impact. Level 4 is where you learn how to build a community and deepen engagement.</p>
+  <a class="lc-btn" href="kol-level-4.html">Start Level 4 →</a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 3 — All pages</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l3-gaps.html">
+      <div class="pn-ey">3.1</div>
+      <div class="pn-title">🔍 Key gaps in the energy transition</div>
+    </a>
+    <a class="pn-card" href="kol-l3-topics.html">
+      <div class="pn-ey">3.2</div>
+      <div class="pn-title">💡 Top topics to start conversations</div>
+    </a>
+    <a class="pn-card" href="kol-l3-campaign.html">
+      <div class="pn-ey">3.3</div>
+      <div class="pn-title">🚀 How to launch a first campaign</div>
+    </a>
+    <a class="pn-card" href="kol-l3-community.html">
+      <div class="pn-ey">3.4</div>
+      <div class="pn-title">🤝 Community activities</div>
+    </a>
+    <a class="pn-card" href="kol-l3-data.html">
+      <div class="pn-ey">3.5</div>
+      <div class="pn-title">📊 Is my campaign working?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-level-4.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">Level 4: Engage &amp; Mobilise</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
