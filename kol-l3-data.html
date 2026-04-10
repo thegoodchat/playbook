@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Can I Know If My Campaign Is Working? — KOL Level 3</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:14px;color:#555;line-height:1.75;margin-bottom:.5rem;font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+ul{padding-left:1.25rem;margin-bottom:.75rem}
+li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.35rem}
+li strong{font-weight:700;color:#111}
+
+.overview-box{background:#f7f7f5;border:.5px solid var(--b);border-radius:12px;padding:1.25rem;margin-bottom:2rem}
+.ov-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.85rem}
+.ov-steps{display:flex;flex-direction:column;gap:6px}
+.ov-step{display:flex;align-items:center;gap:10px;font-size:13px;color:#444}
+.ov-num{width:22px;height:22px;border-radius:50%;background:var(--p);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ov-step strong{font-weight:700;color:#111}
+
+.opening-box{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin-bottom:2rem;background:var(--pl);border-radius:0 8px 8px 0}
+.opening-box p{font-size:14px;color:var(--pd);line-height:1.75;margin-bottom:.5rem}
+.opening-box p:last-child{margin-bottom:0}
+.opening-box strong{font-weight:800;color:var(--p)}
+
+.steps-wrap{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem}
+.sc{border:.5px solid var(--b);border-radius:12px;overflow:hidden;transition:border-color .15s}
+.sc:hover{border-color:var(--pm)}
+.sc.open{border-color:var(--p)}
+.sc-head{display:flex;align-items:center;gap:14px;padding:1.1rem 1.25rem;cursor:pointer;user-select:none}
+.sc-head:hover{background:#f7f7f5}
+.sc.open .sc-head{background:var(--pl)}
+.sc-num{width:32px;height:32px;border-radius:50%;background:var(--p);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sc.open .sc-num{background:var(--s)}
+.sc-info{flex:1}
+.sc-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:2px}
+.sc-title{font-size:15px;font-weight:800;color:#111}
+.sc.open .sc-title{color:var(--p)}
+.scarr{font-size:14px;color:#aaa;transition:transform .2s;flex-shrink:0}
+.sc.open .scarr{transform:rotate(90deg);color:var(--s)}
+.sc-body{display:none;padding:1.25rem;border-top:.5px solid var(--b)}
+.sc.open .sc-body{display:block}
+.sc-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.sc-body strong{font-weight:700;color:#111}
+.sc-body em{font-style:italic}
+.sc-body ul{padding-left:1.25rem;margin-bottom:.75rem}
+.sc-body li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.35rem}
+
+.north-star{text-align:center;background:var(--p);border-radius:10px;padding:1.25rem;margin:.85rem 0}
+.ns-text{font-size:15px;font-weight:800;color:#fff;line-height:1.5;font-style:italic}
+
+.lf-grid{display:flex;flex-direction:column;gap:8px;margin:.85rem 0}
+.lf-item{border:.5px solid var(--b);border-radius:9px;padding:.85rem 1rem}
+.lf-key{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--s);margin-bottom:.35rem}
+.lf-body ul{padding-left:1.1rem;margin:.35rem 0}
+.lf-body li{font-size:13px;color:#555;margin-bottom:.25rem}
+
+.baseline-box{background:#f7f7f5;border-radius:9px;border:.5px solid var(--b);padding:1rem 1.1rem;margin:.85rem 0}
+.baseline-box p{font-size:13px;color:#444;line-height:1.7;margin-bottom:.4rem}
+.baseline-q{font-size:13px;font-style:italic;color:var(--pd);background:var(--pl);border:.5px solid var(--pm);border-radius:8px;padding:.65rem 1rem;margin:.75rem 0;line-height:1.65}
+
+.indicators{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.85rem 0}
+.ind{border:.5px solid var(--b);border-radius:9px;padding:.85rem 1rem}
+.ind:hover{border-color:var(--pm)}
+.ind-num{font-size:20px;font-weight:800;color:var(--pm);margin-bottom:.2rem}
+.ind-title{font-size:13px;font-weight:800;color:var(--p);margin-bottom:.25rem}
+.ind-body{font-size:12px;color:#555;line-height:1.55}
+.ind-body em{font-style:italic;color:var(--pd)}
+
+.posts-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:.85rem 0}
+.post-card{background:var(--pl);border:.5px solid var(--pm);border-radius:9px;padding:.85rem .9rem;text-align:center}
+.post-num{font-size:20px;margin-bottom:.3rem}
+.post-type{font-size:12px;font-weight:800;color:var(--p);margin-bottom:.3rem}
+.post-desc{font-size:11px;color:#555;line-height:1.5}
+
+.hashtag-chips{display:flex;flex-wrap:wrap;gap:7px;margin:.85rem 0}
+.htag{font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;background:#f7f7f5;color:#444;border:.5px solid var(--b)}
+.htag.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+.golden-q{background:var(--p);border-radius:12px;padding:1.4rem;margin:.85rem 0;text-align:center}
+.gq-lbl{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.6rem}
+.gq-text{font-size:18px;font-weight:800;color:#fff;line-height:1.4;font-style:italic}
+
+.ripples{display:flex;flex-direction:column;gap:6px;margin:.85rem 0}
+.ripple{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#444;line-height:1.6}
+.ripple-dot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0;margin-top:6px}
+
+.culture-quote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.25rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.culture-quote p{font-size:14px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.7;margin:0}
+
+.checklist-section{background:var(--p);border-radius:12px;padding:1.5rem;margin-top:2rem}
+.cl-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:.4rem}
+.cl-sub{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:1.25rem;line-height:1.6}
+.checklist{display:flex;flex-direction:column;gap:8px}
+.cl-item{display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:.7rem .9rem;border-radius:9px;background:rgba(255,255,255,.08);transition:background .15s;user-select:none}
+.cl-item:hover{background:rgba(255,255,255,.14)}
+.cl-item.checked{background:rgba(255,255,255,.18)}
+.cl-box{width:20px;height:20px;border-radius:5px;border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:12px;color:#fff;transition:all .2s}
+.cl-item.checked .cl-box{background:var(--s);border-color:var(--s)}
+.cl-text{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
+.cl-item.checked .cl-text{color:#fff}
+.cl-score{font-size:13px;color:rgba(255,255,255,.6);margin-top:1rem;font-style:italic}
+.cl-score span{color:#fff;font-weight:700}
+
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-3.html">Level 3: Starting Conversations</a><span class="sep">›</span>
+  <span>Is my campaign working?</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep done" href="kol-level-2.html">Level 2 ✓</a>
+  <a class="lstep on" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">📊 Level 3 · Starting Conversations</p>
+<h1>But how can I know if my campaign is working?</h1>
+<p class="lead">A creator-friendly guide to measure whether your climate content is truly making impact — without needing a data team.</p>
+
+<div class="overview-box">
+  <div class="ov-title">7 steps · fully DIY · zero painful spreadsheets</div>
+  <div class="ov-steps">
+    <div class="ov-step"><div class="ov-num">1</div><div><strong>Know Your North Star</strong> — your compass before any numbers</div></div>
+    <div class="ov-step"><div class="ov-num">2</div><div><strong>Build Your Tiny Logframe</strong> — creator-sized impact planning</div></div>
+    <div class="ov-step"><div class="ov-num">3</div><div><strong>Create Your Baseline</strong> — 5-minute DIY benchmark</div></div>
+    <div class="ov-step"><div class="ov-num">4</div><div><strong>Track 6 Indicators</strong> — the ones that actually matter</div></div>
+    <div class="ov-step"><div class="ov-num">5</div><div><strong>The "3 Post Rule"</strong> — don't judge from one post</div></div>
+    <div class="ov-step"><div class="ov-num">6</div><div><strong>Choose Your Hashtag</strong> — your climate signature</div></div>
+    <div class="ov-step"><div class="ov-num">7</div><div><strong>Ask One Simple Question</strong> — the golden test</div></div>
+  </div>
+</div>
+
+<div class="opening-box">
+  <p>So you're posting about climate, renewable energy, just transition — or you <em>want</em> to — and now you're wondering:</p>
+  <p><strong>"Okay but… is it working?"</strong></p>
+  <p>Great question. And I promise the answer does <strong>not</strong> require a statistics degree, a team of analysts, or a dashboard that looks like a spaceship.</p>
+</div>
+
+<div class="steps-wrap">
+
+  <div class="sc" id="sc1">
+    <div class="sc-head" onclick="stog('sc1')">
+      <div class="sc-num">1</div>
+      <div class="sc-info"><div class="sc-lbl">Step 1</div><div class="sc-title">Know Your North Star</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <p>Before numbers, before analytics — you need one simple compass.</p>
+      <div class="north-star"><div class="ns-text">Your goal is to help normalize climate and renewable energy conversations in your niche.</div></div>
+      <p>Not to become a climate expert. Not to lecture. Not to turn your feed into a science museum. Just to include the energy transition into the world you already create — beauty, books, food, fashion, gaming, home, lifestyle, whatever your lane is.</p>
+      <p><strong>Your impact = more people in your community talking about renewable energy in ways that feel intuitive, fun, or relevant to real life.</strong></p>
+    </div>
+  </div>
+
+  <div class="sc" id="sc2">
+    <div class="sc-head" onclick="stog('sc2')">
+      <div class="sc-num">2</div>
+      <div class="sc-info"><div class="sc-lbl">Step 2</div><div class="sc-title">Build Your Tiny Logframe</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <p>A "logical framework" sounds like something on a government whiteboard — but you can shrink it into something creator-sized. Just answer three questions:</p>
+      <div class="lf-grid">
+        <div class="lf-item"><div class="lf-key">A. Big change you want to support</div><div class="lf-body"><ul><li>More public support for renewable energy</li><li>A culture where clean energy feels normal</li><li>More diverse climate stories in everyday niches</li></ul></div></div>
+        <div class="lf-item"><div class="lf-key">B. What you can realistically influence (outcomes)</div><div class="lf-body"><ul><li>More energy conversations in your comments</li><li>Followers DMing questions or tagging friends</li><li>KOL peers resharing your climate posts</li><li>More people at your events or livestreams</li></ul></div></div>
+        <div class="lf-item"><div class="lf-key">C. What you'll actually do (outputs)</div><div class="lf-body"><ul><li><strong>Online:</strong> Reels, TikToks, carousels, stories, educational content, humor, storytelling</li><li><strong>Community:</strong> IG Live, offline meetups, book clubs, collabs, pop-ups</li></ul></div></div>
+      </div>
+      <p>That's it. You now have a logframe — creator edition.</p>
+    </div>
+  </div>
+
+  <div class="sc" id="sc3">
+    <div class="sc-head" onclick="stog('sc3')">
+      <div class="sc-num">3</div>
+      <div class="sc-info"><div class="sc-lbl">Step 3</div><div class="sc-title">Create Your Own Baseline</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <div class="baseline-box">
+        <p><strong>Look at your last 10 non-climate posts:</strong></p>
+        <ul style="padding-left:1.1rem;margin-top:.4rem"><li>What's the average reach?</li><li>What's the average engagement rate?</li><li>What kind of comments do you usually get?</li></ul>
+        <p style="margin-top:.6rem">Write it down anywhere — Notes app, Notion, back of a receipt. This is your personal benchmark.</p>
+      </div>
+      <div class="baseline-q">Did the climate post perform above, below, or <em>differently</em> from my usual content? That difference is data. And more importantly — it's <strong>direction.</strong></div>
+    </div>
+  </div>
+
+  <div class="sc" id="sc4">
+    <div class="sc-head" onclick="stog('sc4')">
+      <div class="sc-num">4</div>
+      <div class="sc-info"><div class="sc-lbl">Step 4</div><div class="sc-title">Track These 6 Indicators</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <p>You don't have a data team — but you have the most important metrics right inside your app.</p>
+      <div class="indicators">
+        <div class="ind"><div class="ind-num">01</div><div class="ind-title">Reach</div><div class="ind-body">Are more people seeing your climate content than expected?</div></div>
+        <div class="ind"><div class="ind-num">02</div><div class="ind-title">Engagement</div><div class="ind-body">Likes, saves, shares — but especially: <em>are people responding with curiosity or excitement?</em></div></div>
+        <div class="ind"><div class="ind-num">03</div><div class="ind-title">Sentiment</div><div class="ind-body">Are comments supportive, curious, inspired, playful? <em>This is where the real magic happens.</em></div></div>
+        <div class="ind"><div class="ind-num">04</div><div class="ind-title">Community Conversations</div><div class="ind-body">Did people tag friends, start their own posts, DM questions, use your hashtag? → That's cultural impact.</div></div>
+        <div class="ind"><div class="ind-num">05</div><div class="ind-title">KOL Echo</div><div class="ind-body">Did other creators repost, reference your message, or start similar conversations? <em>This is how narratives spread.</em></div></div>
+        <div class="ind"><div class="ind-num">06</div><div class="ind-title">Offline Ripples</div><div class="ind-body">How many came to your events? Did they post? DM you? <em>This counts just as much as numbers.</em></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc" id="sc5">
+    <div class="sc-head" onclick="stog('sc5')">
+      <div class="sc-num">5</div>
+      <div class="sc-info"><div class="sc-lbl">Step 5</div><div class="sc-title">Use the "3 Post Rule"</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <p>Don't judge impact from one post. Try at least three — then compare with your baseline.</p>
+      <div class="posts-grid">
+        <div class="post-card"><div class="post-num">✨</div><div class="post-type">Post 1</div><div class="post-desc">Fun or storytelling post</div></div>
+        <div class="post-card"><div class="post-num">🧠</div><div class="post-type">Post 2</div><div class="post-desc">Informative or myth-busting post</div></div>
+        <div class="post-card"><div class="post-num">💬</div><div class="post-type">Post 3</div><div class="post-desc">Community activation — invite, poll, question box</div></div>
+      </div>
+      <p>You'll start seeing patterns: "Storytelling performs best." "My audience loves practical tips." "Humor works better than big-picture concepts." <strong>This information is gold.</strong></p>
+    </div>
+  </div>
+
+  <div class="sc" id="sc6">
+    <div class="sc-head" onclick="stog('sc6')">
+      <div class="sc-num">6</div>
+      <div class="sc-info"><div class="sc-lbl">Step 6</div><div class="sc-title">Choose Your Own Hashtag</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <p>Think of a hashtag as your little lighthouse — a tiny marker that gathers all the posts, ripples, and side-conversations your content inspires. Join our regional conversation or birth your own:</p>
+      <div class="hashtag-chips">
+        <span class="htag on">#thegoodchatasia</span>
+        <span class="htag">#EnergyIsEveryday</span>
+        <span class="htag">#CleanEnergyAtHome</span>
+        <span class="htag">#PoweringMyLife</span>
+        <span class="htag">#MyJustTransition</span>
+      </div>
+      <p>Every time someone uses it, you can see how far your influence has wandered and which corners of the internet have started talking about renewable energy because of you.</p>
+    </div>
+  </div>
+
+  <div class="sc" id="sc7">
+    <div class="sc-head" onclick="stog('sc7')">
+      <div class="sc-num">7</div>
+      <div class="sc-info"><div class="sc-lbl">Step 7</div><div class="sc-title">Ask One Simple Question</div></div>
+      <span class="scarr">›</span>
+    </div>
+    <div class="sc-body">
+      <div class="golden-q">
+        <div class="gq-lbl">Your golden question</div>
+        <div class="gq-text">"Did this spark any new conversation in my niche that wasn't there before?"</div>
+      </div>
+      <p>After every climate post, look for tiny signs:</p>
+      <div class="ripples">
+        <div class="ripple"><div class="ripple-dot"></div>Did someone ask a question they've never asked before?</div>
+        <div class="ripple"><div class="ripple-dot"></div>Did a follower DM: "I never thought about it like this"?</div>
+        <div class="ripple"><div class="ripple-dot"></div>Did someone tag a friend or use your hashtag?</div>
+        <div class="ripple"><div class="ripple-dot"></div>Did a small pocket of your community start a conversation you didn't have to lead?</div>
+        <div class="ripple"><div class="ripple-dot"></div>Did your comment section sound different from your usual content?</div>
+      </div>
+      <p>If the answer to <em>any</em> of these is yes — <strong>congratulations, your campaign is working.</strong></p>
+      <p>Impact doesn't always look like fireworks. Sometimes it looks like three thoughtful comments, one brave question, or a quiet DM from someone who learned something new.</p>
+      <div class="culture-quote"><p>Culture doesn't shift because something goes viral. Culture shifts because something becomes familiar — showing up again and again in ways that feel natural, personal, and part of everyday life. That's what you're building. One post, one conversation, one ripple at a time.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="checklist-section">
+  <div class="cl-title">TL;DR — The Creator-Friendly Impact Checklist</div>
+  <div class="cl-sub">If you can answer "yes" to any of these, you are making real impact. Tap to check off what applies.</div>
+  <div class="checklist">
+    <div class="cl-item" onclick="tick(this)"><div class="cl-box"></div><div class="cl-text">My climate posts perform at or above my usual baseline</div></div>
+    <div class="cl-item" onclick="tick(this)"><div class="cl-box"></div><div class="cl-text">My audience comments more thoughtfully on these posts</div></div>
+    <div class="cl-item" onclick="tick(this)"><div class="cl-box"></div><div class="cl-text">People DM me questions or stories</div></div>
+    <div class="cl-item" onclick="tick(this)"><div class="cl-box"></div><div class="cl-text">Other creators have reshared or referenced my content</div></div>
+    <div class="cl-item" onclick="tick(this)"><div class="cl-box"></div><div class="cl-text">Someone in my community used my hashtag or made a related post</div></div>
+    <div class="cl-item" onclick="tick(this)"><div class="cl-box"></div><div class="cl-text">My niche now has at least one renewable-energy conversation it didn't have before</div></div>
+  </div>
+  <div class="cl-score" id="cl-score">Check any box above — that's mainstreaming. That's culture shift. That's impact.</div>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 3 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l3-community.html">
+      <div class="pn-ey">← Previous</div>
+      <div class="pn-title">🤝 Community activities</div>
+    </a>
+    <a class="pn-card" href="kol-l3-gaps.html">
+      <div class="pn-ey">Also in Level 3</div>
+      <div class="pn-title">🔍 Key gaps in the energy transition</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l3-storytelling.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">🎭 3 storytelling tactics to get attention</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function stog(id){document.getElementById(id).classList.toggle('open')}
+function tick(el){
+  el.classList.toggle('checked');
+  el.querySelector('.cl-box').textContent = el.classList.contains('checked') ? '✓' : '';
+  var checked = document.querySelectorAll('.cl-item.checked').length;
+  var total = document.querySelectorAll('.cl-item').length;
+  var s = document.getElementById('cl-score');
+  if(!checked) s.textContent = 'Check any box above — that\'s mainstreaming. That\'s culture shift. That\'s impact.';
+  else if(checked === total) s.innerHTML = '<span>' + checked + '/' + total + '</span> — You\'re absolutely making impact. Keep going! 🎉';
+  else s.innerHTML = '<span>' + checked + '/' + total + '</span> — That\'s real impact. Every yes counts.';
+}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
