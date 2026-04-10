@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Power of Conversations — KOL Level 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:1.5rem;max-width:600px;font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:800;color:#111;margin-bottom:.6rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* OPENING STATEMENT */
+.opening{font-size:16px;color:#333;line-height:1.8;margin-bottom:1.5rem;padding-left:1rem;border-left:3px solid var(--pm)}
+.opening strong{color:var(--p)}
+
+/* KEY BOX */
+.key-box{background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1rem 1.25rem;margin-bottom:2rem;font-size:14px;color:var(--pd);line-height:1.7}
+.key-box strong{font-weight:700;color:var(--p)}
+
+/* VIDEO + AUDIO */
+.media-block{border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.media-head{padding:1rem 1.25rem;background:var(--p);border-bottom:.5px solid var(--b)}
+.media-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.3rem}
+.media-title{font-size:15px;font-weight:800;color:#fff}
+.media-body{padding:1.25rem}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin-bottom:1rem;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video-ph{position:relative;padding-bottom:56.25%;height:0;background:#f7f7f5;border-radius:8px;margin-bottom:1rem;border:.5px solid var(--b);display:flex}
+.video-ph-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:#aaa;font-size:13px;font-style:italic}
+.lang-note{font-size:12px;color:#888;font-style:italic;margin:.4rem 0 .75rem}
+.audio-link{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:8px;padding:7px 14px;background:var(--pl);text-decoration:none}
+.audio-link:hover{background:var(--pm)}
+
+/* EXAMPLES LINKS */
+.example-links{display:flex;flex-direction:column;gap:8px;margin:1rem 0}
+.elink{display:flex;gap:12px;align-items:flex-start;border:.5px solid var(--b);border-radius:10px;padding:.85rem 1rem;transition:border-color .15s;text-decoration:none}
+.elink:hover{border-color:var(--pm)}
+.elink-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.elink-body .elink-title{font-size:13px;font-weight:700;color:var(--p);margin-bottom:2px}
+.elink-body .elink-sub{font-size:12px;color:#666;line-height:1.55}
+
+/* SECTION BLOCKS */
+.section-block{margin-bottom:2rem}
+.section-icon{font-size:20px;margin-bottom:.4rem}
+.section-head{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
+.section-head .sh-icon{font-size:20px}
+.section-head h3{margin:0}
+
+/* TIPPING POINT */
+.tip-box{background:#f7f7f5;border:.5px solid var(--b);border-radius:10px;padding:1.1rem 1.25rem;margin:1.25rem 0}
+.tip-stat{font-size:32px;font-weight:800;color:var(--p);letter-spacing:-.02em;margin-bottom:.2rem}
+.tip-label{font-size:12px;font-weight:700;color:#888;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em}
+.tip-body{font-size:13px;color:#555;line-height:1.7}
+.tip-body strong{font-weight:700;color:#111}
+.tip-example{margin-top:.75rem;padding:.75rem 1rem;background:#fff;border:.5px solid var(--b);border-radius:8px;font-size:13px;color:#555;line-height:1.65}
+.tip-example strong{font-weight:700;color:#111}
+
+/* 4 PRINCIPLES */
+.principles{display:flex;flex-direction:column;gap:10px;margin:1.25rem 0}
+.principle{border:.5px solid var(--b);border-radius:10px;overflow:hidden;transition:border-color .15s}
+.principle:hover{border-color:var(--pm)}
+.principle.open{border-color:var(--p)}
+.p-head{display:flex;align-items:center;gap:12px;padding:.9rem 1.1rem;cursor:pointer;user-select:none}
+.p-head:hover{background:#f7f7f5}
+.principle.open .p-head{background:var(--pl)}
+.p-num{width:28px;height:28px;border-radius:50%;background:var(--p);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.principle.open .p-num{background:var(--s)}
+.p-name{font-size:15px;font-weight:800;color:#111;flex:1}
+.p-arr{font-size:14px;color:#aaa;transition:transform .2s}
+.principle.open .p-arr{transform:rotate(90deg);color:var(--s)}
+.p-body{display:none;padding:.1rem 1.1rem 1rem 3.2rem;border-top:.5px solid var(--b)}
+.principle.open .p-body{display:block}
+.p-body p{font-size:13px;color:#555;line-height:1.7;margin-top:.75rem;margin-bottom:.4rem}
+.p-body strong{font-weight:700;color:#111}
+.p-body em{font-style:italic}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* SOFT ACTIVISM HIGHLIGHT */
+.highlight-box{background:var(--p);border-radius:12px;padding:1.25rem 1.4rem;margin:1.5rem 0;text-align:center}
+.highlight-box p{font-size:16px;font-weight:800;color:#fff;line-height:1.6;margin:0}
+.highlight-box em{font-style:italic;color:rgba(255,255,255,.85)}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-2.html">Level 2: Your Entry Point</a><span class="sep">›</span>
+  <span>The Power of Conversations</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep on" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">💬 Level 2 · Your Entry Point</p>
+<h1>The Power of Conversations: a New &amp; Soft Form of Activism</h1>
+<p class="lead">Systems change when a new way of thinking becomes the norm.</p>
+
+<p class="opening">Systems don't change just because a law gets passed. They change when <em>enough</em> people start thinking differently, imagining differently, acting differently. That's what we mean by <strong>large-scale mindset change</strong>. It's not about one epic speech at the UN — it's about thousands of tiny shifts in kitchens, group chats, livestream comments, and bus-stop gossip. That's where new futures get normalized.</p>
+
+<div class="key-box">
+  🔑 In the masterclass below, <strong>you'll explore the power of conversation as a gentle yet effective form of activism</strong> — and gain practical tips and tactics to spark and shape meaningful dialogues that drive systemic change.
+</div>
+
+<!-- MASTERCLASS VIDEO -->
+<div class="media-block">
+  <div class="media-head">
+    <div class="media-label">🎬 Masterclass</div>
+    <div class="media-title">The Power of Conversations</div>
+  </div>
+  <div class="media-body">
+    <div class="video-ph">
+      <div class="video-ph-inner">
+        <span>📹</span>
+        <span>Add masterclass video here</span>
+        <span style="font-size:11px">(replace with YouTube embed)</span>
+      </div>
+    </div>
+    <p class="lang-note">🗣 Speaking language: English</p>
+    <a class="audio-link" href="https://drive.google.com/file/d/1fAk3vW5HSWs_pfGrXid_8z3eXXCwJIAC/view" target="_blank">🎧 Audio only (podcast-style) ↗</a>
+  </div>
+</div>
+
+<!-- 2 VIDEO EXAMPLES -->
+<h3 style="margin-bottom:.75rem">2 examples of conversations that shift people's views</h3>
+<div class="example-links">
+  <a class="elink" href="https://www.youtube.com/watch?v=4TqVwTMdwgw" target="_blank">
+    <span class="elink-icon">▶️</span>
+    <div class="elink-body">
+      <div class="elink-title">Example 1 — Watch on YouTube ↗</div>
+      <div class="elink-sub">A conversation that shifts views on a social or environmental issue</div>
+    </div>
+  </a>
+  <a class="elink" href="https://www.youtube.com/watch?v=_tdjtFRdbAo" target="_blank">
+    <span class="elink-icon">▶️</span>
+    <div class="elink-body">
+      <div class="elink-title">Example 2 — Deep Canvassing ↗</div>
+      <div class="elink-sub">How one-on-one conversations can change minds on contested issues</div>
+    </div>
+  </a>
+</div>
+
+<hr>
+<h2>In a Nutshell</h2>
+
+<!-- SECTION 1: HOW CONVERSATIONS SHIFT NORMS -->
+<div class="section-block">
+  <div class="section-head"><span class="sh-icon">🌱</span><h3>How Conversations Shift Social Norms</h3></div>
+  <p>Think about it: fashion trends, slang, memes, even whole lifestyle choices — none of them started in policy papers. They started in <strong>conversations.</strong></p>
+  <p>A girl posts about her thrifted outfit. Someone DMs you about plant-based recipes. A cousin teases you for carrying a reusable cup — and then buys one themselves a week later.</p>
+
+  <div class="pquote">
+    <p>That's how social norms bend: not by telling people what's right, but by showing them what's normal. And normal is powerful.</p>
+  </div>
+
+  <p>When enough people treat climate care as obvious, decision-makers don't have to be convinced — they have to keep up.</p>
+</div>
+
+<!-- SECTION 2: WHY STORYTELLING MATTERS -->
+<div class="section-block">
+  <div class="section-head"><span class="sh-icon">🎙️</span><h3>Why Storytelling, Discussion &amp; Visibility Matter</h3></div>
+  <p>You don't need technical expertise to be part of this. Honestly, most people tune out when you start dropping policy acronyms. What they lean in for are <em>stories</em>:</p>
+
+  <div class="tip-box" style="background:var(--pl);border-color:var(--pm)">
+    <p style="font-size:13px;color:var(--pd);line-height:1.85;margin:0">
+      🌧️ A thread about how your city flooded and you biked through it with soggy sneakers.<br>
+      👵 A TikTok on how your grandma composts without calling it composting.<br>
+      🌬️ A casual chat on why your aircon broke and you realized fans + shade trees actually work.
+    </p>
+  </div>
+
+  <p style="margin-top:.75rem">Storytelling makes climate <strong>human</strong>. Discussion makes it <strong>communal</strong>. Visibility makes it <strong>undeniable</strong>.</p>
+
+  <div class="highlight-box">
+    <p>Every conversation you have is a micro-rebellion against apathy.<br><em>Small and unpolished — but alive. And alive is exactly what we need.</em></p>
+  </div>
+</div>
+
+<!-- REAL EXAMPLES -->
+<div class="section-block">
+  <div class="section-head"><span class="sh-icon">🔗</span><h3>Real Examples of Soft Activism</h3></div>
+  <div class="example-links">
+    <a class="elink" href="https://www.abc.net.au/religion/veganism-in-japan-and-the-challenge-of-soft-activism/14107838" target="_blank">
+      <span class="elink-icon">🌱</span>
+      <div class="elink-body">
+        <div class="elink-title">Veganism in Japan: How "soft" activism is changing minds ↗</div>
+        <div class="elink-sub">How vegan options spread through cafés and maps, creating a cultural shift in Japan's food scene.</div>
+      </div>
+    </a>
+    <a class="elink" href="https://journals.sagepub.com/doi/abs/10.1177/13675494241268269" target="_blank">
+      <span class="elink-icon">🏳️‍🌈</span>
+      <div class="elink-body">
+        <div class="elink-title">Queer media as soft activism in China ↗</div>
+        <div class="elink-sub">How LGBT+ activism uses soft, non-confrontational storytelling to adapt to restrictions and keep diverse voices heard.</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- TIPPING POINT -->
+<div class="section-block">
+  <div class="section-head"><span class="sh-icon">💨</span><h3>What is the Tipping Point — and why does it matter?</h3></div>
+  <p>The tipping point is the moment at which it takes more energy to <em>resist</em> a change than to participate in it. Research shows this threshold is lower than most people think.</p>
+
+  <div class="tip-box">
+    <div class="tip-stat">25%</div>
+    <div class="tip-label">The tipping point threshold</div>
+    <div class="tip-body">According to research cited by <strong>Malcolm Gladwell</strong>, when just 25% of a group adopts a new norm, the change becomes self-sustaining. You don't need a majority. You need a committed, vocal quarter.
+      <div class="tip-example">
+        <strong>Example: Mental health conversations.</strong> Before COVID-19, it was taboo to talk about anxiety or therapy. After countless public and personal conversations during the pandemic, it became normal — and policy and business culture followed. That's a tipping point in action.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4 PRINCIPLES -->
+<div class="section-block">
+  <div class="section-head"><span class="sh-icon">🤝</span><h3>4 Principles of a Meaningful Conversation</h3></div>
+  <p>Not all conversations have the power to change society positively. A meaningful conversation is one where both people leave having received something of value — a new insight, a feeling of being understood, or a sense of hope.</p>
+  <p>These four principles are the backbone of how Good Chat fellows approach dialogue.</p>
+
+  <div class="principles">
+
+    <div class="principle" id="pr1">
+      <div class="p-head" onclick="ptog('pr1')">
+        <div class="p-num">1</div>
+        <div class="p-name">Humility</div>
+        <span class="p-arr">›</span>
+      </div>
+      <div class="p-body">
+        <p>Come in knowing that you don't have all the answers. Especially when talking about something as complex as the energy transition, we each hold just a small piece of the truth.</p>
+        <p><strong>Humility keeps the door open for learning — and for connection.</strong></p>
+      </div>
+    </div>
+
+    <div class="principle" id="pr2">
+      <div class="p-head" onclick="ptog('pr2')">
+        <div class="p-num">2</div>
+        <div class="p-name">Curiosity</div>
+        <span class="p-arr">›</span>
+      </div>
+      <div class="p-body">
+        <p>Instead of trying to convince or lecture, get genuinely interested. Ask follow-up questions. Reflect back what you heard — things like, <em>"It sounds like you're worried about the cost, is that right?"</em></p>
+        <p>That simple reflection makes people feel heard, and often helps them open up more deeply. <strong>Curiosity turns monologue into dialogue.</strong></p>
+      </div>
+    </div>
+
+    <div class="principle" id="pr3">
+      <div class="p-head" onclick="ptog('pr3')">
+        <div class="p-num">3</div>
+        <div class="p-name">Generosity</div>
+        <span class="p-arr">›</span>
+      </div>
+      <div class="p-body">
+        <p>Bring something to the table — a story, a resource, or even just kindness. You don't have to be an expert, but you can offer your experience as a gift.</p>
+        <p>Sometimes it's as small as saying: <em>"I used to think that too, until I saw…"</em> or sharing a personal example. <strong>Generosity disarms defensiveness.</strong></p>
+      </div>
+    </div>
+
+    <div class="principle" id="pr4">
+      <div class="p-head" onclick="ptog('pr4')">
+        <div class="p-num">4</div>
+        <div class="p-name">Accountability</div>
+        <span class="p-arr">›</span>
+      </div>
+      <div class="p-body">
+        <p>What we say matters. Be honest, be kind, and follow up. If you promise to share a link, share it. If someone raises a question you can't answer, circle back later.</p>
+        <p><strong>That follow-through builds trust — and trust is what turns a nice chat into a lasting relationship.</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pquote" style="margin-top:1.5rem">
+    <p>When humility, curiosity, generosity, and accountability come together, a conversation moves beyond opinion-trading. It becomes a space where transformation can happen — for the listener, the speaker, and the community around them.</p>
+  </div>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 2 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l2-solar.html">
+      <div class="pn-ey">← Previous</div>
+      <div class="pn-title">☀️ Why solar energy?</div>
+    </a>
+    <a class="pn-card" href="kol-l2-organizations.html">
+      <div class="pn-ey">Also in Level 2</div>
+      <div class="pn-title">🌿 Climate organizations in my country</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l2-imposter.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">💪 How to fight imposter syndrome</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function ptog(id){
+  var el=document.getElementById(id);
+  el.classList.toggle('open');
+}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
