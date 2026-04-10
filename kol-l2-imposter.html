@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Fight Imposter Syndrome — KOL Level 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+/* BREADCRUMB */
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+/* LEVEL STRIP */
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+/* HERO */
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;max-width:600px;font-style:italic}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:800;color:#111;margin-bottom:.6rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+
+/* JUMP LINKS */
+.jumps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
+.jump{font-size:12px;font-weight:700;color:var(--p);background:var(--pl);border:.5px solid var(--pm);border-radius:20px;padding:5px 14px;text-decoration:none}
+.jump:hover{background:var(--pm)}
+
+/* VOICE CARDS - imposter thoughts */
+.thought-list{display:flex;flex-direction:column;gap:8px;margin:1rem 0}
+.thought{display:flex;align-items:flex-start;gap:10px;background:#fef3f2;border:.5px solid #fecaca;border-radius:9px;padding:.85rem 1rem;font-size:13px;color:#9b1c1c;line-height:1.6}
+.thought-icon{font-size:16px;flex-shrink:0}
+
+/* GREEN FLAG BOX */
+.green-flag{background:var(--pl);border:.5px solid var(--pm);border-radius:10px;padding:1.1rem 1.25rem;margin:1.25rem 0}
+.gf-head{display:flex;align-items:center;gap:8px;margin-bottom:.5rem}
+.gf-badge{font-size:11px;font-weight:800;background:var(--p);color:#fff;padding:2px 10px;border-radius:20px}
+.gf-body{font-size:14px;color:var(--pd);line-height:1.75}
+.gf-body strong{font-weight:700;color:var(--p)}
+
+/* VIDEO */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin:1.25rem 0;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+/* REFRAME TABLE */
+.reframe-table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:13px}
+.reframe-table th{text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.6rem .9rem;border-bottom:.5px solid var(--b);color:#aaa}
+.reframe-table td{padding:.75rem .9rem;border-bottom:.5px solid var(--b);vertical-align:top;line-height:1.6}
+.reframe-table tr:last-child td{border-bottom:none}
+.reframe-table tr:hover td{background:#f7f7f5}
+.reframe-table td:first-child{color:#9b1c1c;font-style:italic;width:48%}
+.reframe-table td:last-child{color:var(--pd);font-weight:700;font-style:italic}
+.reframe-table th:last-child{color:var(--p)}
+
+/* WHY YOUR VOICE MATTERS */
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.25rem 0}
+.vcard{border:.5px solid var(--b);border-radius:10px;padding:1rem;transition:border-color .15s}
+.vcard:hover{border-color:var(--pm)}
+.vcard-num{font-size:22px;font-weight:800;color:var(--pm);margin-bottom:.3rem;letter-spacing:-.02em}
+.vcard-title{font-size:13px;font-weight:800;color:var(--p);margin-bottom:.4rem}
+.vcard-body{font-size:12px;color:#555;line-height:1.6}
+.vcard-body em{font-style:italic;color:#777}
+
+/* EXERCISES */
+.ex-list{display:flex;flex-direction:column;gap:10px;margin:1.25rem 0}
+.ex{border:.5px solid var(--b);border-radius:10px;overflow:hidden}
+.ex-head{display:flex;align-items:center;gap:12px;padding:.9rem 1.1rem;cursor:pointer;user-select:none}
+.ex-head:hover{background:#f7f7f5}
+.ex.open .ex-head{background:var(--pl)}
+.ex-icon{font-size:18px;flex-shrink:0}
+.ex-name{font-size:14px;font-weight:800;color:#111;flex:1}
+.ex-arr{font-size:14px;color:#aaa;transition:transform .2s}
+.ex.open .ex-arr{transform:rotate(90deg);color:var(--s)}
+.ex-body{display:none;padding:.85rem 1.1rem;border-top:.5px solid var(--b)}
+.ex.open .ex-body{display:block}
+.ex-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:.5rem}
+.ex-body strong{font-weight:700;color:#111}
+.ex-body em{font-style:italic}
+.ex-body .prompt{background:#f7f7f5;border-radius:8px;padding:.75rem 1rem;font-size:13px;color:#444;font-style:italic;margin-top:.5rem;border:.5px solid var(--b)}
+
+/* DECOLONIZE SECTION — Option C: orange sidebar */
+.thought-box{display:grid;grid-template-columns:44px 1fr;border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin:2rem 0}
+.tb-sidebar{background:var(--s);padding:1.25rem .6rem;display:flex;align-items:flex-start;justify-content:center}
+.tb-sidebar-text{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+.tb-content{padding:1.25rem}
+.tb-q{font-size:17px;font-weight:800;color:#072d1c;line-height:1.3;margin-bottom:1rem}
+.tb-qs{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.reclaim-q{display:flex;align-items:flex-start;gap:8px;font-size:13px;font-weight:700;color:var(--p);line-height:1.6}
+.tb-body{font-size:13px;color:#444;line-height:1.8}
+.tb-body strong{font-weight:700;color:#111}
+.tb-body em{font-style:italic}
+.tb-link{display:inline-flex;align-items:center;gap:6px;margin-top:.85rem;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:8px;padding:7px 14px;background:var(--pl);text-decoration:none}
+.tb-link:hover{background:var(--pm)}
+.reclaim-q span{font-size:16px;flex-shrink:0}
+
+/* PULL QUOTE */
+.pquote{border-left:3px solid var(--s);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--pl);border-radius:0 8px 8px 0}
+.pquote p{font-size:15px;font-weight:700;color:var(--pd);font-style:italic;line-height:1.6;margin:0}
+
+/* VIDEO LINK */
+.vid-link{display:flex;align-items:center;gap:12px;border:.5px solid var(--b);border-radius:10px;padding:.85rem 1.1rem;margin:1rem 0;text-decoration:none;transition:border-color .15s}
+.vid-link:hover{border-color:var(--pm)}
+.vid-link-icon{font-size:18px;flex-shrink:0}
+.vid-link-title{font-size:13px;font-weight:700;color:var(--p)}
+.vid-link-sub{font-size:12px;color:#777;margin-top:2px}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-2.html">Level 2: Your Entry Point</a><span class="sep">›</span>
+  <span>How to fight imposter syndrome</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep on" href="kol-level-2.html">Level 2</a>
+  <a class="lstep" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">💪 Level 2 · Your Entry Point</p>
+<h1>How to fight imposter syndrome</h1>
+<p class="lead">You don't need to be an energy expert to advocate. You just need to care about fairness, access, and a livable future.</p>
+
+<div class="jumps">
+  <a class="jump" href="#what-is">What is imposter syndrome?</a>
+  <a class="jump" href="#your-voice">Why your voice matters</a>
+  <a class="jump" href="#exercises">Exercises</a>
+  <a class="jump" href="#decolonize">A bigger question</a>
+</div>
+
+<hr>
+
+<!-- WHAT IS IMPOSTER SYNDROME -->
+<div id="what-is">
+  <h2>What is imposter syndrome?</h2>
+  <p>Imposter syndrome is the voice in your head that says you don't deserve to speak. It makes you feel like you are not good enough — even when you are.</p>
+  <p>As a KOL, it often sounds like this:</p>
+
+  <div class="thought-list">
+    <div class="thought"><span class="thought-icon">😔</span>"I'm not a scientist, so maybe I shouldn't talk about climate change."</div>
+    <div class="thought"><span class="thought-icon">😔</span>"Other people know more than me."</div>
+    <div class="thought"><span class="thought-icon">😔</span>"What if I say something wrong?"</div>
+  </div>
+
+  <p>This feeling is common. Many leaders and creators experience it. And here's the thing: <strong>having imposter syndrome actually means you care about doing a good job.</strong> It's proof that you are pushing yourself to grow.</p>
+
+  <div class="green-flag">
+    <div class="gf-head"><span class="gf-badge">✅ Green flag</span></div>
+    <div class="gf-body">Harvard professor <strong>Arthur C. Brooks</strong> says imposter syndrome isn't a flaw — it's literally a green flag. His advice? Don't shove it away. Don't spiral. Just <em>lean in</em> to the feeling. Use it as fuel to keep getting better.<br><br>So if you ever think, <em>"who let me in this room?"</em>… congrats. It means you're exactly where you're supposed to be.</div>
+  </div>
+
+  <a class="vid-link" href="https://www.youtube.com/watch?v=qGmwH6DyUjo" target="_blank">
+    <span class="vid-link-icon">▶️</span>
+    <div>
+      <div class="vid-link-title">Watch: Arthur C. Brooks on imposter syndrome ↗</div>
+      <div class="vid-link-sub">YouTube · opens in new tab</div>
+    </div>
+  </a>
+</div>
+
+<hr>
+
+<!-- REFRAME THE FEAR -->
+<h2>Reframe the Fear</h2>
+<p>When that fear shows up, don't let it take over. Give it a new script.</p>
+
+<table class="reframe-table">
+  <thead>
+    <tr>
+      <th>Instead of…</th>
+      <th>Try this →</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>"I'm not qualified."</td>
+      <td>"I'm here to connect, not to lecture."</td>
+    </tr>
+    <tr>
+      <td>"Others know more than me."</td>
+      <td>"I bring a perspective they don't have."</td>
+    </tr>
+    <tr>
+      <td>"What if I make a mistake?"</td>
+      <td>"I can always learn and improve."</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pquote">
+  <p>Think of that nervous energy before you hit "post." Your heart beats fast, your finger hovers over the button. Reframe it: that nervousness means you care. Remind yourself — "I'm not here to be perfect. I'm here to connect."</p>
+</div>
+
+<hr>
+
+<!-- WHY YOUR VOICE MATTERS -->
+<div id="your-voice">
+  <h2>Why your voice matters</h2>
+  <p>Your voice isn't "just another opinion." It's something scientists often can't do. Here's why:</p>
+
+  <div class="voice-grid">
+    <div class="vcard">
+      <div class="vcard-num">01</div>
+      <div class="vcard-title">Relatable + Trusted</div>
+      <div class="vcard-body">Scientists are smart, but far away. You're right here. People know you — your posts, your wins, your worries. When you share a message, it doesn't feel like a lecture. <em>It feels like a friend talking.</em></div>
+    </div>
+    <div class="vcard">
+      <div class="vcard-num">02</div>
+      <div class="vcard-title">You Tell Stories</div>
+      <div class="vcard-body">Science talks in charts and numbers. You make it a story — a rainy day that felt off-season, a convo with your mom, a flooded street. <em>People remember feelings, not numbers.</em></div>
+    </div>
+    <div class="vcard">
+      <div class="vcard-num">03</div>
+      <div class="vcard-title">You Make It Simple</div>
+      <div class="vcard-body">You don't need to explain the carbon cycle. You just translate: <em>"The air is like a blanket. It's getting thicker. That's why it's hotter and storms are more intense."</em> See?</div>
+    </div>
+    <div class="vcard">
+      <div class="vcard-num">04</div>
+      <div class="vcard-title">You Reach People Where They Are</div>
+      <div class="vcard-body">Scientists write in journals. You hang out on TikTok, IG, YouTube — where people scroll every day. You can drop a climate story in a feed where no one expected it, and boom, <em>it clicks.</em></div>
+    </div>
+    <div class="vcard">
+      <div class="vcard-num">05</div>
+      <div class="vcard-title">You Inspire Action</div>
+      <div class="vcard-body">Knowing stuff is nice. Doing stuff is better. You can show tiny steps — try this swap, go to this event, meet this local expert. You don't just share the problem. <em>You share what we can do.</em></div>
+    </div>
+    <div class="vcard" style="background:var(--pl);border-color:var(--pm)">
+      <div class="vcard-num" style="color:var(--p)">💡</div>
+      <div class="vcard-title" style="color:var(--p)">Lived experience = legit data</div>
+      <div class="vcard-body" style="color:var(--pd)">You don't have to hide the doubt. Start with: <em>"I'm not a scientist, but here's what I've noticed…"</em> That flip turns imposter voice into honesty + relatability.</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- EXERCISES -->
+<div id="exercises">
+  <h2>Exercises to Find Your Climate Voice</h2>
+  <p>Try one. Try all four. They're quick, practical, and designed to turn your lived experience into your superpower.</p>
+
+  <div class="ex-list">
+
+    <div class="ex" id="ex1">
+      <div class="ex-head" onclick="etog('ex1')">
+        <span class="ex-icon">🚶</span>
+        <span class="ex-name">Observation Walk</span>
+        <span class="ex-arr">›</span>
+      </div>
+      <div class="ex-body">
+        <p>Take a short walk around your neighborhood. Notice <strong>3 things connected to weather or climate.</strong></p>
+        <p>Is it hotter than usual? Is the air hazy? Are plants or seasons acting differently?</p>
+        <div class="prompt">Jot them down or snap a quick pic. That's your raw material — the starting point for a post only you can write.</div>
+      </div>
+    </div>
+
+    <div class="ex" id="ex2">
+      <div class="ex-head" onclick="etog('ex2')">
+        <span class="ex-icon">🎛️</span>
+        <span class="ex-name">Fact + POV Remix</span>
+        <span class="ex-arr">›</span>
+      </div>
+      <div class="ex-body">
+        <p>Take one science fact you've read and add your personal perspective.</p>
+        <div class="prompt"><strong>Fact:</strong> "Sea levels are rising."<br><strong>You:</strong> "My family's riverside house now floods almost every year."<br><br>Mixing facts with personal experience makes your voice powerful and credible.</div>
+      </div>
+    </div>
+
+    <div class="ex" id="ex3">
+      <div class="ex-head" onclick="etog('ex3')">
+        <span class="ex-icon">🎤</span>
+        <span class="ex-name">Pass the Mic</span>
+        <span class="ex-arr">›</span>
+      </div>
+      <div class="ex-body">
+        <p>Use your platform to highlight another voice. Share a quote, clip, or post from a community directly impacted and add:</p>
+        <div class="prompt"><em>"Their perspective matters — here's why I'm sharing it."</em><br><br>This shows you're learning out loud, not speaking over. It positions you as a connector, not a lecturer.</div>
+      </div>
+    </div>
+
+    <div class="ex" id="ex4">
+      <div class="ex-head" onclick="etog('ex4')">
+        <span class="ex-icon">✍️</span>
+        <span class="ex-name">Lived Experience = Legit Data</span>
+        <span class="ex-arr">›</span>
+      </div>
+      <div class="ex-body">
+        <p>Write one short post starting with one of these openers:</p>
+        <div class="prompt"><em>"I'm not a scientist, but here's what I've noticed…"</em><br><br>or<br><br><em>"As someone living here, I've noticed…"</em><br><br>This flips the imposter voice into honesty + relatability. Your doubt becomes your authenticity.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<!-- DECOLONIZE SECTION -->
+<div id="decolonize">
+  <div class="thought-box">
+    <div class="tb-sidebar"><span class="tb-sidebar-text">Just a thought</span></div>
+    <div class="tb-content">
+      <div class="tb-q">Why do we still feel like guests in our own narratives?</div>
+      <div class="tb-qs">
+        <div class="reclaim-q"><span>👉</span>Who benefits if we stay silent?</div>
+        <div class="reclaim-q"><span>👉</span>Who might feel less alone if we speak?</div>
+      </div>
+      <div class="tb-body">
+        <p>Imposter syndrome, in its original form, described high-achieving women who felt undeserving of success because of <em>external</em> bias and exclusion. Over time, it got reframed as a <em>personal flaw</em> — when really, it's a symptom of systemic injustice.</p>
+        <p style="margin-top:.75rem">When you post online, especially in spaces shaped by Western norms, that voice of doubt isn't proof you're unqualified. It's the echo of structures built to make you feel that way. <strong>Your presence, your local lens, your humor, cultural wisdom, and storytelling — it's already an act of resistance.</strong></p>
+        <p style="margin-top:.75rem">Our work is not to "fix" ourselves. It's to <strong>unlearn the doubt</strong>, <strong>build collective confidence</strong>, and <strong>create spaces where diverse voices thrive.</strong></p>
+      </div>
+      <a class="tb-link" href="https://archermagazine.com.au/2025/07/impostor-syndrome-is-a-colonial-patriarchal-construct-on-mediocrity-and-white-supremacy/" target="_blank">Read: "Impostor Syndrome is a Colonial, Patriarchal Construct" ↗</a>
+    </div>
+  </div>
+
+  <a class="vid-link" href="https://youtu.be/ztgld4K_kAk" target="_blank">
+    <span class="vid-link-icon">▶️</span>
+    <div>
+      <div class="vid-link-title">Opinions: Why should YOU talk about climate? ↗</div>
+      <div class="vid-link-sub">Watch on YouTube</div>
+    </div>
+  </a>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 2 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l2-conversation.html">
+      <div class="pn-ey">← Previous</div>
+      <div class="pn-title">💬 The Power of Conversations</div>
+    </a>
+    <a class="pn-card" href="kol-l2-who-am-i.html">
+      <div class="pn-ey">Also in Level 2</div>
+      <div class="pn-title">🪞 Who am I? What role do I want to play?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l2-organizations.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">🌿 Climate organizations in my country</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function etog(id){document.getElementById(id).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
