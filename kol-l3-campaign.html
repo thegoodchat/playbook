@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Launch a First Campaign — KOL Level 3</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#0b442b;--s:#fb8b24;--pl:#e6f0eb;--pm:#c2d9cc;--pd:#072d1c;--b:rgba(0,0,0,.12)}
+body{font-family:'Raleway',sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem;color:#111}
+a{text-decoration:none;color:inherit}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.25rem;border-bottom:.5px solid var(--b);margin-bottom:1.5rem}
+.logo{font-size:13px;font-weight:800;color:var(--p)}
+.nright{display:flex;align-items:center;gap:12px}
+nav a.nl{font-size:12px;font-weight:600;color:#555}
+nav a.nl:hover{color:var(--p)}
+nav a.nl.on{color:var(--p);border-bottom:2px solid var(--s);padding-bottom:2px}
+#search-bar{position:relative}
+#search-input{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;padding:5px 10px 5px 28px;border:.5px solid var(--b);border-radius:20px;outline:none;width:150px;color:#111;background:#f7f7f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 9px center;transition:border-color .15s,width .2s}
+#search-input:focus{border-color:var(--p);width:190px;background-color:#fff}
+#search-input::placeholder{color:#aaa}
+#search-box{display:none;position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;border:.5px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+.sr-item{display:flex;flex-direction:column;gap:2px;padding:.7rem 1rem;border-bottom:.5px solid var(--b);text-decoration:none;transition:background .1s}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:#f7f7f5}
+.sr-path{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p)}
+.sr-title{font-size:13px;font-weight:700;color:#111}
+.sr-empty{padding:.9rem 1rem;font-size:13px;color:#999}
+
+.crumb{display:flex;align-items:center;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.crumb a,.crumb span{font-size:11px;font-weight:700;color:#aaa}
+.crumb a{color:var(--p)}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{color:#ccc}
+
+.lstrip{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.lstep{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;border:.5px solid var(--b);color:#999;text-decoration:none}
+.lstep:hover{border-color:var(--pm);color:var(--p)}
+.lstep.on{background:var(--p);color:#fff;border-color:var(--p)}
+.lstep.done{background:var(--pl);color:var(--p);border-color:var(--pm)}
+
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--s);margin-bottom:.6rem}
+h1{font-size:27px;font-weight:800;color:var(--p);line-height:1.2;letter-spacing:-.02em;margin-bottom:.75rem}
+.lead{font-size:15px;color:#444;line-height:1.75;margin-bottom:1.5rem;font-style:italic;max-width:600px}
+hr{border:none;border-top:.5px solid var(--b);margin:2rem 0}
+h2{font-size:20px;font-weight:800;color:var(--p);margin-bottom:.75rem;letter-spacing:-.01em}
+h3{font-size:15px;font-weight:800;color:#111;margin-bottom:.5rem}
+p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#111}
+em{font-style:italic}
+ul{padding-left:1.25rem;margin-bottom:.75rem}
+li{font-size:14px;color:#444;line-height:1.75;margin-bottom:.3rem}
+
+/* PREREQ BOX */
+.prereq{border:.5px solid #fcd4a8;border-radius:12px;overflow:hidden;margin-bottom:1.5rem;background:#fff5ec}
+.prereq-head{padding:.85rem 1.25rem;background:var(--s);display:flex;align-items:center;gap:8px}
+.prereq-head span{font-size:14px;font-weight:800;color:#fff}
+.prereq-body{padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:10px}
+.prereq-item{display:flex;gap:12px;align-items:flex-start;border:.5px solid #fcd4a8;border-radius:9px;padding:.85rem 1rem;background:#fff;text-decoration:none;transition:border-color .15s}
+.prereq-item:hover{border-color:var(--s)}
+.prereq-num{font-size:13px;font-weight:800;color:var(--s);flex-shrink:0;margin-top:1px}
+.prereq-text{font-size:13px;color:#444;line-height:1.65}
+.prereq-text strong{font-weight:700;color:#111}
+.prereq-link{font-size:12px;font-weight:700;color:var(--p);margin-top:4px;display:block}
+
+/* MINDSET BOX */
+.mindset{background:var(--p);border-radius:12px;padding:1.4rem 1.5rem;margin-bottom:2rem}
+.mindset-tag{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.6rem}
+.mindset-title{font-size:17px;font-weight:800;color:#fff;margin-bottom:.85rem;line-height:1.3}
+.mindset p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.8;margin-bottom:.6rem}
+.mindset p:last-child{margin-bottom:0}
+.mindset strong{color:#fff;font-weight:800}
+.mindset em{font-style:italic;color:rgba(255,255,255,.9)}
+.mindset-qs{margin:1rem 0;padding:1rem;background:rgba(255,255,255,.1);border-radius:8px;display:flex;flex-direction:column;gap:8px}
+.mindset-q{font-size:13px;color:rgba(255,255,255,.9);font-style:italic;line-height:1.6}
+
+/* MEDIA */
+.media-block{border:.5px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.media-head{padding:1rem 1.25rem;background:var(--p)}
+.media-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.3rem}
+.media-title{font-size:15px;font-weight:800;color:#fff}
+.media-body{padding:1.25rem;display:flex;flex-direction:column;gap:10px}
+.vid-ph{background:#f7f7f5;border-radius:8px;padding:2rem;text-align:center;color:#aaa;font-size:13px;font-style:italic;border:.5px solid var(--b)}
+.media-link{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--p);border:.5px solid var(--pm);border-radius:8px;padding:7px 14px;background:var(--pl);text-decoration:none}
+.media-link:hover{background:var(--pm)}
+
+/* WHAT IS A CAMPAIGN */
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.25rem 0}
+.def-card{border:.5px solid var(--b);border-radius:10px;padding:1rem 1.1rem;transition:border-color .15s}
+.def-card:hover{border-color:var(--pm)}
+.def-icon{font-size:20px;margin-bottom:.5rem}
+.def-title{font-size:13px;font-weight:800;color:var(--p);margin-bottom:.4rem}
+.def-body{font-size:13px;color:#555;line-height:1.65}
+
+/* 3 ELEMENTS ACCORDION */
+.elements{display:flex;flex-direction:column;gap:10px;margin:1.25rem 0}
+.elem{border:.5px solid var(--b);border-radius:12px;overflow:hidden}
+.elem-head{display:flex;align-items:center;gap:14px;padding:1rem 1.25rem;cursor:pointer;user-select:none}
+.elem-head:hover{background:#f7f7f5}
+.elem.open .elem-head{background:var(--pl)}
+.elem-icon{font-size:20px;flex-shrink:0}
+.elem-info{flex:1}
+.elem-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:2px}
+.elem-title{font-size:15px;font-weight:800;color:#111}
+.elem.open .elem-title{color:var(--p)}
+.earr{font-size:14px;color:#aaa;transition:transform .2s}
+.elem.open .earr{transform:rotate(90deg);color:var(--s)}
+.elem-body{display:none;padding:1.25rem;border-top:.5px solid var(--b)}
+.elem.open .elem-body{display:block}
+.elem-body p{font-size:14px;color:#444;line-height:1.75;margin-bottom:.75rem}
+.elem-body strong{font-weight:700;color:#111}
+.elem-body ul{padding-left:1.25rem;margin-bottom:.75rem}
+.elem-body li{font-size:13px;color:#555;line-height:1.75;margin-bottom:.3rem}
+
+/* FRAMEWORK BOX */
+.framework{background:#f7f7f5;border:.5px solid var(--b);border-radius:10px;padding:1.1rem 1.25rem;margin:1rem 0}
+.fw-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:.85rem}
+.fw-rows{display:flex;flex-direction:column;gap:8px}
+.fw-row{display:grid;grid-template-columns:80px 1fr;gap:10px;align-items:start}
+.fw-key{font-size:12px;font-weight:800;color:var(--p);padding:.35rem .75rem;background:var(--pl);border-radius:6px;text-align:center;border:.5px solid var(--pm)}
+.fw-val{font-size:13px;color:#444;line-height:1.6;padding-top:.25rem}
+
+/* ENTRYPOINTS */
+.entry-chips{display:flex;flex-wrap:wrap;gap:7px;margin:.75rem 0}
+.echip{font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--pl);color:var(--p);border:.5px solid var(--pm)}
+
+/* FLEXIBILITY CALLOUT */
+.flex-box{display:grid;grid-template-columns:44px 1fr;border:.5px solid var(--pm);border-radius:12px;overflow:hidden;margin-top:2rem}
+.flex-side{background:var(--pm);display:flex;align-items:center;justify-content:center;font-size:20px}
+.flex-content{padding:1.1rem 1.25rem}
+.flex-title{font-size:14px;font-weight:800;color:var(--p);margin-bottom:.5rem}
+.flex-content p{font-size:13px;color:#444;line-height:1.75;margin-bottom:.5rem}
+.flex-content strong{font-weight:700;color:#111}
+.flex-content em{font-style:italic}
+
+/* BOTTOM NAV */
+.page-nav{margin-top:3rem;padding-top:1.5rem;border-top:.5px solid var(--b)}
+.pn-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:1rem}
+.pn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pn-card{border:.5px solid var(--b);border-radius:10px;padding:.75rem 1rem;text-decoration:none;transition:border-color .15s}
+.pn-card:hover{border-color:var(--pm)}
+.pn-card.highlight{background:var(--p);border-color:var(--p)}
+.pn-ey{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin-bottom:3px}
+.pn-card.highlight .pn-ey{color:rgba(255,255,255,.6)}
+.pn-title{font-size:13px;font-weight:800;color:#111}
+.pn-card.highlight .pn-title{color:#fff}
+
+footer{margin-top:2rem;padding-top:1rem;border-top:.5px solid var(--b);display:flex;align-items:center;gap:6px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--s);flex-shrink:0}
+footer span{font-size:11px;color:#999;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">The Good Chat Playbook</a>
+  <div class="nright">
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off">
+      <div id="search-box"><div id="search-results"></div></div>
+    </div>
+    <a href="index.html" class="nl">Home</a>
+    <a href="kol-path.html" class="nl on">KOL Path</a>
+    <a href="cso-path.html" class="nl">CSO Path</a>
+  </div>
+</nav>
+
+<div class="crumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="kol-path.html">KOL Path</a><span class="sep">›</span>
+  <a href="kol-level-3.html">Level 3: Starting Conversations</a><span class="sep">›</span>
+  <span>How to launch a first campaign</span>
+</div>
+
+<div class="lstrip">
+  <a class="lstep done" href="kol-level-1.html">Level 1 ✓</a>
+  <a class="lstep done" href="kol-level-2.html">Level 2 ✓</a>
+  <a class="lstep on" href="kol-level-3.html">Level 3</a>
+  <a class="lstep" href="kol-level-4.html">Level 4</a>
+  <a class="lstep" href="kol-level-5.html">Level 5</a>
+</div>
+
+<p class="hero-tag">🚀 Level 3 · Starting Conversations</p>
+<h1>How to launch a first campaign when I've never talked about climate change with my audience before?</h1>
+<p class="lead">The most powerful conversations can't be fully scripted — so your plan shouldn't be either.</p>
+
+<!-- PREREQUISITES -->
+<div class="prereq">
+  <div class="prereq-head"><span>⚠️ Before you start — two things to do first</span></div>
+  <div class="prereq-body">
+    <div class="prereq-item">
+      <span class="prereq-num">1</span>
+      <div>
+        <div class="prereq-text"><strong>Watch the "Power of Conversations" training</strong> — understand why dialogue is one of the most effective ways to influence attitudes and inspire collective action in SEA. This is the foundation of your campaign.</div>
+        <a class="prereq-link" href="kol-l2-conversation.html">→ The Power of Conversations: a New &amp; Soft Form of Activism</a>
+      </div>
+    </div>
+    <div class="prereq-item">
+      <span class="prereq-num">2</span>
+      <div>
+        <div class="prereq-text"><strong>Create your "Story of Self, Us, and Now"</strong> — clarify your community driver and define why this moment matters for them.</div>
+        <a class="prereq-link" href="kol-l2-who-am-i.html">→ Your Story, Your Why — Finding Your Place in the Movement</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MINDSET -->
+<div class="mindset">
+  <div class="mindset-tag">⚠️ Important mindset shift</div>
+  <div class="mindset-title">This is not a traditional communication campaign.</div>
+  <p>We're not producing a series of polished posts, events, or slogans planned in advance. What we're building is a <strong>strategy</strong> — a structured plan to create and sustain <em>conversations</em> about the energy transition across multiple spaces and over time.</p>
+  <p>Your content and events plan will evolve with how the conversations are happening. The goal is not only to raise awareness, but to make people <strong>care enough to talk</strong> — with their families, friends, and communities.</p>
+  <p><strong>Think of yourself not as a campaign manager, but as a conversation enabler.</strong></p>
+  <p>Your objective is to design opportunities to discuss Renewable Energy — through online content, small gatherings, collaborations, or everyday exchanges — that allow people to engage naturally. <strong>The more organic, authentic, and relatable, the more powerful.</strong></p>
+  <div class="mindset-qs">
+    <div class="mindset-q">💭 What kinds of conversations have influenced me in my own life?</div>
+    <div class="mindset-q">💭 How can I recreate those kinds of exchanges for others?</div>
+  </div>
+  <p>This is the foundation of your campaign: not communication for visibility, but <strong>conversation for change.</strong></p>
+</div>
+
+<!-- VIDEO -->
+<div class="media-block">
+  <div class="media-head">
+    <div class="media-label">🎬 Masterclass</div>
+    <div class="media-title">Campaign Planning — Full Training</div>
+  </div>
+  <div class="media-body">
+    <div class="vid-ph">📹 Add masterclass video here (replace with YouTube embed)</div>
+    <a class="media-link" href="#" target="_blank">📄 Download Campaign Planning Training Materials (PDF) ↗</a>
+  </div>
+</div>
+
+<hr>
+
+<h2>What is a campaign?</h2>
+<p>A campaign is a <strong>time-bound series of materials, content, and activities</strong> unified by one purpose, one central message, and a consistent visual and verbal identity.</p>
+
+<div class="def-grid">
+  <div class="def-card">
+    <div class="def-icon">📱</div>
+    <div class="def-title">Social Media Campaign</div>
+    <div class="def-body">A series of posts based on your content and message — published across your platforms over time.</div>
+  </div>
+  <div class="def-card">
+    <div class="def-icon">🤝</div>
+    <div class="def-title">In-Person Campaign</div>
+    <div class="def-body">Gatherings you organize, lead, and facilitate — bringing conversations into physical spaces.</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>The 3 Key Elements of Any Campaign</h2>
+<p>Whether online or offline, every campaign is built on the same three foundations. Click each to explore.</p>
+
+<div class="elements">
+
+  <div class="elem" id="el1">
+    <div class="elem-head" onclick="etog('el1')">
+      <span class="elem-icon">👥</span>
+      <div class="elem-info">
+        <div class="elem-label">Element 1</div>
+        <div class="elem-title">Audience — who you're talking to</div>
+      </div>
+      <span class="earr">›</span>
+    </div>
+    <div class="elem-body">
+      <p><strong>Goal:</strong> Understand your current community and how to reach them.</p>
+      <p>Reflect on:</p>
+      <ul>
+        <li><strong>Who is your current community?</strong> Age range, gender, interests, opportunities and challenges</li>
+        <li><strong>What do they interact with you about?</strong> Topics, habits, behaviors — what already gets them talking?</li>
+      </ul>
+      <p>The clearer your picture of your audience, the more naturally your campaign will connect with them.</p>
+    </div>
+  </div>
+
+  <div class="elem" id="el2">
+    <div class="elem-head" onclick="etog('el2')">
+      <span class="elem-icon">💬</span>
+      <div class="elem-info">
+        <div class="elem-label">Element 2</div>
+        <div class="elem-title">Messaging — what you're saying</div>
+      </div>
+      <span class="earr">›</span>
+    </div>
+    <div class="elem-body">
+      <p><strong>Goal:</strong> Decide what you want people to think, feel, and do.</p>
+
+      <div class="framework">
+        <div class="fw-title">Think / Feel / Do Framework</div>
+        <div class="fw-rows">
+          <div class="fw-row">
+            <div class="fw-key">Think</div>
+            <div class="fw-val">What do you want your audience to <strong>understand</strong> about renewable energy?</div>
+          </div>
+          <div class="fw-row">
+            <div class="fw-key">Feel</div>
+            <div class="fw-val">What <strong>emotion</strong> do you want them to feel?</div>
+          </div>
+          <div class="fw-row">
+            <div class="fw-key">Do</div>
+            <div class="fw-val">What <strong>action</strong> do you want them to take?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="framework" style="margin-top:.85rem">
+        <div class="fw-title">Messaging House Tool</div>
+        <div class="fw-rows">
+          <div class="fw-row">
+            <div class="fw-key">Key message</div>
+            <div class="fw-val">The main idea of your campaign</div>
+          </div>
+          <div class="fw-row">
+            <div class="fw-key">Values</div>
+            <div class="fw-val">What makes your message appealing or relevant to your audience?</div>
+          </div>
+          <div class="fw-row">
+            <div class="fw-key">Support</div>
+            <div class="fw-val">Proof, examples, or reasons people should believe your message</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="elem" id="el3">
+    <div class="elem-head" onclick="etog('el3')">
+      <span class="elem-icon">✍️</span>
+      <div class="elem-info">
+        <div class="elem-label">Element 3</div>
+        <div class="elem-title">Content — how you're saying it</div>
+      </div>
+      <span class="earr">›</span>
+    </div>
+    <div class="elem-body">
+      <p><strong>Goal:</strong> Make renewable energy relatable using "entry points" your community already cares about.</p>
+      <p>Entry point examples:</p>
+      <div class="entry-chips">
+        <span class="echip">Electricity rates</span>
+        <span class="echip">Flooding &amp; climate impacts</span>
+        <span class="echip">Extreme weather</span>
+        <span class="echip">Making homes less hot</span>
+        <span class="echip">Understanding the power sector</span>
+      </div>
+      <p>For each entry point, brainstorm <strong>at least 3 content examples</strong> using storytelling and daily-life relevance. Start with what feels most natural — that's usually what resonates most with your audience too.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="flex-box">
+  <div class="flex-side">💡</div>
+  <div class="flex-content">
+    <div class="flex-title">Planning is important. Flexibility is essential.</div>
+    <p>Conversations are living things — they evolve, shift direction, and take us somewhere unexpected. <strong>Your plan should be a guide, not a script.</strong></p>
+    <p>The key is to <strong>think fast and act iteratively:</strong> <em>start with simple ideas for posts, conversation points, or small events you can test right away.</em></p>
+    <p>Don't plan too far ahead. Plan just enough to <strong>experiment, observe, learn, and adjust.</strong> The more responsive you are to how people react and what they care about, the more authentic and impactful your campaign will become.</p>
+  </div>
+</div>
+
+<div class="page-nav">
+  <p class="pn-label">Level 3 — Continue reading</p>
+  <div class="pn-grid">
+    <a class="pn-card" href="kol-l3-topics.html">
+      <div class="pn-ey">← Previous</div>
+      <div class="pn-title">💡 Top topics to start conversations</div>
+    </a>
+    <a class="pn-card" href="kol-l3-data.html">
+      <div class="pn-ey">Also in Level 3</div>
+      <div class="pn-title">📊 Is my campaign working?</div>
+    </a>
+    <a class="pn-card highlight" href="kol-l3-community.html">
+      <div class="pn-ey">Up next →</div>
+      <div class="pn-title">🤝 Community activities to kickstart conversations</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fdot"></div>
+  <span>The Good Chat Playbook · Philippines · Thailand · Indonesia · Free to use &amp; share</span>
+</footer>
+
+<script>
+function etog(id){document.getElementById(id).classList.toggle('open')}
+</script>
+<script src="search.js"></script>
+<script src="glossary-tooltip.js"></script>
+</body>
+</html>
